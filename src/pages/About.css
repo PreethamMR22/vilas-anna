@@ -1,0 +1,30 @@
+.page-about {
+    width: 100%;
+}
+
+.about-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+}
+
+.about-hero p {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.about-vision h2 {
+    margin-bottom: 30px;
+    color: var(--color-gold);
+}
+
+.about-vision p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #ddd;
+}

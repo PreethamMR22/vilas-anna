@@ -1,0 +1,127 @@
+.contact-section {
+    padding-top: 40px;
+}
+
+.contact-header {
+    margin-bottom: 60px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #000;
+    border: 1px solid var(--color-text-muted);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.contact-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-intro {
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+/* Info Column */
+.info-item {
+    margin-bottom: 40px;
+}
+
+.info-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--color-text-main);
+}
+
+.info-item p {
+    color: var(--color-text-muted);
+}
+
+.social-links-contact {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon-c {
+    color: #ff0055;
+    /* Provide brand colors or keep generic */
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icon-c:nth-child(2) {
+    color: #1877f2;
+}
+
+.social-icon-c:nth-child(3) {
+    color: #ff0000;
+}
+
+.social-icon-c:nth-child(4) {
+    color: #0077b5;
+}
+
+.social-icon-c:hover {
+    transform: translateY(-3px);
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--color-text-main);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #E8E8E8;
+    /* Light gray input bg as per image */
+    color: #333;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid var(--color-gold);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-header h1 {
+        font-size: 2.5rem;
+    }
+}

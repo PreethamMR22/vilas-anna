@@ -1,0 +1,26 @@
+.page-courses {
+    width: 100%;
+}
+
+.courses-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0 100px;
+    text-align: center;
+}
+
+.courses-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.courses-hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}

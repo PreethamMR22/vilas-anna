@@ -1,0 +1,221 @@
+.text-center {
+    text-align: center;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 209, 0, 0.1), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.philosophy-content {
+    position: relative;
+    z-index: 1;
+}
+
+.philosophy-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.philosophy-image-wrapper {
+    margin-top: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.philosophy-image-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+}
+
+.philosophy-image-wrapper img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.philosophy-image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* About Hint */
+.about-hint-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(255, 209, 0, 0.03), transparent);
+    position: relative;
+}
+
+.about-hint-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 209, 0, 0.3), transparent);
+}
+
+.about-hint-section h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Grids */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.courses-grid::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle at center, rgba(255, 209, 0, 0.02), transparent);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.mentors-scroll-container {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+}
+
+.mentors-track {
+    display: flex;
+    animation: scrollLeft 30s linear infinite;
+    width: fit-content;
+}
+
+.mentors-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 320px);
+    gap: 40px;
+    min-width: fit-content;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.text-dream {
+    font-family: var(--font-heading);
+    font-style: italic;
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+/* Floating animation for special elements */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Staggered animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+@media (max-width: 768px) {
+    .philosophy-section h2 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+    
+    .philosophy-image-wrapper {
+        margin-top: 30px;
+        border-radius: 16px;
+    }
+    
+    .about-hint-section {
+        padding: 60px 0;
+    }
+    
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 30px;
+    }
+    
+    .mentors-grid {
+        grid-template-columns: repeat(5, 280px);
+        gap: 20px;
+    }
+    
+    .mentors-scroll-container {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .philosophy-section::before {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .courses-grid {
+        gap: 20px;
+    }
+    
+    .mentors-grid {
+        grid-template-columns: repeat(5, 260px);
+        gap: 15px;
+    }
+}
