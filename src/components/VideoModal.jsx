@@ -95,7 +95,7 @@ const VideoModal = ({ isOpen, onClose, videoUrl }) => {
                 {/* Modal Footer */}
                 <div className="video-modal-footer">
                     <p className="video-description">
-                        Discover the story behind Blue Grass Academy and our passion for music education.
+                        Discover the story behind Blue Grass Academy and our passion for music, yoga, and therapy education.
                     </p>
                 </div>
             </motion.div>
