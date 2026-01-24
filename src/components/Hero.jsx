@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaPlay, FaMusic, FaStar } from 'react-icons/fa';
+import { FaPlay, FaMusic, FaStar, FaYoutube } from 'react-icons/fa';
+import { useVideoModal } from '../contexts/VideoModalContext';
 const heroImage = '/images/hero.png';
 import './Hero.css';
 
 const Hero = () => {
+    const { openVideoModal } = useVideoModal();
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -74,9 +77,16 @@ const Hero = () => {
             >
                 <motion.h1 variants={itemVariants}>
                     Blue Grass <br />
-                    <span className="text-gold">Academy of</span> <br />
-                    Music
+                    <span className="text-gold">Academy</span>
                 </motion.h1>
+
+                <motion.div 
+                    className="hero-subtitle"
+                    variants={itemVariants}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                    Music • <span className="text-white">Yoga</span> • Art Therapy
+                </motion.div>
 
                 <motion.div className="hero-badge" variants={itemVariants}>
                     <FaMusic className="badge-icon" />
@@ -85,9 +95,7 @@ const Hero = () => {
                 </motion.div>
 
                 <motion.p variants={itemVariants}>
-                    <span className="text-gold text-bold">BGA</span> is a young, multi-instrumental, multi-genre music academy.
-                    We aim to help our learners - across gender and age barriers - discover the musical superhero
-                    in themselves.
+                    <span className="text-gold text-bold">Blue Grass Academy</span> is a holistic learning space where Music, Yoga and Art Therapy come together to help learners grow with confidence, creativity and calm.
                 </motion.p>
 
                 <motion.div className="hero-buttons" variants={itemVariants}>
@@ -98,9 +106,18 @@ const Hero = () => {
                         </Link>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Link to="/about" className="btn btn-outline">
-                            Our Journey
+                        <Link to="/programs" className="btn btn-outline">
+                            View Programs
                         </Link>
+                    </motion.div>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <button 
+                            className="btn btn-outline btn-video"
+                            onClick={openVideoModal}
+                        >
+                            <FaYoutube className="btn-icon" />
+                            Watch Brand Film
+                        </button>
                     </motion.div>
                 </motion.div>
 
@@ -117,7 +134,7 @@ const Hero = () => {
                     </div>
                     <div className="stat-item">
                         <div className="stat-number">15+</div>
-                        <div className="stat-label">Courses</div>
+                        <div className="stat-label">Programs</div>
                     </div>
                     <div className="stat-item">
                         <div className="stat-number">10+</div>

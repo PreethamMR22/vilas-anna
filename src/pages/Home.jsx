@@ -23,6 +23,39 @@ const Home = () => {
         <div className="home-page">
             <Hero />
 
+            {/* Programs Section */}
+            <Section title="Our Programs" id="programs">
+                <div className="courses-grid">
+                    <Card
+                        image="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop"
+                        title="Music Classes"
+                        timing="4:00 PM – 8:00 PM"
+                        description="Instruments • Vocals • Theory"
+                        buttonText="Explore Music"
+                        onClick={() => navigate('/programs/music')}
+                        delay={1}
+                    />
+                    <Card
+                        image="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop"
+                        title="Yoga Classes"
+                        timing="6:00 AM – 10:30 AM"
+                        description="Beginner-friendly • Wellness focused"
+                        buttonText="Explore Yoga"
+                        onClick={() => navigate('/programs/yoga')}
+                        delay={2}
+                    />
+                    <Card
+                        image="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=2070&auto=format&fit=crop"
+                        title="Art Therapy / Art Workshops"
+                        timing="10:30 AM – 3:30 PM"
+                        description="Guided sessions • Creative healing"
+                        buttonText="Explore Art Therapy"
+                        onClick={() => navigate('/programs/art-therapy')}
+                        delay={3}
+                    />
+                </div>
+            </Section>
+
             {/* Philosophy Section */}
             <Section className="philosophy-section">
                 <div className="philosophy-content text-center">
@@ -33,17 +66,19 @@ const Home = () => {
                         transition={{ duration: 0.8 }}
                     >
                         At Blue Grass Academy, <br />
-                        every melody carries a <span className="text-gold text-dream">dream</span>
+                        every day builds a <span className="text-gold text-dream">better you</span>
                     </motion.h2>
-                    <motion.p
-                        className="subtitle"
-                        initial={{ opacity: 0, y: 30 }}
+                    <motion.div
+                        className="philosophy-lines"
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        transition={{ duration: 0.8, delay: 0.1 }}
                     >
-                        In every classroom, every note, and every applause, <br /> we see futures being written.
-                    </motion.p>
+                        <p>Calm mornings with Yoga</p>
+                        <p>Creative afternoons with Art Therapy</p>
+                        <p>Confident evenings with Music</p>
+                    </motion.div>
                     <motion.div
                         className="philosophy-image-wrapper"
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -53,57 +88,6 @@ const Home = () => {
                     >
                         <img src={philosophyImage} alt="Musician playing drums" />
                     </motion.div>
-                </div>
-            </Section>
-
-            {/* About Hint Section */}
-            <Section className="about-hint-section text-center">
-                <h2>Explore Our <span className="text-gold text-italic">World of Music</span></h2>
-                <p className="subtitle">
-                    Where the art of instruments and the soul of vocals come together to shape every musical journey.
-                </p>
-            </Section>
-
-            {/* Courses Section */}
-            <Section title="Our Courses" id="courses">
-                <div className="courses-grid">
-                    <Card
-                        image={courseGuitar}
-                        title="Guitar"
-                        description="Learn guitar from the basics to advanced techniques in our performance-focused course."
-                        badge="Popular"
-                        delay={1}
-                        onClick={() => navigate('/courses/guitar')}
-                    />
-                    <Card
-                        image={mentor2}
-                        title="Piano"
-                        description="Master the keys with our comprehensive piano curriculum designed for all ages."
-                        delay={2}
-                        onClick={() => navigate('/courses/piano')}
-                    />
-                    <Card
-                        image={mentor3}
-                        title="Vocals"
-                        description="Find your voice and refine your technique with professional vocal training."
-                        delay={3}
-                        onClick={() => navigate('/courses/vocals')}
-                    />
-                    <Card
-                        image={philosophyImage}
-                        title="Drums"
-                        description="Find your rhythm and beat with our expert drum lessons."
-                        delay={4}
-                        onClick={() => navigate('/courses/drums')}
-                    />
-                    <Card
-                        image={yogaImage}
-                        title="Yoga Classes"
-                        description="Balance your mind and body to enhance your musical journey."
-                        badge="Coming Soon"
-                        delay={5}
-                    // No click for Coming Soon or maybe just scroll/alert
-                    />
                 </div>
             </Section>
 

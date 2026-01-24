@@ -62,7 +62,7 @@ const Header = () => {
                 {/* Desktop Navigation */}
                 <nav className="nav-menu desktop-nav">
                     <ul>
-                        {['Home', 'About', 'Courses', 'Contact'].map((item, index) => (
+                        {['Home', 'About', 'Programs', 'Contact'].map((item, index) => (
                             <motion.li 
                                 key={item}
                                 initial={{ opacity: 0, y: -20 }}
@@ -113,7 +113,7 @@ const Header = () => {
                                 </div>
                             </div>
                             <ul>
-                                {['Home', 'About', 'Courses', 'Contact'].map((item, index) => (
+                                {['Home', 'About', 'Programs', 'Contact'].map((item, index) => (
                                     <motion.li
                                         key={item}
                                         initial={{ opacity: 0, x: 50 }}

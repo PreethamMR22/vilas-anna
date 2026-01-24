@@ -13,7 +13,7 @@ const Courses = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (id) => {
-    navigate(`/courses/${id}`);
+    navigate(`/programs/${id}`);
   };
 
   return (
@@ -21,54 +21,38 @@ const Courses = () => {
       <div className="courses-hero" style={{
         background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(' + philosophyImage + ')'
       }}>
-        <h1>Our Courses</h1>
-        <p>Discover your musical potential</p>
+        <h1>Our Programs</h1>
+        <p>Discover your creative potential</p>
       </div>
 
       <Section>
         <div className="courses-grid">
           <Card
-            image={courseGuitar}
-            title="Guitar"
-            description="From acoustic strumming to electric shredding, learn guitar from the basics to advanced techniques."
-            badge="Popular"
-            onClick={() => handleCardClick('guitar')}
+            image="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop"
+            title="Music Classes"
+            timing="4:00 PM – 8:00 PM"
+            description="Instruments • Vocals • Theory"
+            buttonText="Explore Music"
+            onClick={() => handleCardClick('music')}
             delay={1}
           />
           <Card
-            image={mentor2}
-            title="Piano"
-            description="Master the keys with our comprehensive piano curriculum designed for all ages and skill levels."
-            onClick={() => handleCardClick('piano')}
+            image="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop"
+            title="Yoga Classes"
+            timing="6:00 AM – 10:30 AM"
+            description="Beginner-friendly • Wellness focused"
+            buttonText="Explore Yoga"
+            onClick={() => handleCardClick('yoga')}
             delay={2}
           />
           <Card
-            image={mentor3}
-            title="Vocals"
-            description="Find your voice and refine your technique with professional vocal training in various genres."
-            onClick={() => handleCardClick('vocals')}
+            image="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=2070&auto=format&fit=crop"
+            title="Art Therapy / Art Workshops"
+            timing="10:30 AM – 3:30 PM"
+            description="Guided sessions • Creative healing"
+            buttonText="Explore Art Therapy"
+            onClick={() => handleCardClick('art-therapy')}
             delay={3}
-          />
-          <Card
-            image={philosophyImage}
-            title="Drums"
-            description="Find your rhythm and beat with our expert drum lessons."
-            onClick={() => handleCardClick('drums')}
-            delay={4}
-          />
-          <Card
-            image="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop"
-            title="Theory & Composition"
-            description="Understand the language of music and learn to write your own songs."
-            onClick={() => handleCardClick('theory')}
-            delay={5}
-          />
-          <Card
-            image={yogaImage}
-            title="Yoga For Musicians"
-            description="A special program designed to help musicians with posture, breathing, and mental focus."
-            badge="Coming Soon"
-            delay={6}
           />
         </div>
       </Section>

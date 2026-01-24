@@ -140,6 +140,10 @@ button {
   color: var(--color-gold);
 }
 
+.text-white {
+  color: var(--color-text-main);
+}
+
 .text-gold-gradient {
   background: linear-gradient(135deg, var(--color-gold), var(--color-gold-hover));
   -webkit-background-clip: text;

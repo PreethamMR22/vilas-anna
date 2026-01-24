@@ -114,6 +114,17 @@
     text-shadow: 0 0 30px rgba(255, 209, 0, 0.5);
 }
 
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-gold);
+    margin-bottom: 30px;
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
 .hero p {
     font-size: 1.4rem;
     line-height: 1.7;
@@ -132,6 +143,45 @@
 .btn-icon {
     margin-right: 8px;
     font-size: 0.9rem;
+}
+
+/* Video Button Specific Styles */
+.btn-video {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 209, 0, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-video:hover::before {
+    left: 100%;
+}
+
+.btn-video:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    background: rgba(255, 209, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 209, 0, 0.2);
+}
+
+.btn-video .btn-icon {
+    color: var(--color-gold);
+    transition: all var(--transition-base);
+}
+
+.btn-video:hover .btn-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(255, 209, 0, 0.6));
 }
 
 .hero-stats {
@@ -201,6 +251,12 @@
     .hero h1 {
         font-size: 3rem;
         letter-spacing: -1.5px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
     }
 
     .hero p {

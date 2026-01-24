@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Card.css';
 
-const Card = ({ image, title, description, badge, onClick, className = '', delay = 0 }) => {
+const Card = ({ image, title, description, badge, timing, buttonText, onClick, className = '', delay = 0 }) => {
     return (
         <motion.div
             className={`card ${className}`}
@@ -27,14 +27,25 @@ const Card = ({ image, title, description, badge, onClick, className = '', delay
             </div>
             <div className="card-content">
                 <h3>{title}</h3>
+                {timing && <p className="card-timing">{timing}</p>}
                 {description && <p>{description}</p>}
 
-                <motion.div className="card-arrow"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileHover={{ opacity: 1, x: 0 }}
-                >
-                    →
-                </motion.div>
+                {buttonText ? (
+                    <motion.button className="card-button"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileHover={{ opacity: 1, y: 0 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        {buttonText}
+                    </motion.button>
+                ) : (
+                    <motion.div className="card-arrow"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileHover={{ opacity: 1, x: 0 }}
+                    >
+                        →
+                    </motion.div>
+                )}
             </div>
         </motion.div>
     );

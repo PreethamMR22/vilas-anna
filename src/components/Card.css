@@ -120,6 +120,18 @@
     transition: color 0.3s ease;
 }
 
+.card-timing {
+    color: var(--color-gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card-timing {
+    color: #E0B800;
+}
+
 .card:hover .card-content h3 {
     color: var(--color-gold);
     text-shadow: 0 0 10px rgba(255, 209, 0, 0.5);
@@ -150,6 +162,29 @@
     opacity: 1;
     transform: translateX(5px);
     text-shadow: 0 0 15px rgba(255, 209, 0, 0.8);
+}
+
+.card-button {
+    margin-top: 20px;
+    background: linear-gradient(135deg, var(--color-gold), #E0B800);
+    color: var(--color-bg-dark);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 209, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    align-self: flex-start;
+}
+
+.card-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 209, 0, 0.5);
+    background: linear-gradient(135deg, #E0B800, var(--color-gold));
 }
 
 @media (max-width: 768px) {

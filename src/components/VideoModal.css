@@ -1,0 +1,226 @@
+/* Video Modal Styles */
+.video-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 9999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.video-modal-container {
+    background: var(--color-bg-card);
+    border: 1px solid rgba(255, 209, 0, 0.2);
+    border-radius: var(--border-radius-lg);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modal Header */
+.video-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-card));
+}
+
+.video-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-text-main);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.youtube-icon {
+    color: var(--color-gold);
+    font-size: 1.4rem;
+}
+
+.video-modal-close {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--color-text-main);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-size: 1.1rem;
+}
+
+.video-modal-close:hover {
+    background: var(--color-gold);
+    color: var(--color-bg-dark);
+    transform: scale(1.1);
+}
+
+/* Modal Content */
+.video-modal-content {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    background: var(--color-bg-dark);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--border-radius-md);
+}
+
+/* Modal Footer */
+.video-modal-footer {
+    padding: 20px 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-secondary));
+    text-align: center;
+}
+
+.video-description {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-modal-overlay {
+        padding: 15px;
+    }
+
+    .video-modal-container {
+        max-height: 95vh;
+        border-radius: var(--border-radius-md);
+    }
+
+    .video-modal-header {
+        padding: 15px 20px;
+    }
+
+    .video-modal-title {
+        font-size: 1.1rem;
+    }
+
+    .youtube-icon {
+        font-size: 1.2rem;
+    }
+
+    .video-modal-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .video-modal-content {
+        padding: 20px;
+        min-height: 250px;
+    }
+
+    .video-modal-footer {
+        padding: 15px 20px;
+    }
+
+    .video-description {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-modal-overlay {
+        padding: 10px;
+    }
+
+    .video-modal-header {
+        padding: 12px 15px;
+    }
+
+    .video-modal-title {
+        font-size: 1rem;
+        gap: 8px;
+    }
+
+    .youtube-icon {
+        font-size: 1.1rem;
+    }
+
+    .video-modal-content {
+        padding: 15px;
+        min-height: 200px;
+    }
+
+    .video-modal-footer {
+        padding: 12px 15px;
+    }
+
+    .video-description {
+        font-size: 0.8rem;
+    }
+}
+
+/* Loading Animation for Video */
+.video-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 209, 0, 0.3);
+    border-top: 3px solid var(--color-gold);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+    z-index: 1;
+}
+
+.video-wrapper.loaded::before {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Focus States for Accessibility */
+.video-modal-close:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+}

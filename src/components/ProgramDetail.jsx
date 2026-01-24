@@ -1,0 +1,225 @@
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import Section from '../components/Section';
+import Card from '../components/Card';
+import './ProgramDetail.css';
+
+const programData = {
+    music: {
+        title: "Music Classes",
+        image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop",
+        description: "Discover the joy of music with our comprehensive program covering instruments, vocals, and theory.",
+        subPrograms: [
+            {
+                id: 'instruments',
+                title: 'Instruments',
+                image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop',
+                description: 'Guitar, Piano, Drums, and more',
+                timing: '4:00 PM - 6:00 PM',
+                details: [
+                    'Individual and group lessons',
+                    'Beginner to advanced levels',
+                    'Performance opportunities',
+                    'Expert instructors'
+                ]
+            },
+            {
+                id: 'vocals',
+                title: 'Vocals',
+                image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2070&auto=format&fit=crop',
+                description: 'Find your voice and master vocal techniques',
+                timing: '6:00 PM - 8:00 PM',
+                details: [
+                    'Breathing techniques',
+                    'Range expansion',
+                    'Genre exploration',
+                    'Solo and group training'
+                ]
+            },
+            {
+                id: 'theory',
+                title: 'Music Theory',
+                image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop',
+                description: 'Understand the language of music',
+                timing: '5:00 PM - 7:00 PM',
+                details: [
+                    'Fundamentals of music',
+                    'Composition basics',
+                    'Ear training',
+                    'Music appreciation'
+                ]
+            }
+        ]
+    },
+    yoga: {
+        title: "Yoga Classes",
+        image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop",
+        description: "Transform your mind and body with our beginner-friendly yoga program focused on wellness and balance.",
+        subPrograms: [
+            {
+                id: 'beginner-yoga',
+                title: 'Beginner Yoga',
+                image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop',
+                description: 'Perfect introduction to yoga practice',
+                timing: '6:00 AM - 7:30 AM',
+                details: [
+                    'Basic poses and alignment',
+                    'Breathing fundamentals',
+                    'Stress reduction techniques',
+                    'Flexible scheduling'
+                ]
+            },
+            {
+                id: 'wellness-yoga',
+                title: 'Wellness Yoga',
+                image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2070&auto=format&fit=crop',
+                description: 'Focus on holistic health and wellness',
+                timing: '8:00 AM - 9:30 AM',
+                details: [
+                    'Meditation practices',
+                    'Mindfulness techniques',
+                    'Lifestyle integration',
+                    'Personal wellness plans'
+                ]
+            },
+            {
+                id: 'advanced-yoga',
+                title: 'Advanced Practice',
+                image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop',
+                description: 'Deepen your yoga practice',
+                timing: '9:30 AM - 10:30 AM',
+                details: [
+                    'Advanced poses and sequences',
+                    'Deeper meditation practices',
+                    'Yoga philosophy',
+                    'Teacher training preparation'
+                ]
+            }
+        ]
+    },
+    'art-therapy': {
+        title: "Art Therapy / Art Workshops",
+        image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=2070&auto=format&fit=crop",
+        description: "Experience creative healing through guided art therapy sessions and workshops.",
+        subPrograms: [
+            {
+                id: 'creative-healing',
+                title: 'Creative Healing',
+                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?q=80&w=2070&auto=format&fit=crop',
+                description: 'Therapeutic art sessions for emotional wellness',
+                timing: '10:30 AM - 12:00 PM',
+                details: [
+                    'Expressive art techniques',
+                    'Emotional processing through art',
+                    'Group therapy sessions',
+                    'Personal growth focus'
+                ]
+            },
+            {
+                id: 'art-workshops',
+                title: 'Art Workshops',
+                image: 'https://images.unsplash.com/photo-1513364776144-60667f13ded8?q=80&w=2070&auto=format&fit=crop',
+                description: 'Hands-on creative workshops',
+                timing: '12:30 PM - 2:00 PM',
+                details: [
+                    'Various art mediums',
+                    'Skill-building sessions',
+                    'Creative expression',
+                    'Take-home projects'
+                ]
+            },
+            {
+                id: 'guided-sessions',
+                title: 'Guided Sessions',
+                image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=2070&auto=format&fit=crop',
+                description: 'Professional guided art therapy',
+                timing: '2:30 PM - 3:30 PM',
+                details: [
+                    'Certified art therapists',
+                    'Personalized sessions',
+                    'Progress tracking',
+                    'Holistic approach'
+                ]
+            }
+        ]
+    }
+};
+
+const ProgramDetail = () => {
+    const { id } = useParams();
+    const program = programData[id] || {
+        title: "Program",
+        image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop",
+        description: "Explore our world-class programs.",
+        subPrograms: []
+    };
+
+    return (
+        <div className="page-program-detail">
+            <div className="program-hero">
+                <img src={program.image} alt={program.title} />
+                <div className="program-hero-overlay">
+                    <motion.h1
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        className="program-hero-title"
+                    >
+                        {program.title}
+                    </motion.h1>
+                </div>
+            </div>
+
+            <Section>
+                <motion.div
+                    className="program-overview"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    <h2>Program <span className="text-gold">Overview</span></h2>
+                    <p>{program.description}</p>
+                    <Link to="/contact" className="btn btn-primary">Enroll Now</Link>
+                </motion.div>
+
+                <div className="sub-programs-section">
+                    <h3>Explore Our <span className="text-gold">Programs</span></h3>
+                    <div className="sub-programs-grid">
+                        {program.subPrograms.map((subProgram, index) => (
+                            <motion.div
+                                key={subProgram.id}
+                                className="sub-program-card"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                            >
+                                <div className="sub-program-image">
+                                    <img src={subProgram.image} alt={subProgram.title} />
+                                </div>
+                                <div className="sub-program-content">
+                                    <h4>{subProgram.title}</h4>
+                                    <p className="sub-program-timing">{subProgram.timing}</p>
+                                    <p className="sub-program-description">{subProgram.description}</p>
+                                    <ul className="sub-program-details">
+                                        {subProgram.details.map((detail, detailIndex) => (
+                                            <li key={detailIndex}>
+                                                {detail}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <Link to="/contact" className="sub-program-btn">
+                                        Join This Program
+                                    </Link>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </Section>
+        </div>
+    );
+};
+
+export default ProgramDetail;
