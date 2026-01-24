@@ -17,6 +17,20 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Prevent body scroll when mobile nav is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add('mobile-nav-open');
+        } else {
+            document.body.classList.remove('mobile-nav-open');
+        }
+        
+        // Cleanup on unmount
+        return () => {
+            document.body.classList.remove('mobile-nav-open');
+        };
+    }, [isOpen]);
+
     const toggleMenu = () => setIsOpen(!isOpen);
 
     // Logo SVG Component
@@ -99,13 +113,22 @@ const Header = () => {
                 {/* Mobile Navigation overlay */}
                 <AnimatePresence>
                     {isOpen && (
-                        <motion.nav
-                            className="mobile-nav"
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{ type: 'tween', duration: 0.3 }}
-                        >
+                        <>
+                            <motion.div
+                                className="mobile-nav-overlay"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                onClick={toggleMenu}
+                            />
+                            <motion.nav
+                                className="mobile-nav"
+                                initial={{ x: '100%' }}
+                                animate={{ x: 0 }}
+                                exit={{ x: '100%' }}
+                                transition={{ type: 'tween', duration: 0.3 }}
+                            >
                             <div className="mobile-nav-header">
                                 <div className="mobile-logo">
                                     <Logo />
@@ -134,11 +157,11 @@ const Header = () => {
                                 <div className="mobile-contact-info">
                                     <div className="contact-item">
                                         <FaPhone />
-                                        <span>+91 8096006688</span>
+                                        <span>08861552277</span>
                                     </div>
                                     <div className="contact-item">
                                         <FaEnvelope />
-                                        <span>info@bluegrassacademy.com</span>
+                                        <span>bluegrassacademybangalore@gmail.com</span>
                                     </div>
                                 </div>
                                 <Link to="/contact" className="btn-cta" onClick={toggleMenu}>
@@ -146,6 +169,7 @@ const Header = () => {
                                 </Link>
                             </div>
                         </motion.nav>
+                        </>
                     )}
                 </AnimatePresence>
             </div>
