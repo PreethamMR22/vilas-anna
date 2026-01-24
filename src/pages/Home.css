@@ -57,7 +57,9 @@
 
 .philosophy-image-wrapper {
     margin-top: 50px;
-    max-width: 900px;
+    max-width: 1200px;
+    width: 100%;
+    height: 700px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
@@ -74,6 +76,8 @@
 
 .philosophy-image-wrapper img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.6s ease;
 }
@@ -127,35 +131,6 @@
     z-index: -1;
 }
 
-.mentors-scroll-container {
-    overflow: hidden;
-    width: 100%;
-    margin-top: 50px;
-    position: relative;
-}
-
-.mentors-track {
-    display: flex;
-    animation: scrollLeft 30s linear infinite;
-    width: fit-content;
-}
-
-.mentors-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 320px);
-    gap: 40px;
-    min-width: fit-content;
-}
-
-@keyframes scrollLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
 .text-dream {
     font-family: var(--font-heading);
     font-style: italic;
@@ -195,6 +170,8 @@
     .philosophy-image-wrapper {
         margin-top: 30px;
         border-radius: 16px;
+        height: 250px;
+        max-width: 100%;
     }
     
     .about-hint-section {
@@ -204,15 +181,6 @@
     .courses-grid {
         grid-template-columns: 1fr;
         gap: 25px;
-        margin-top: 30px;
-    }
-    
-    .mentors-grid {
-        grid-template-columns: repeat(5, 280px);
-        gap: 20px;
-    }
-    
-    .mentors-scroll-container {
         margin-top: 30px;
     }
 }
@@ -225,10 +193,5 @@
     
     .courses-grid {
         gap: 20px;
-    }
-    
-    .mentors-grid {
-        grid-template-columns: repeat(5, 260px);
-        gap: 15px;
     }
 }

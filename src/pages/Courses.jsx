@@ -3,8 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import Section from '../components/Section';
 import Card from '../components/Card';
 const courseGuitar = '/images/course_guitar.png';
-const mentor2 = '/images/mentor_2.png';
-const mentor3 = '/images/mentor_3.png';
 const philosophyImage = '/images/philosophy.png';
 const yogaImage = '/images/yoga.png';
 import './Courses.css';

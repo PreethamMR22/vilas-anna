@@ -2,18 +2,14 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
+import Founder from '../components/Founder';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 // Import Images
-const philosophyImage = '/images/philosophy.png';
+const philosophyImage = '/images/soulfull.png';
 const courseGuitar = '/images/course_guitar.png';
-const mentor1 = '/images/mentor_1.png';
-const mentor2 = '/images/mentor_2.png';
-const mentor3 = '/images/mentor_3.png';
-const mentor4 = '/images/mentor_4.png';
-const mentor5 = '/images/mentor_5.png';
 const yogaImage = '/images/yoga.png';
 
 const Home = () => {
@@ -91,78 +87,8 @@ const Home = () => {
                 </div>
             </Section>
 
-            {/* Mentors Section */}
-            <Section title="The Mentors Behind the Music" subtitle="Our accomplished faculty brings decades of experience, passion, and dedication to every lesson.">
-                <div className="mentors-scroll-container">
-                    <div className="mentors-track">
-                        <div className="mentors-grid">
-                            <Card
-                                image={mentor1}
-                                title="Arjun"
-                                description="Drums & Percussion"
-                                delay={1}
-                            />
-                            <Card
-                                image={mentor2}
-                                title="David"
-                                description="Piano & Theory"
-                                delay={2}
-                            />
-                            <Card
-                                image={mentor3}
-                                title="Priya"
-                                description="Vocals & Performance"
-                                delay={3}
-                            />
-                            <Card
-                                image={mentor4}
-                                title="Michael"
-                                description="Guitar & Composition"
-                                delay={4}
-                            />
-                            <Card
-                                image={mentor5}
-                                title="Sarah"
-                                description="Violin & Orchestra"
-                                delay={5}
-                            />
-                        </div>
-                        {/* Duplicate cards for seamless infinite scroll */}
-                        <div className="mentors-grid">
-                            <Card
-                                image={mentor1}
-                                title="Arjun"
-                                description="Drums & Percussion"
-                                delay={1}
-                            />
-                            <Card
-                                image={mentor2}
-                                title="David"
-                                description="Piano & Theory"
-                                delay={2}
-                            />
-                            <Card
-                                image={mentor3}
-                                title="Priya"
-                                description="Vocals & Performance"
-                                delay={3}
-                            />
-                            <Card
-                                image={mentor4}
-                                title="Michael"
-                                description="Guitar & Composition"
-                                delay={4}
-                            />
-                            <Card
-                                image={mentor5}
-                                title="Sarah"
-                                description="Violin & Orchestra"
-                                delay={5}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </Section>
+            <Founder />
+
         </div>
     );
 };
