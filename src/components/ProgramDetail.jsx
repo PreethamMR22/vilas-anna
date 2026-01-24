@@ -58,8 +58,8 @@ const programData = {
         description: "Transform your mind and body with our beginner-friendly yoga program focused on wellness and balance.",
         subPrograms: [
             {
-                id: 'beginner-yoga',
-                title: 'Beginner Yoga',
+                id: 'morning-yoga',
+                title: 'Morning Yoga (Beginner)',
                 image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop',
                 description: 'Perfect introduction to yoga practice',
                 timing: '6:00 AM - 7:30 AM',
@@ -71,8 +71,8 @@ const programData = {
                 ]
             },
             {
-                id: 'wellness-yoga',
-                title: 'Wellness Yoga',
+                id: 'yoga-wellness',
+                title: 'Yoga for Wellness',
                 image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2070&auto=format&fit=crop',
                 description: 'Focus on holistic health and wellness',
                 timing: '8:00 AM - 9:30 AM',
@@ -84,16 +84,16 @@ const programData = {
                 ]
             },
             {
-                id: 'advanced-yoga',
-                title: 'Advanced Practice',
+                id: 'yoga-seniors',
+                title: 'Yoga for Seniors',
                 image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop',
-                description: 'Deepen your yoga practice',
+                description: 'Gentle yoga practice for seniors',
                 timing: '9:30 AM - 10:30 AM',
                 details: [
-                    'Advanced poses and sequences',
-                    'Deeper meditation practices',
-                    'Yoga philosophy',
-                    'Teacher training preparation'
+                    'Gentle stretches and movements',
+                    'Joint-friendly exercises',
+                    'Balance and stability focus',
+                    'Adapted poses for comfort'
                 ]
             }
         ]
@@ -104,42 +104,42 @@ const programData = {
         description: "Experience creative healing through guided art therapy sessions and workshops.",
         subPrograms: [
             {
-                id: 'creative-healing',
-                title: 'Creative Healing',
-                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?q=80&w=2070&auto=format&fit=crop',
-                description: 'Therapeutic art sessions for emotional wellness',
+                id: 'kids-art-workshop',
+                title: 'Kids Art Workshop',
+                image: 'https://picsum.photos/seed/kids-art/400/300.jpg',
+                description: 'Creative art sessions for children',
                 timing: '10:30 AM - 12:00 PM',
                 details: [
+                    'Fun and engaging activities',
+                    'Age-appropriate projects',
+                    'Creative expression',
+                    'Skill development'
+                ]
+            },
+            {
+                id: 'art-therapy-session',
+                title: 'Art Therapy Session',
+                image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=2070&auto=format&fit=crop',
+                description: 'Therapeutic art for emotional wellness',
+                timing: '12:30 PM - 2:00 PM',
+                details: [
                     'Expressive art techniques',
-                    'Emotional processing through art',
-                    'Group therapy sessions',
+                    'Emotional processing',
+                    'Professional guidance',
                     'Personal growth focus'
                 ]
             },
             {
-                id: 'art-workshops',
-                title: 'Art Workshops',
-                image: 'https://images.unsplash.com/photo-1513364776144-60667f13ded8?q=80&w=2070&auto=format&fit=crop',
-                description: 'Hands-on creative workshops',
-                timing: '12:30 PM - 2:00 PM',
-                details: [
-                    'Various art mediums',
-                    'Skill-building sessions',
-                    'Creative expression',
-                    'Take-home projects'
-                ]
-            },
-            {
-                id: 'guided-sessions',
-                title: 'Guided Sessions',
-                image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=2070&auto=format&fit=crop',
-                description: 'Professional guided art therapy',
+                id: 'weekend-workshop',
+                title: 'Weekend Workshop',
+                image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop',
+                description: 'Special weekend creative sessions',
                 timing: '2:30 PM - 3:30 PM',
                 details: [
-                    'Certified art therapists',
-                    'Personalized sessions',
-                    'Progress tracking',
-                    'Holistic approach'
+                    'Weekend scheduling',
+                    'Intensive creative projects',
+                    'Community building',
+                    'Take-home artwork'
                 ]
             }
         ]

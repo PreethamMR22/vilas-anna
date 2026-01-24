@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import VideoModal from './components/VideoModal';
 import ScrollToTop from './components/ScrollToTop';
@@ -10,11 +10,23 @@ import Courses from './pages/Courses';
 import ProgramDetail from './components/ProgramDetail';
 import Contact from './pages/Contact';
 
+// Component to handle scroll to top on route change
+const ScrollToTopOnRouteChange = () => {
+    const location = useLocation();
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+    
+    return null;
+};
+
 const AppContent = () => {
     const { isVideoModalOpen, closeVideoModal, videoUrl } = useVideoModal();
 
     return (
         <>
+            <ScrollToTopOnRouteChange />
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />

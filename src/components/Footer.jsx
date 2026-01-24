@@ -51,23 +51,26 @@ const Footer = () => {
                         <div className="contact-item">
                             <FaMapMarkerAlt className="contact-icon" />
                             <div>
-                                <p>Indu Arcade, Sainikpuri</p>
-                                <p>Secunderabad, Telangana 500094</p>
+                                <p>59/6, 80 Feet Road, Gubbalala Main Rd</p>
+                                <p>Gubbalala, Subramanyapura, Bengaluru</p>
+                                <p>Karnataka 560061</p>
                             </div>
                         </div>
                         <div className="contact-item">
                             <FaPhone className="contact-icon" />
-                            <p>+91 8096006688</p>
+                            <p>08861552277</p>
                         </div>
                         <div className="contact-item">
                             <FaEnvelope className="contact-icon" />
-                            <p>info@bluegrassacademy.com</p>
+                            <p>bluegrassacademybangalore@gmail.com</p>
                         </div>
                         <div className="contact-item">
                             <FaClock className="contact-icon" />
                             <div>
-                                <p>Mon - Fri: 9:00 AM - 8:00 PM</p>
-                                <p>Sat - Sun: 10:00 AM - 6:00 PM</p>
+                                <p className="schedule-title">Daily Schedule</p>
+                                <p>Yoga: 6:00 AM – 10:30 AM</p>
+                                <p>Art Therapy: 10:30 AM – 3:30 PM</p>
+                                <p>Music: 4:00 PM – 8:00 PM</p>
                             </div>
                         </div>
                     </div>

@@ -8,7 +8,8 @@ const Contact = () => {
         name: '',
         email: '',
         phone: '',
-        subject: ''
+        interestedField: '',
+        preferredSlot: ''
     });
 
     const handleChange = (e) => {
@@ -19,7 +20,7 @@ const Contact = () => {
         e.preventDefault();
         console.log('Form submitted:', formData);
         alert('Thank you for contacting Blue Grass Academy! We will get back to you soon.');
-        setFormData({ name: '', email: '', phone: '', subject: '' });
+        setFormData({ name: '', email: '', phone: '', interestedField: '', preferredSlot: '' });
     };
 
     return (
@@ -39,15 +40,15 @@ const Contact = () => {
                     <div className="contact-info">
                         <div className="info-item">
                             <h4>Office</h4>
-                            <p>Indu Arcade, Sainikpuri, Secunderabad, Telangana 500094</p>
+                            <p>59/6, 80 Feet Road, Gubbalala Main Rd, Gubbalala, Subramanyapura, Bengaluru, Karnataka 560061</p>
                         </div>
                         <div className="info-item">
                             <h4>Email</h4>
-                            <p>info@bluegrassacademy.com</p>
+                            <p>bluegrassacademybangalore@gmail.com</p>
                         </div>
                         <div className="info-item">
                             <h4>Telephone</h4>
-                            <p>+91 8096006688</p>
+                            <p>08861552277</p>
                         </div>
 
                         <div className="info-item social-section">
@@ -103,21 +104,34 @@ const Contact = () => {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="subject">Subject / Jam Room</label>
+                                <label htmlFor="interestedField">Interested Field</label>
                                 <select
-                                    id="subject"
-                                    name="subject"
-                                    value={formData.subject}
+                                    id="interestedField"
+                                    name="interestedField"
+                                    value={formData.interestedField}
                                     onChange={handleChange}
+                                    required
                                 >
-                                    <option value="">All Subject</option>
-                                    <option value="guitar">Guitar Class</option>
-                                    <option value="piano">Piano Class</option>
-                                    <option value="vocals">Vocals Class</option>
-                                    <option value="drums">Drums Class</option>
-                                    <option value="yoga">Yoga Class</option>
-                                    <option value="jamroom">Jam Room Booking</option>
-                                    <option value="other">Other Inquiry</option>
+                                    <option value="">Select a field</option>
+                                    <option value="music">Music</option>
+                                    <option value="yoga">Yoga</option>
+                                    <option value="art-therapy">Art Therapy</option>
+                                </select>
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="preferredSlot">Preferred Slot</label>
+                                <select
+                                    id="preferredSlot"
+                                    name="preferredSlot"
+                                    value={formData.preferredSlot}
+                                    onChange={handleChange}
+                                    required
+                                >
+                                    <option value="">Select a time slot</option>
+                                    <option value="morning">Morning</option>
+                                    <option value="afternoon">Afternoon</option>
+                                    <option value="evening">Evening</option>
                                 </select>
                             </div>
 

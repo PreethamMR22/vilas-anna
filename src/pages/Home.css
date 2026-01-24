@@ -16,6 +16,7 @@
 .philosophy-section {
     position: relative;
     overflow: hidden;
+    padding-top: 0px;
 }
 
 .philosophy-section::before {
