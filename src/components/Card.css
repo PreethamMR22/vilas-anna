@@ -164,27 +164,45 @@
     text-shadow: 0 0 15px rgba(26, 77, 62, 0.8);
 }
 
-.card-button {
+.card-button, button.card-button {
     margin-top: 20px;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
-    color: var(--color-bg-dark);
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(26, 77, 62, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    align-self: flex-start;
+    background: linear-gradient(135deg, #1a1a1a, #333333) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    align-self: flex-start !important;
+    position: relative !important;
+    overflow: hidden !important;
+    opacity: 1 !important;
 }
 
-.card-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(26, 77, 62, 0.5);
-    background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary));
+.card-button::before, button.card-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.card-button:hover::before, button.card-button:hover::before {
+    left: 100%;
+}
+
+.card-button:hover, button.card-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover)) !important;
 }
 
 @media (max-width: 768px) {

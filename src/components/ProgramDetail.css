@@ -101,6 +101,85 @@
     margin-top: 40px;
 }
 
+/* Horizontal scrolling for music program */
+.sub-programs-grid.music-scroll {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    gap: 30px;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sub-programs-grid.music-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.sub-programs-grid.music-scroll .sub-program-card {
+    min-width: 400px;
+    flex-shrink: 0;
+}
+
+/* Navigation buttons for horizontal scrolling */
+.scroll-navigation {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+    overflow: visible;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(26, 77, 62, 0.3);
+    font-size: 1.2rem;
+}
+
+.scroll-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(26, 77, 62, 0.5);
+}
+
+.scroll-btn.prev {
+    left: 15px;
+}
+
+.scroll-btn.next {
+    right: 15px;
+}
+
+.scroll-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: translateY(-50%);
+}
+
+.scroll-btn:disabled:hover {
+    transform: translateY(-50%);
+    box-shadow: 0 4px 15px rgba(26, 77, 62, 0.3);
+}
+
 .sub-program-card {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
     border-radius: 20px;
@@ -219,6 +298,39 @@
         gap: 30px;
     }
     
+    /* Mobile horizontal scrolling for music program */
+    .sub-programs-grid.music-scroll {
+        gap: 15px;
+        margin: 0 -10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .sub-programs-grid.music-scroll .sub-program-card {
+        min-width: calc(100vw - 100px);
+        width: calc(100vw - 100px);
+        max-width: 350px;
+    }
+    
+    /* Mobile navigation buttons */
+    .scroll-navigation {
+        padding: 0 20px;
+    }
+    
+    .scroll-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .scroll-btn.prev {
+        left: 5px;
+    }
+    
+    .scroll-btn.next {
+        right: 5px;
+    }
+    
     .sub-program-content {
         padding: 20px;
     }
@@ -245,5 +357,38 @@
     
     .program-overview p {
         font-size: 1.1rem;
+    }
+    
+    /* Small mobile horizontal scrolling for music program */
+    .sub-programs-grid.music-scroll {
+        gap: 10px;
+        margin: 0 -5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .sub-programs-grid.music-scroll .sub-program-card {
+        min-width: calc(100vw - 70px);
+        width: calc(100vw - 70px);
+        max-width: 320px;
+    }
+    
+    /* Small mobile navigation buttons */
+    .scroll-navigation {
+        padding: 0 10px;
+    }
+    
+    .scroll-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .scroll-btn.prev {
+        left: 2px;
+    }
+    
+    .scroll-btn.next {
+        right: 2px;
     }
 }

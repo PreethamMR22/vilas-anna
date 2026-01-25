@@ -65,15 +65,55 @@ const Home = () => {
                         every day builds a <span className="text-gold text-dream">better you</span>
                     </motion.h2>
                     <motion.div
-                        className="philosophy-lines"
+                        className="philosophy-timeline"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.1 }}
                     >
-                        <p>Calm mornings with Yoga</p>
-                        <p>Creative afternoons with Art Therapy</p>
-                        <p>Confident evenings with Music</p>
+                        <div className="timeline-item">
+                            <div className="timeline-icon morning">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"/>
+                                    <line x1="12" y1="1" x2="12" y2="3"/>
+                                    <line x1="12" y1="21" x2="12" y2="23"/>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                    <line x1="1" y1="12" x2="3" y2="12"/>
+                                    <line x1="21" y1="12" x2="23" y2="12"/>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                                </svg>
+                            </div>
+                            <div className="timeline-content">
+                                <h3>Calm Mornings</h3>
+                                <p>with Yoga</p>
+                            </div>
+                        </div>
+                        <div className="timeline-item">
+                            <div className="timeline-icon afternoon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div className="timeline-content">
+                                <h3>Creative Afternoons</h3>
+                                <p>with Art Therapy</p>
+                            </div>
+                        </div>
+                        <div className="timeline-item">
+                            <div className="timeline-icon evening">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 18V5l12-2v13"/>
+                                    <circle cx="6" cy="18" r="3"/>
+                                    <circle cx="18" cy="16" r="3"/>
+                                </svg>
+                            </div>
+                            <div className="timeline-content">
+                                <h3>Confident Evenings</h3>
+                                <p>with Music</p>
+                            </div>
+                        </div>
                     </motion.div>
                     <motion.div
                         className="philosophy-image-wrapper"

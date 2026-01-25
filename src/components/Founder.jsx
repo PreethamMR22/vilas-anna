@@ -66,38 +66,8 @@ const Founder = () => {
                             
                             <div className="founder-description">
                                 <p>
-                                    Building a holistic academy:
+                                    Building a holistic academy offering Music, Yoga, and Art Therapy - a dedicated space for learning, wellness, and creative growth with quality training and personal attention.
                                 </p>
-                                <p>
-                                    <span className="highlight">Music • Yoga • Art Therapy</span>
-                                </p>
-                                <p>
-                                    A space for learning, wellness and creative growth
-                                </p>
-                                <p>
-                                    Focused on quality training and personal attention
-                                </p>
-                            </div>
-
-                            <div className="founder-actions">
-                                <motion.button 
-                                    className="founder-btn primary"
-                                    onClick={handleBookDemo}
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    Book a Demo
-                                </motion.button>
-                                <motion.button 
-                                    className="founder-btn secondary"
-                                    onClick={handleContactVisit}
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    Contact / Visit Us
-                                </motion.button>
                             </div>
                         </motion.div>
                     </div>
