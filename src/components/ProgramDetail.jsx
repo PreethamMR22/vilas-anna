@@ -66,7 +66,7 @@ const programData = {
             {
                 id: 'violin',
                 title: 'Violin',
-                image: 'https://images.unsplash.com/photo-1518699930442-1c665b5d8b9c?q=80&w=2070&auto=format&fit=crop',
+                image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop',
                 description: 'Classical violin training for all levels',
                 timing: '2:00 PM - 4:00 PM',
                 details: [
@@ -79,7 +79,7 @@ const programData = {
             {
                 id: 'music-production',
                 title: 'Music Production',
-                image: 'https://images.unsplash.com/photo-1471478331149-c72f4e049368?q=80&w=2070&auto=format&fit=crop',
+                image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop',
                 description: 'Learn modern music production and recording',
                 timing: '7:00 PM - 9:00 PM',
                 details: [
@@ -187,9 +187,6 @@ const programData = {
 
 const ProgramDetail = () => {
     const { id } = useParams();
-    const scrollContainerRef = useRef(null);
-    const [canScrollLeft, setCanScrollLeft] = useState(false);
-    const [canScrollRight, setCanScrollRight] = useState(true);
     
     const program = programData[id] || {
         title: "Program",
@@ -198,47 +195,7 @@ const ProgramDetail = () => {
         subPrograms: []
     };
 
-    useEffect(() => {
-        const checkScrollButtons = () => {
-            if (scrollContainerRef.current && id === 'music') {
-                const container = scrollContainerRef.current;
-                setCanScrollLeft(container.scrollLeft > 0);
-                setCanScrollRight(
-                    container.scrollLeft < container.scrollWidth - container.clientWidth
-                );
-            }
-        };
 
-        const container = scrollContainerRef.current;
-        if (container) {
-            container.addEventListener('scroll', checkScrollButtons);
-            checkScrollButtons(); // Initial check
-        }
-
-        return () => {
-            if (container) {
-                container.removeEventListener('scroll', checkScrollButtons);
-            }
-        };
-    }, [id]);
-
-    const scrollLeft = () => {
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({
-                left: -430,
-                behavior: 'smooth'
-            });
-        }
-    };
-
-    const scrollRight = () => {
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({
-                left: 430,
-                behavior: 'smooth'
-            });
-        }
-    };
 
     return (
         <div className="page-program-detail">
@@ -270,59 +227,36 @@ const ProgramDetail = () => {
 
                 <div className="sub-programs-section">
                     <h3>Explore Our <span className="text-gold">Programs</span></h3>
-                    <div className="scroll-navigation">
-                        {id === 'music' && (
-                            <>
-                                <button 
-                                    className="scroll-btn prev" 
-                                    onClick={scrollLeft}
-                                    disabled={!canScrollLeft}
-                                >
-                                    ←
-                                </button>
-                                <button 
-                                    className="scroll-btn next" 
-                                    onClick={scrollRight}
-                                    disabled={!canScrollRight}
-                                >
-                                    →
-                                </button>
-                            </>
-                        )}
-                        <div 
-                            ref={scrollContainerRef}
-                            className={`sub-programs-grid ${id === 'music' ? 'music-scroll' : ''}`}
-                        >
-                            {program.subPrograms.map((subProgram, index) => (
-                                <motion.div
-                                    key={subProgram.id}
-                                    className="sub-program-card"
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                                >
-                                    <div className="sub-program-image">
-                                        <img src={subProgram.image} alt={subProgram.title} />
-                                    </div>
-                                    <div className="sub-program-content">
-                                        <h4>{subProgram.title}</h4>
-                                        <p className="sub-program-timing">{subProgram.timing}</p>
-                                        <p className="sub-program-description">{subProgram.description}</p>
-                                        <ul className="sub-program-details">
-                                            {subProgram.details.map((detail, detailIndex) => (
-                                                <li key={detailIndex}>
-                                                    {detail}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                        <Link to="/contact" className="sub-program-btn">
-                                            Join This Program
-                                        </Link>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                    <div className="sub-programs-grid">
+                        {program.subPrograms.map((subProgram, index) => (
+                            <motion.div
+                                key={subProgram.id}
+                                className="sub-program-card"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                            >
+                                <div className="sub-program-image">
+                                    <img src={subProgram.image} alt={subProgram.title} />
+                                </div>
+                                <div className="sub-program-content">
+                                    <h4>{subProgram.title}</h4>
+                                    <p className="sub-program-timing">{subProgram.timing}</p>
+                                    <p className="sub-program-description">{subProgram.description}</p>
+                                    <ul className="sub-program-details">
+                                        {subProgram.details.map((detail, detailIndex) => (
+                                            <li key={detailIndex}>
+                                                {detail}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <Link to="/contact" className="sub-program-btn">
+                                        Join This Program
+                                    </Link>
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </Section>
