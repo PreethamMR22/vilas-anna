@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Section from '../components/Section';
 import Card from '../components/Card';
+import { useProgramEnrollment } from '../contexts/ProgramEnrollmentContext';
 import './ProgramDetail.css';
 
 const programData = {
@@ -187,12 +188,25 @@ const programData = {
 
 const ProgramDetail = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
+    const { setProgramData } = useProgramEnrollment();
     
     const program = programData[id] || {
         title: "Program",
         image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop",
         description: "Explore our world-class programs.",
         subPrograms: []
+    };
+
+    const handleJoinProgram = (subProgram) => {
+        const programData = {
+            category: id,
+            programName: subProgram.title,
+            timing: subProgram.timing,
+            description: subProgram.description
+        };
+        setProgramData(programData);
+        navigate('/contact');
     };
 
 
@@ -251,9 +265,12 @@ const ProgramDetail = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <Link to="/contact" className="sub-program-btn">
+                                    <button 
+                                        onClick={() => handleJoinProgram(subProgram)}
+                                        className="sub-program-btn"
+                                    >
                                         Join This Program
-                                    </Link>
+                                    </button>
                                 </div>
                             </motion.div>
                         ))}

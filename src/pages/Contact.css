@@ -107,6 +107,17 @@
     outline: 2px solid var(--color-primary);
 }
 
+.readonly-field {
+    background-color: #f8f9fa !important;
+    color: #6c757d !important;
+    cursor: not-allowed !important;
+    border-color: #dee2e6 !important;
+}
+
+.readonly-field:focus {
+    outline: 2px solid #dee2e6 !important;
+}
+
 .submit-btn {
     width: 100%;
     padding: 15px;

@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import VideoModal from './components/VideoModal';
 import ScrollToTop from './components/ScrollToTop';
 import { VideoModalProvider, useVideoModal } from './contexts/VideoModalContext';
+import { ProgramEnrollmentProvider } from './contexts/ProgramEnrollmentContext';
 import Home from './pages/Home';
 import About from './pages/About';
 import Courses from './pages/Courses';
@@ -54,11 +55,13 @@ const AppContent = () => {
 
 function App() {
   return (
-    <VideoModalProvider>
-      <Router>
-        <AppContent />
-      </Router>
-    </VideoModalProvider>
+    <ProgramEnrollmentProvider>
+      <VideoModalProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </VideoModalProvider>
+    </ProgramEnrollmentProvider>
   );
 }
 

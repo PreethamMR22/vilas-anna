@@ -1,16 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Section from '../components/Section';
 import { FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
+import { useProgramEnrollment } from '../contexts/ProgramEnrollmentContext';
 import './Contact.css';
 
 const Contact = () => {
+    const { enrollmentData, clearEnrollmentData } = useProgramEnrollment();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
         interestedField: '',
-        preferredSlot: ''
+        preferredSlot: '',
+        programName: '',
+        programTiming: ''
     });
+
+    useEffect(() => {
+        if (enrollmentData) {
+            const categoryMap = {
+                'music': 'music',
+                'yoga': 'yoga',
+                'art-therapy': 'art-therapy'
+            };
+            
+            const timeSlotMap = {
+                'morning': 'morning',
+                'afternoon': 'afternoon', 
+                'evening': 'evening'
+            };
+            
+            // Determine time slot based on program timing
+            let preferredSlot = '';
+            if (enrollmentData.timing) {
+                const hour = parseInt(enrollmentData.timing.split(':')[0]);
+                if (hour >= 6 && hour < 12) preferredSlot = 'morning';
+                else if (hour >= 12 && hour < 17) preferredSlot = 'afternoon';
+                else preferredSlot = 'evening';
+            }
+            
+            setFormData(prev => ({
+                ...prev,
+                interestedField: categoryMap[enrollmentData.category] || '',
+                programName: enrollmentData.programName || '',
+                programTiming: enrollmentData.timing || '',
+                preferredSlot: preferredSlot
+            }));
+        }
+    }, [enrollmentData]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,7 +57,16 @@ const Contact = () => {
         e.preventDefault();
         console.log('Form submitted:', formData);
         alert('Thank you for contacting Blue Grass Academy! We will get back to you soon.');
-        setFormData({ name: '', email: '', phone: '', interestedField: '', preferredSlot: '' });
+        setFormData({ 
+            name: '', 
+            email: '', 
+            phone: '', 
+            interestedField: '', 
+            preferredSlot: '',
+            programName: '',
+            programTiming: ''
+        });
+        clearEnrollmentData();
     };
 
     return (
@@ -134,6 +180,36 @@ const Contact = () => {
                                     <option value="evening">Evening</option>
                                 </select>
                             </div>
+
+                            {enrollmentData && (
+                                <>
+                                    <div className="form-group">
+                                        <label htmlFor="programName">Selected Program</label>
+                                        <input
+                                            type="text"
+                                            id="programName"
+                                            name="programName"
+                                            value={formData.programName}
+                                            onChange={handleChange}
+                                            readOnly
+                                            className="readonly-field"
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="programTiming">Program Timing</label>
+                                        <input
+                                            type="text"
+                                            id="programTiming"
+                                            name="programTiming"
+                                            value={formData.programTiming}
+                                            onChange={handleChange}
+                                            readOnly
+                                            className="readonly-field"
+                                        />
+                                    </div>
+                                </>
+                            )}
 
                             <button type="submit" className="btn btn-primary submit-btn">Submit</button>
                         </form>
