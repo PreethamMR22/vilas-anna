@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaPlay, FaMusic, FaStar, FaYoutube } from 'react-icons/fa';
@@ -8,6 +8,114 @@ import './Hero.css';
 
 const Hero = () => {
     const { openVideoModal } = useVideoModal();
+    const [counters, setCounters] = useState({
+        students: 0,
+        programs: 0,
+        years: 0
+    });
+
+    const [completedCounters, setCompletedCounters] = useState({
+        students: false,
+        programs: false,
+        years: false
+    });
+
+    const targetValues = {
+        students: 500,
+        programs: 15,
+        years: 10
+    };
+
+    useEffect(() => {
+        console.log('Component mounted, starting counter animation');
+        
+        // All counters reach target at the same time (4 seconds)
+        const studentsDuration = 4000; // 4 seconds for 500
+        const programsDuration = 4000; // 4 seconds for 15  
+        const yearsDuration = 4000; // 4 seconds for 10
+        
+        const studentsSteps = 80;
+        const programsSteps = 30; // Fewer steps for smaller number
+        const yearsSteps = 25; // Fewer steps for smaller number
+
+        const studentsInterval = studentsDuration / studentsSteps;
+        const programsInterval = programsDuration / programsSteps;
+        const yearsInterval = yearsDuration / yearsSteps;
+
+        let studentsTimer, programsTimer, yearsTimer;
+
+        // Students counter
+        studentsTimer = setInterval(() => {
+            setCounters((prev) => {
+                const newCounters = { ...prev };
+                if (newCounters.students < targetValues.students) {
+                    newCounters.students = Math.min(
+                        newCounters.students + Math.ceil(targetValues.students / studentsSteps),
+                        targetValues.students
+                    );
+                    
+                    // Trigger blush effect when reaching target
+                    if (newCounters.students === targetValues.students && !completedCounters.students) {
+                        setCompletedCounters(prev => ({ ...prev, students: true }));
+                        setTimeout(() => {
+                            setCompletedCounters(prev => ({ ...prev, students: false }));
+                        }, 2000);
+                    }
+                }
+                return newCounters;
+            });
+        }, studentsInterval);
+
+        // Programs counter
+        programsTimer = setInterval(() => {
+            setCounters((prev) => {
+                const newCounters = { ...prev };
+                if (newCounters.programs < targetValues.programs) {
+                    newCounters.programs = Math.min(
+                        newCounters.programs + Math.ceil(targetValues.programs / programsSteps),
+                        targetValues.programs
+                    );
+                    
+                    // Trigger blush effect when reaching target
+                    if (newCounters.programs === targetValues.programs && !completedCounters.programs) {
+                        setCompletedCounters(prev => ({ ...prev, programs: true }));
+                        setTimeout(() => {
+                            setCompletedCounters(prev => ({ ...prev, programs: false }));
+                        }, 2000);
+                    }
+                }
+                return newCounters;
+            });
+        }, programsInterval);
+
+        // Years counter
+        yearsTimer = setInterval(() => {
+            setCounters((prev) => {
+                const newCounters = { ...prev };
+                if (newCounters.years < targetValues.years) {
+                    newCounters.years = Math.min(
+                        newCounters.years + Math.ceil(targetValues.years / yearsSteps),
+                        targetValues.years
+                    );
+                    
+                    // Trigger blush effect when reaching target
+                    if (newCounters.years === targetValues.years && !completedCounters.years) {
+                        setCompletedCounters(prev => ({ ...prev, years: true }));
+                        setTimeout(() => {
+                            setCompletedCounters(prev => ({ ...prev, years: false }));
+                        }, 2000);
+                    }
+                }
+                return newCounters;
+            });
+        }, yearsInterval);
+
+        return () => {
+            clearInterval(studentsTimer);
+            clearInterval(programsTimer);
+            clearInterval(yearsTimer);
+        };
+    }, []);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -100,24 +208,18 @@ const Hero = () => {
 
                 <motion.div className="hero-buttons" variants={itemVariants}>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Link to="/contact" className="btn btn-primary">
-                            <FaPlay className="btn-icon" />
-                            Book a Free Demo
-                        </Link>
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Link to="/programs" className="btn btn-outline">
-                            View Programs
-                        </Link>
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <button 
-                            className="btn btn-outline btn-video"
+                            className="btn btn-primary"
                             onClick={openVideoModal}
                         >
                             <FaYoutube className="btn-icon" />
                             Watch Brand Film
                         </button>
+                    </motion.div>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Link to="/programs" className="btn btn-outline">
+                            View Programs
+                        </Link>
                     </motion.div>
                 </motion.div>
 
@@ -129,15 +231,21 @@ const Hero = () => {
                     transition={{ delay: 1.2 }}
                 >
                     <div className="stat-item">
-                        <div className="stat-number">500+</div>
+                        <div className={`stat-number ${completedCounters.students ? 'blush' : ''}`}>
+                            {counters.students}+
+                        </div>
                         <div className="stat-label">Students</div>
                     </div>
                     <div className="stat-item">
-                        <div className="stat-number">15+</div>
+                        <div className={`stat-number ${completedCounters.programs ? 'blush' : ''}`}>
+                            {counters.programs}+
+                        </div>
                         <div className="stat-label">Programs</div>
                     </div>
                     <div className="stat-item">
-                        <div className="stat-number">10+</div>
+                        <div className={`stat-number ${completedCounters.years ? 'blush' : ''}`}>
+                            {counters.years}+
+                        </div>
                         <div className="stat-label">Years</div>
                     </div>
                 </motion.div>
