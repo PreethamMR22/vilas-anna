@@ -40,8 +40,6 @@ const Footer = () => {
                         <li><a href="/about">About Us</a></li>
                         <li><a href="/programs">Programs</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="/privacy">Privacy Policy</a></li>
-                        <li><a href="/terms">Terms of Service</a></li>
                     </ul>
                 </div>
 
@@ -96,13 +94,6 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="footer-bottom-content">
                     <p>&copy; {currentYear} Blue Grass Academy. All rights reserved.</p>
-                    <div className="footer-bottom-links">
-                        <a href="/privacy">Privacy</a>
-                        <span className="separator">|</span>
-                        <a href="/terms">Terms</a>
-                        <span className="separator">|</span>
-                        <a href="/sitemap">Sitemap</a>
-                    </div>
                 </div>
             </div>
         </footer>

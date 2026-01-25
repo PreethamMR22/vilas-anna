@@ -141,7 +141,7 @@ button {
 }
 
 .text-white {
-  color: var(--color-text-main);
+  color: #FFFFFF;
 }
 
 .text-primary-gradient {
