@@ -4,7 +4,7 @@
     right: 30px;
     width: 56px;
     height: 56px;
-    background: linear-gradient(135deg, var(--color-gold), #E0B800);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
     color: var(--color-bg-dark);
     border: none;
     border-radius: 50%;
@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(255, 209, 0, 0.4);
+    box-shadow: 0 4px 20px rgba(26, 77, 62, 0.4);
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     font-family: var(--font-body);

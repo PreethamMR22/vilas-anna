@@ -46,8 +46,8 @@ const Header = () => {
         >
             <defs>
                 <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#FFD100" />
-                    <stop offset="100%" stopColor="#E0B800" />
+                    <stop offset="0%" stopColor="var(--color-primary)" />
+                    <stop offset="100%" stopColor="var(--color-primary-hover)" />
                 </linearGradient>
             </defs>
             <circle cx="50" cy="50" r="48" stroke="url(#goldGradient)" strokeWidth="4" />

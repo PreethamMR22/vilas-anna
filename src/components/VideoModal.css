@@ -16,7 +16,7 @@
 
 .video-modal-container {
     background: var(--color-bg-card);
-    border: 1px solid rgba(255, 209, 0, 0.2);
+    border: 1px solid rgba(26, 77, 62, 0.2);
     border-radius: var(--border-radius-lg);
     max-width: 900px;
     width: 100%;
@@ -33,7 +33,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 25px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-card));
 }
 
@@ -48,12 +48,12 @@
 }
 
 .youtube-icon {
-    color: var(--color-gold);
+    color: var(--color-primary);
     font-size: 1.4rem;
 }
 
 .video-modal-close {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.05);
     border: none;
     color: var(--color-text-main);
     width: 40px;
@@ -68,7 +68,7 @@
 }
 
 .video-modal-close:hover {
-    background: var(--color-gold);
+    background: var(--color-primary);
     color: var(--color-bg-dark);
     transform: scale(1.1);
 }
@@ -106,7 +106,7 @@
 /* Modal Footer */
 .video-modal-footer {
     padding: 20px 25px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-secondary));
     text-align: center;
 }
@@ -202,8 +202,8 @@
     left: 50%;
     width: 40px;
     height: 40px;
-    border: 3px solid rgba(255, 209, 0, 0.3);
-    border-top: 3px solid var(--color-gold);
+    border: 3px solid rgba(26, 77, 62, 0.3);
+    border-top: 3px solid var(--color-primary);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: spin 1s linear infinite;
@@ -221,6 +221,6 @@
 
 /* Focus States for Accessibility */
 .video-modal-close:focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }

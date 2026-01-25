@@ -1,7 +1,7 @@
 /* Founder Section */
 .founder-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, rgba(255, 209, 0, 0.02), transparent);
+    background: linear-gradient(135deg, rgba(26, 77, 62, 0.02), transparent);
     position: relative;
     overflow: hidden;
 }
@@ -13,7 +13,7 @@
     right: -10%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(255, 209, 0, 0.08), transparent);
+    background: radial-gradient(circle, rgba(26, 77, 62, 0.08), transparent);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -25,7 +25,7 @@
     left: -5%;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(255, 209, 0, 0.05), transparent);
+    background: radial-gradient(circle, rgba(26, 77, 62, 0.05), transparent);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -49,10 +49,10 @@
 .founder-title {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 800;
-    color: var(--color-text-primary, #ffffff);
+    color: var(--color-text-primary, #1A1A1A);
     margin: 0;
     line-height: 1.2;
-    background: linear-gradient(135deg, var(--color-text-primary, #ffffff), var(--color-gold, #ffd100));
+    background: linear-gradient(135deg, var(--color-text-primary, #1A1A1A), var(--color-primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -78,12 +78,13 @@
     height: 320px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 50px rgba(26, 77, 62, 0.3);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .founder-image-container:hover {
     transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(26, 77, 62, 0.4);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
@@ -104,7 +105,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 209, 0, 0.1), transparent);
+    background: linear-gradient(135deg, rgba(26, 77, 62, 0.1), transparent);
     pointer-events: none;
 }
 
@@ -116,14 +117,14 @@
 .founder-name {
     font-size: clamp(2rem, 3vw, 2.5rem);
     font-weight: 700;
-    color: var(--color-text-primary, #ffffff);
+    color: var(--color-text-primary, #1A1A1A);
     margin: 0 0 8px 0;
     line-height: 1.2;
 }
 
 .founder-role {
     font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-    color: var(--color-gold, #ffd100);
+    color: var(--color-primary);
     margin: 0 0 30px 0;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -135,14 +136,14 @@
 
 .founder-description p {
     font-size: clamp(1rem, 1.2vw, 1.1rem);
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
     line-height: 1.6;
     margin: 0 0 16px 0;
     font-weight: 400;
 }
 
 .founder-description .highlight {
-    color: var(--color-gold, #ffd100);
+    color: var(--color-primary);
     font-weight: 600;
     white-space: nowrap;
 }
@@ -186,28 +187,28 @@
 }
 
 .founder-btn.primary {
-    background: linear-gradient(135deg, var(--color-gold, #ffd100), var(--color-gold-hover, #ffed4e));
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
     color: var(--color-text-dark, #000000);
-    box-shadow: 0 8px 25px rgba(255, 209, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 128, 0, 0.3);
 }
 
 .founder-btn.primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(255, 209, 0, 0.4);
+    box-shadow: 0 12px 35px rgba(0, 128, 0, 0.4);
 }
 
 .founder-btn.secondary {
     background: transparent;
-    color: var(--color-text-primary, #ffffff);
-    border: 2px solid var(--color-gold, #ffd100);
-    box-shadow: 0 4px 15px rgba(255, 209, 0, 0.1);
+    color: var(--color-text-primary, #1A1A1A);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.1);
 }
 
 .founder-btn.secondary:hover {
-    background: var(--color-gold, #ffd100);
+    background: var(--color-primary);
     color: var(--color-text-dark, #000000);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 209, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 128, 0, 0.3);
 }
 
 /* Responsive Design */

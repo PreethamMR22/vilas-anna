@@ -40,7 +40,7 @@ const ScrollToTop = () => {
                     }}
                     whileHover={{ 
                         scale: 1.1,
-                        boxShadow: "0 8px 30px rgba(255, 209, 0, 0.6)"
+                        boxShadow: "0 8px 30px rgba(26, 77, 62, 0.4)"
                     }}
                     whileTap={{ scale: 0.95 }}
                     aria-label="Scroll to top"

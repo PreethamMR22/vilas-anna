@@ -11,20 +11,21 @@
 
 .about-hero h1 {
     font-size: 3rem;
+    color: #FFFFFF;
 }
 
 .about-hero p {
     margin-top: 10px;
-    color: #ccc;
+    color: #FFFFFF;
 }
 
 .about-vision h2 {
     margin-bottom: 30px;
-    color: var(--color-gold);
+    color: var(--color-primary);
 }
 
 .about-vision p {
     margin-bottom: 20px;
     font-size: 1.1rem;
-    color: #ddd;
+    color: #555;
 }

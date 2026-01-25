@@ -12,11 +12,12 @@
 .courses-hero h1 {
     font-size: 4rem;
     margin-bottom: 15px;
+    color: #FFFFFF;
 }
 
 .courses-hero p {
     font-size: 1.2rem;
-    color: #ccc;
+    color: #FFFFFF;
 }
 
 .courses-grid {

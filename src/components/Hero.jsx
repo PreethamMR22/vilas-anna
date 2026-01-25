@@ -90,7 +90,7 @@ const Hero = () => {
 
                 <motion.div className="hero-badge" variants={itemVariants}>
                     <FaMusic className="badge-icon" />
-                    <span>Excellence in Music Education</span>
+                    <span>Training Mind, Body & Soul</span>
                     <FaStar className="badge-star" />
                 </motion.div>
 

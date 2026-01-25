@@ -42,12 +42,13 @@
 .course-overview h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .course-overview p {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #ccc;
+    color: #666;
     margin-bottom: 30px;
 }
 
