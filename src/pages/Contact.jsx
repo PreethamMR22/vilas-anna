@@ -15,6 +15,7 @@ const Contact = () => {
         programName: '',
         programTiming: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
         if (enrollmentData) {
@@ -53,20 +54,52 @@ const Contact = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Thank you for contacting Blue Grass Academy! We will get back to you soon.');
-        setFormData({ 
-            name: '', 
-            email: '', 
-            phone: '', 
-            interestedField: '', 
-            preferredSlot: '',
-            programName: '',
-            programTiming: ''
-        });
-        clearEnrollmentData();
+        setIsSubmitting(true);
+        
+        try {
+            const formDataToSend = new FormData();
+            formDataToSend.append('access_key', import.meta.env.VITE_WEB3FORMS_ACCESS_KEY); // Must be set in .env file
+            formDataToSend.append('subject', 'New Contact Form Submission - Blue Grass Academy');
+            formDataToSend.append('from_name', formData.name);
+            formDataToSend.append('from_email', formData.email);
+            formDataToSend.append('phone', formData.phone);
+            formDataToSend.append('interested_field', formData.interestedField);
+            formDataToSend.append('preferred_slot', formData.preferredSlot);
+            formDataToSend.append('program_name', formData.programName || 'Not specified');
+            formDataToSend.append('program_timing', formData.programTiming || 'Not specified');
+            formDataToSend.append('message', `New contact form submission from Blue Grass Academy website.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nInterested Field: ${formData.interestedField}\nPreferred Slot: ${formData.preferredSlot}\nProgram Name: ${formData.programName || 'Not specified'}\nProgram Timing: ${formData.programTiming || 'Not specified'}`);
+            
+            // Send to Web3Forms API
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formDataToSend
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                alert('Thank you for contacting Blue Grass Academy! We will get back to you soon.');
+                setFormData({ 
+                    name: '', 
+                    email: '', 
+                    phone: '', 
+                    interestedField: '', 
+                    preferredSlot: '',
+                    programName: '',
+                    programTiming: ''
+                });
+                clearEnrollmentData();
+            } else {
+                alert('Sorry, there was an error sending your message. Please try again later.');
+            }
+        } catch (error) {
+            console.error('Failed to send email:', error);
+            alert('Sorry, there was an error sending your message. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -211,7 +244,9 @@ const Contact = () => {
                                 </>
                             )}
 
-                            <button type="submit" className="btn btn-primary submit-btn">Submit</button>
+                            <button type="submit" className="btn btn-primary submit-btn" disabled={isSubmitting}>
+                                {isSubmitting ? 'Sending...' : 'Submit'}
+                            </button>
                         </form>
                     </div>
                 </div>
