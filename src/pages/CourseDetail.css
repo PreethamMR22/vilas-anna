@@ -76,6 +76,10 @@
 }
 
 @media (max-width: 768px) {
+    .course-hero {
+        margin-top: 40px;
+    }
+    
     .course-content-grid {
         grid-template-columns: 1fr;
         gap: 40px;

@@ -201,6 +201,10 @@
 }
 
 @media (max-width: 768px) {
+    .program-hero {
+        margin-top: 40px;
+    }
+    
     .program-hero-title {
         font-size: 2.5rem;
     }

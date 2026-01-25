@@ -10,7 +10,7 @@
 }
 
 .courses-hero h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 15px;
     color: #FFFFFF;
 }
@@ -24,4 +24,14 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
+}
+
+@media (max-width: 768px) {
+    .courses-hero {
+        margin-top: 40px;
+    }
+    
+    .courses-hero h1 {
+        font-size: 3rem;
+    }
 }

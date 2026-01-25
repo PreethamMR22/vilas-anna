@@ -29,3 +29,9 @@
     font-size: 1.1rem;
     color: #555;
 }
+
+@media (max-width: 768px) {
+    .about-hero {
+        margin-top: 40px;
+    }
+}
