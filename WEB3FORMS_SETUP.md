@@ -27,7 +27,7 @@ Web3Forms is a free service that allows you to receive form submissions directly
 Replace the placeholder access key in `src/pages/Contact.jsx`:
 
 ```javascript
-formDataToSend.append('access_key', 'd0553385-b407-448d-9d5d-8b0a679b5b51'); // Replace with your actual Web3Forms access key
+formDataToSend.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY'); // Replace with your actual Web3Forms access key
 ```
 
 Change it to:
@@ -66,7 +66,7 @@ formDataToSend.append('access_key', 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'); // 
 
 If emails are not sending:
 
-1. **Check Access Key**: Make sure you replaced `d0553385-b407-448d-9d5d-8b0a679b5b51` with your actual Web3Forms access key
+1. **Check Access Key**: Make sure you replaced `YOUR_WEB3FORMS_ACCESS_KEY` with your actual Web3Forms access key
 2. **Check Network Tab**: Look for the POST request to `api.web3forms.com` in browser dev tools
 3. **Check Console**: Look for any error messages in the browser console
 4. **Check Web3Forms Dashboard**: Verify your email is configured correctly

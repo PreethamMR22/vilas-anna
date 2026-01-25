@@ -56,3 +56,7 @@ jspm_packages/
 
 # Vite build cache
 .vite
+
+# Setup documentation (development only)
+EMAILJS_SETUP.md
+WEB3FORMS_SETUP.md
