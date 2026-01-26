@@ -74,21 +74,6 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="footer-column">
-                    <h4>Newsletter</h4>
-                    <p className="newsletter-text">Subscribe to get updates on new programs and music tips.</p>
-                    <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-                        <input 
-                            type="email" 
-                            placeholder="Enter your email" 
-                            className="newsletter-input"
-                            required
-                        />
-                        <button type="submit" className="newsletter-btn">
-                            Subscribe
-                        </button>
-                    </form>
-                </div>
             </div>
             
             <div className="footer-bottom">
