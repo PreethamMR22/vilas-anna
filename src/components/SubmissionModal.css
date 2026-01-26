@@ -1,0 +1,232 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999999;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.modal-container {
+    background: white;
+    border-radius: var(--border-radius-lg) !important;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg) !important;
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 0;
+    position: relative;
+}
+
+.modal-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.modal-icon.success {
+    color: #28a745;
+}
+
+.modal-icon.error {
+    color: #dc3545;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: var(--transition-fast);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.modal-close-btn:hover {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-main);
+}
+
+.modal-content {
+    padding: 0 30px 30px;
+    text-align: center;
+}
+
+.modal-title {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.modal-message {
+    font-size: 16px;
+    color: var(--color-text-main);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.modal-additional-info {
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.modal-additional-info h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.modal-additional-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-additional-info li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: var(--color-text-main);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.modal-additional-info li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.modal-footer {
+    padding: 0 30px 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    min-width: 120px;
+}
+
+.modal-btn.primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.modal-btn.primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.modal-btn.secondary {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-main);
+}
+
+.modal-btn.secondary:hover {
+    background-color: var(--color-bg-card);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-overlay {
+        padding: 15px;
+    }
+    
+    .modal-container {
+        max-width: 100%;
+    }
+    
+    .modal-header,
+    .modal-content,
+    .modal-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .modal-title {
+        font-size: 24px;
+    }
+    
+    .modal-icon {
+        font-size: 40px;
+    }
+    
+    .modal-additional-info {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-title {
+        font-size: 22px;
+    }
+    
+    .modal-message {
+        font-size: 15px;
+    }
+    
+    .modal-btn {
+        padding: 10px 25px;
+        font-size: 15px;
+    }
+}
+
+/* Animation for modal entrance */
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-container {
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+/* Focus styles for accessibility */
+.modal-close-btn:focus,
+.modal-btn:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}

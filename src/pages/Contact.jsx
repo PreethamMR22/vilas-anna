@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Section from '../components/Section';
 import { FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import { useProgramEnrollment } from '../contexts/ProgramEnrollmentContext';
+import { useSubmissionModal } from '../contexts/SubmissionModalContext';
 import './Contact.css';
 
 const Contact = () => {
     const { enrollmentData, clearEnrollmentData } = useProgramEnrollment();
+    const { showSuccessModal, showErrorModal } = useSubmissionModal();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -80,7 +82,10 @@ const Contact = () => {
             const result = await response.json();
             
             if (result.success) {
-                alert('Thank you for contacting Blue Grass Academy! We will get back to you soon.');
+                showSuccessModal(
+                    'Thank You for Your Interest!',
+                    `Thank you for contacting Blue Grass Academy, ${formData.name}! We have received your inquiry and will get back to you soon.`
+                );
                 setFormData({ 
                     name: '', 
                     email: '', 
@@ -92,11 +97,17 @@ const Contact = () => {
                 });
                 clearEnrollmentData();
             } else {
-                alert('Sorry, there was an error sending your message. Please try again later.');
+                showErrorModal(
+                    'Submission Failed',
+                    'Sorry, there was an error sending your message. Please try again later or contact us directly at bluegrassacademybangalore@gmail.com'
+                );
             }
         } catch (error) {
             console.error('Failed to send email:', error);
-            alert('Sorry, there was an error sending your message. Please try again later.');
+            showErrorModal(
+                'Network Error',
+                'Unable to connect to our servers. Please check your internet connection and try again, or contact us directly.'
+            );
         } finally {
             setIsSubmitting(false);
         }

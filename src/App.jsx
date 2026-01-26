@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import VideoModal from './components/VideoModal';
+import SubmissionModal from './components/SubmissionModal';
 import ScrollToTop from './components/ScrollToTop';
 import { VideoModalProvider, useVideoModal } from './contexts/VideoModalContext';
+import { SubmissionModalProvider, useSubmissionModal } from './contexts/SubmissionModalContext';
 import { ProgramEnrollmentProvider } from './contexts/ProgramEnrollmentContext';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -25,6 +27,7 @@ const ScrollToTopOnRouteChange = () => {
 
 const AppContent = () => {
     const { isVideoModalOpen, closeVideoModal, videoUrl } = useVideoModal();
+    const { modalState, closeModal } = useSubmissionModal();
 
     return (
         <>
@@ -47,6 +50,15 @@ const AppContent = () => {
                 videoUrl={videoUrl}
             />
             
+            {/* Global Submission Modal - renders at root level */}
+            <SubmissionModal
+                isOpen={modalState.isOpen}
+                onClose={closeModal}
+                type={modalState.type}
+                title={modalState.title}
+                message={modalState.message}
+            />
+            
             {/* Scroll to Top Button */}
             <ScrollToTop />
         </>
@@ -57,9 +69,11 @@ function App() {
   return (
     <ProgramEnrollmentProvider>
       <VideoModalProvider>
-        <Router>
-          <AppContent />
-        </Router>
+        <SubmissionModalProvider>
+          <Router>
+            <AppContent />
+          </Router>
+        </SubmissionModalProvider>
       </VideoModalProvider>
     </ProgramEnrollmentProvider>
   );
