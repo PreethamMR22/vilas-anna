@@ -272,29 +272,18 @@ font-size: clamp(1.5rem, 4vw, 2rem);
 
 .philosophy-timeline {
 flex-direction: column;
-gap: 40px;
+gap: 30px;
 margin: 40px 0;
 }
 
 .philosophy-timeline::before {
-width: 2px;
-height: 100%;
-top: 0;
-left: 50%;
-right: auto;
-background: linear-gradient(180deg, 
-transparent 0%, 
-rgba(26, 77, 62, 0.2) 20%, 
-rgba(26, 77, 62, 0.2) 80%, 
-transparent 100%
-);
-transform: translateX(-50%);
+display: none;
 }
 
 .timeline-item {
-flex-direction: row;
-text-align: left;
-gap: 20px;
+flex-direction: column;
+text-align: center;
+gap: 15px;
 align-items: center;
 }
 
@@ -302,7 +291,7 @@ align-items: center;
 width: 60px;
 height: 60px;
 font-size: 1.5rem;
-margin-bottom: 0;
+margin-bottom: 10px;
 flex-shrink: 0;
 }
 
