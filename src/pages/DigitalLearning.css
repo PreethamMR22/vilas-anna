@@ -8,26 +8,24 @@
     height: 60vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&h=1080&fit=crop') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0 100px;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.digital-hero .hero-content h1 {
+.digital-hero h1 {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: white;
 }
 
-.digital-hero .hero-content p {
+.digital-hero p {
     font-size: 1.25rem;
     color: white;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .intro-section {
@@ -324,12 +322,18 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .digital-hero .hero-content h1 {
-        font-size: 2rem;
+    .digital-hero {
+        margin-top: 40px;
     }
     
-    .digital-hero .hero-content p {
+    .digital-hero h1 {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .digital-hero p {
         font-size: 1rem;
+        padding: 0 10px;
     }
     
     .intro-content,
@@ -362,5 +366,20 @@
     
     .cta-button {
         width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .digital-hero {
+        margin-top: 40px;
+    }
+    
+    .digital-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .digital-hero p {
+        font-size: 0.9rem;
+        padding: 0 5px;
     }
 }

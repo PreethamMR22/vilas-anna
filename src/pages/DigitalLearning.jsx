@@ -22,10 +22,8 @@ const DigitalLearning = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="hero-content">
-                    <h1>Digital & Hybrid Learning Platforms</h1>
-                    <p>Extending Blue Grass Academy's premium experience globally</p>
-                </div>
+                <h1>Digital & Hybrid Learning Platforms</h1>
+                <p>Extending Blue Grass Academy's premium experience globally</p>
             </motion.div>
 
             <div className="container">

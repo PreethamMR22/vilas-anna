@@ -22,10 +22,8 @@ const Events = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="hero-content">
-                    <h1>Events & Entertainment</h1>
-                    <p>Where music comes alive through collaboration and celebration</p>
-                </div>
+                <h1>Events & Entertainment</h1>
+                <p>Where music comes alive through collaboration and celebration</p>
             </motion.div>
 
             <div className="container">
