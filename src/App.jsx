@@ -13,6 +13,8 @@ import Courses from './pages/Courses';
 import ProgramDetail from './components/ProgramDetail';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
+import Events from './pages/Events';
+import DigitalLearning from './pages/DigitalLearning';
 
 // Component to handle scroll to top on route change
 const ScrollToTopOnRouteChange = () => {
@@ -39,6 +41,8 @@ const AppContent = () => {
                     <Route path="programs" element={<Courses />} />
                     <Route path="programs/:id" element={<ProgramDetail />} />
                     <Route path="gallery" element={<Gallery />} />
+                    <Route path="events" element={<Events />} />
+                    <Route path="digital-learning" element={<DigitalLearning />} />
                     <Route path="contact" element={<Contact />} />
                 </Route>
             </Routes>

@@ -31,6 +31,11 @@
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg-dark);
@@ -41,6 +46,8 @@ body {
   overflow-x: hidden;
   font-size: 16px;
   font-weight: 400;
+  width: 100%;
+  min-height: 100vh;
 }
 
 h1,

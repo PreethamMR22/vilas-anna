@@ -11,6 +11,7 @@ import './Home.css';
 const philosophyImage = '/images/soulfull.png';
 const courseGuitar = '/images/course_guitar.png';
 const yogaImage = '/images/yoga.png';
+const spaceRentalsImage = '/images/space-rentals.jpg';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -48,6 +49,33 @@ const Home = () => {
                         buttonText="Explore Art Therapy"
                         onClick={() => navigate('/programs/art-therapy')}
                         delay={3}
+                    />
+                    <Card
+                        image="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop"
+                        title="Events & Entertainment"
+                        timing="Evenings & Weekends"
+                        description="Weekly Jamming • Karaoke Nights • Signature Events"
+                        buttonText="Explore Events"
+                        onClick={() => navigate('/events')}
+                        delay={4}
+                    />
+                    <Card
+                        image={spaceRentalsImage}
+                        title="Space Rentals"
+                        timing="Available Daily"
+                        description="Premium Facilities • Creative Events • Corporate Functions"
+                        buttonText="View Spaces"
+                        onClick={() => navigate('/gallery')}
+                        delay={5}
+                    />
+                    <Card
+                        image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
+                        title="Digital Learning"
+                        timing="24/7 Access"
+                        description="Online Classes • Hybrid Learning • Global Access"
+                        buttonText="Explore Digital"
+                        onClick={() => navigate('/digital-learning')}
+                        delay={6}
                     />
                 </div>
             </Section>

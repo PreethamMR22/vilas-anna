@@ -9,9 +9,10 @@ const Card = ({ image, title, description, badge, timing, buttonText, onClick, c
             onClick={onClick}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, delay: delay * 0.1, ease: "easeOut" }}
             whileHover={{ y: -15, transition: { duration: 0.3 } }}
+            style={{ minHeight: '400px' }}
         >
             <div className="card-image-wrapper">
                 <motion.img
@@ -20,6 +21,13 @@ const Card = ({ image, title, description, badge, timing, buttonText, onClick, c
                     className="card-image"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.6 }}
+                    onError={(e) => {
+                        console.error('Image failed to load:', image);
+                        e.target.style.display = 'none';
+                    }}
+                    onLoad={(e) => {
+                        console.log('Image loaded successfully:', image);
+                    }}
                 />
                 {badge && (
                     <span className="card-badge">{badge}</span>

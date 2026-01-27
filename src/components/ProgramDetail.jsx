@@ -78,16 +78,16 @@ const programData = {
                 ]
             },
             {
-                id: 'music-production',
-                title: 'Music Production',
+                id: 'flute',
+                title: 'Flute',
                 image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop',
-                description: 'Learn modern music production and recording',
+                description: 'Master the flute with comprehensive training',
                 timing: '7:00 PM - 9:00 PM',
                 details: [
-                    'Digital audio workstations',
-                    'Mixing and mastering',
-                    'Sound design basics',
-                    'Studio recording techniques'
+                    'Classical and modern flute techniques',
+                    'Breath control and embouchure',
+                    'Music theory integration',
+                    'Solo and ensemble performance'
                 ]
             }
         ]

@@ -24,7 +24,9 @@ const Contact = () => {
             const categoryMap = {
                 'music': 'music',
                 'yoga': 'yoga',
-                'art-therapy': 'art-therapy'
+                'art-therapy': 'art-therapy',
+                'jamming': 'music',
+                'digital-learning': 'music'
             };
             
             const timeSlotMap = {
@@ -206,6 +208,8 @@ const Contact = () => {
                                     <option value="music">Music</option>
                                     <option value="yoga">Yoga</option>
                                     <option value="art-therapy">Art Therapy</option>
+                                    <option value="jamming">Jamming Sessions</option>
+                                    <option value="digital-learning">Digital Learning</option>
                                 </select>
                             </div>
 
