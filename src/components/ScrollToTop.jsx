@@ -7,7 +7,9 @@ const ScrollToTop = () => {
 
     useEffect(() => {
         const toggleVisibility = () => {
-            if (window.pageYOffset > 300) {
+            const contactOpen = document.querySelector('.floating-contact')?.getAttribute('data-contact-open') === 'true';
+            
+            if (window.pageYOffset > 300 && !contactOpen) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);

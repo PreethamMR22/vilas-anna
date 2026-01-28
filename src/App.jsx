@@ -15,6 +15,7 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Events from './pages/Events';
 import DigitalLearning from './pages/DigitalLearning';
+import FloatingContact from './components/FloatingContact';
 
 // Component to handle scroll to top on route change
 const ScrollToTopOnRouteChange = () => {
@@ -65,6 +66,9 @@ const AppContent = () => {
             
             {/* Scroll to Top Button */}
             <ScrollToTop />
+            
+            {/* Floating Contact Widget */}
+            <FloatingContact />
         </>
     );
 };
