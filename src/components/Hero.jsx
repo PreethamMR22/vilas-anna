@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaPlay, FaMusic, FaStar, FaYoutube } from 'react-icons/fa';
 import { useVideoModal } from '../contexts/VideoModalContext';
-const heroImage = '/images/hero.png';
+const heroImage = '/images/heronew.jpg';
 import './Hero.css';
 
 const Hero = () => {
@@ -188,13 +188,6 @@ const Hero = () => {
                     <span className="text-gold">Academy</span>
                 </motion.h1>
 
-                <motion.div 
-                    className="hero-subtitle"
-                    variants={itemVariants}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    Music • <span className="text-white">Yoga</span> • Art Therapy
-                </motion.div>
 
                 <motion.div className="hero-badge" variants={itemVariants}>
                     <FaMusic className="badge-icon" />
@@ -203,7 +196,7 @@ const Hero = () => {
                 </motion.div>
 
                 <motion.p variants={itemVariants}>
-                    <span className="text-gold text-bold">Blue Grass Academy</span> is a holistic learning space where Music, Yoga and Art Therapy come together to help learners grow with confidence, creativity and calm.
+                    <span className="text-gold text-bold">Blue Grass Academy</span> is a holistic learning space where Music, Yoga and Instrumental Services come together to help learners grow with confidence, creativity and calm.
                 </motion.p>
 
                 <motion.div className="hero-buttons" variants={itemVariants}>
@@ -215,6 +208,11 @@ const Hero = () => {
                             <FaYoutube className="btn-icon" />
                             Watch Brand Film
                         </button>
+                    </motion.div>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Link to="/contact" className="btn btn-outline">
+                            Book a Demo
+                        </Link>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Link to="/programs" className="btn btn-outline">

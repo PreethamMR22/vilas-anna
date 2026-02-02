@@ -1,0 +1,336 @@
+.certification {
+    padding: 100px 0;
+    background: var(--color-bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.certification::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(74, 222, 128, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(74, 222, 128, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.certification .container {
+    position: relative;
+    z-index: 1;
+}
+
+.certification-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.certification-header h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+}
+
+.header-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+    filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.3));
+}
+
+.certification-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.section-separator {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.certification-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.certification-description {
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(74, 222, 128, 0.1);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: all var(--transition-base);
+}
+
+.certification-description:hover {
+    border-color: rgba(74, 222, 128, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.certification-description p {
+    font-size: 1.2rem;
+    color: var(--color-text-main);
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 400;
+}
+
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certification-card {
+    padding: 30px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid rgba(74, 222, 128, 0.1);
+    transition: all var(--transition-base);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.certification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.certification-card:hover::before {
+    opacity: 1;
+}
+
+.certification-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(74, 222, 128, 0.3));
+    transition: all var(--transition-base);
+}
+
+.certification-card:hover .certification-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 25px rgba(74, 222, 128, 0.5));
+}
+
+.certification-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+}
+
+.certification-card p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.certification-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+    text-align: left;
+}
+
+.feature-icon {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.certification-benefits {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.benefits-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: var(--font-heading);
+}
+
+.benefits-icon {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.3));
+}
+
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.benefit-point {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.05), rgba(74, 222, 128, 0.02));
+    border-left: 3px solid var(--color-primary);
+    border-radius: 0 8px 8px 0;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.benefit-point:hover {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(74, 222, 128, 0.05));
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.1);
+}
+
+.benefit-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    min-width: 30px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.benefit-text {
+    font-size: 1.05rem;
+    color: var(--color-text-main);
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: left;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .certification {
+        padding: 60px 0;
+    }
+    
+    .certification-header h2 {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .header-icon {
+        font-size: 1.5rem;
+    }
+    
+    .certification-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .certification-description {
+        padding: 30px 20px;
+    }
+    
+    .certification-description p {
+        font-size: 1.1rem;
+    }
+    
+    .certification-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .certification-card {
+        padding: 25px;
+    }
+    
+    .benefits-title {
+        font-size: 1.3rem;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .benefits-list {
+        gap: 12px;
+    }
+    
+    .benefit-point {
+        padding: 14px 16px;
+        gap: 16px;
+    }
+    
+    .benefit-number {
+        font-size: 1.1rem;
+        min-width: 25px;
+    }
+    
+    .benefit-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certification-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .certification-subtitle {
+        font-size: 1rem;
+    }
+    
+    .certification-description p {
+        font-size: 1rem;
+    }
+    
+    .certification-card {
+        padding: 20px;
+    }
+    
+    .certification-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .certification-benefits h3 {
+        font-size: 1.2rem;
+    }
+}

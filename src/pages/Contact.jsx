@@ -140,7 +140,7 @@ const Contact = () => {
                         </div>
                         <div className="info-item">
                             <h4>Telephone</h4>
-                            <p>08861552277</p>
+                            <p>8792175588</p>
                         </div>
 
                         <div className="info-item social-section">
@@ -207,9 +207,9 @@ const Contact = () => {
                                     <option value="">Select a field</option>
                                     <option value="music">Music</option>
                                     <option value="yoga">Yoga</option>
-                                    <option value="art-therapy">Art Therapy</option>
+                                    <option value="instrumental-sales">Instrumental Sales & Services</option>
                                     <option value="jamming">Jamming Sessions</option>
-                                    <option value="digital-learning">Digital Learning</option>
+                                    <option value="digital-learning">Online Classes</option>
                                 </select>
                             </div>
 

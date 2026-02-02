@@ -94,7 +94,7 @@
 
 .feature-card {
     background: var(--color-bg-card);
-    border: 1px solid rgba(26, 77, 62, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
@@ -103,7 +103,7 @@
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(26, 77, 62, 0.1);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
 }
 
 .feature-icon {
@@ -145,7 +145,7 @@
 
 .mode-card {
     background: var(--color-bg-card);
-    border: 1px solid rgba(26, 77, 62, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 15px;
     padding: 2rem;
     transition: transform 0.3s ease;
@@ -317,7 +317,7 @@
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(26, 77, 62, 0.3);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
 }
 
 /* Responsive Design */

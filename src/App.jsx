@@ -15,6 +15,7 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Events from './pages/Events';
 import DigitalLearning from './pages/DigitalLearning';
+import SpaceRentals from './pages/SpaceRentals';
 import FloatingContact from './components/FloatingContact';
 
 // Component to handle scroll to top on route change
@@ -44,6 +45,7 @@ const AppContent = () => {
                     <Route path="gallery" element={<Gallery />} />
                     <Route path="events" element={<Events />} />
                     <Route path="digital-learning" element={<DigitalLearning />} />
+                    <Route path="space-rentals" element={<SpaceRentals />} />
                     <Route path="contact" element={<Contact />} />
                 </Route>
             </Routes>

@@ -1,6 +1,6 @@
 # Blue Grass Academy 🎵🧘‍♀️🎨
 
-A modern, responsive web application for Blue Grass Academy - a premier educational institution offering music classes, yoga sessions, and art therapy workshops. Built with React, Vite, and modern web technologies.
+A modern, responsive web application for Blue Grass Academy - a premier educational institution offering music classes, yoga sessions, and instrumental sales & services. Built with React, Vite, and modern web technologies.
 
 ## 🌟 Features
 
@@ -15,7 +15,7 @@ A modern, responsive web application for Blue Grass Academy - a premier educatio
 
 ## 📚 Programs Offered
 
-### Music Classes
+### Offline Music Classes
 - **Piano**: Classical and modern techniques (3:00 PM - 5:00 PM)
 - **Guitar**: Acoustic and electric styles (4:00 PM - 6:00 PM)
 - **Drums**: Rhythm fundamentals and coordination (5:00 PM - 7:00 PM)
@@ -25,9 +25,10 @@ A modern, responsive web application for Blue Grass Academy - a premier educatio
 - **Morning Sessions**: Beginner-friendly wellness focus (6:00 AM - 10:30 AM)
 - **Evening Sessions**: Relaxation and stress relief (4:00 PM - 8:00 PM)
 
-### Art Therapy / Workshops
-- **Creative Healing**: Guided sessions for therapeutic expression (10:30 AM - 3:30 PM)
-- **Art Workshops**: Skill development and creative exploration
+### Instrumental Sales & Services
+- **Instrument Sales**: Quality instruments for all skill levels (10:30 AM - 3:30 PM)
+- **Repair Services**: Professional maintenance and repairs
+- **Instrument Rentals**: Flexible rental plans for students and professionals
 
 ## 🛠️ Tech Stack
 
@@ -194,7 +195,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 For support and inquiries:
 - Visit our website: [Blue Grass Academy](https://bluegrassacademy.com)
 - Email: bluegrassacademybangalore@gmail.com
-- Phone: +91 8861552277
+- Phone: +91 8792175588
 
 ## 🌐 Live Demo
 

@@ -13,7 +13,7 @@ const FloatingContact = () => {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:8861552277';
+    window.location.href = 'tel:8792175588';
   };
 
   useEffect(() => {

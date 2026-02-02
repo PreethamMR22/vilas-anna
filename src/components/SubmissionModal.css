@@ -14,7 +14,7 @@
 }
 
 .modal-container {
-    background: white;
+    background: var(--color-bg-card);
     border-radius: var(--border-radius-lg) !important;
     max-width: 500px;
     width: 100%;

@@ -180,15 +180,15 @@ const Gallery = () => {
                             <p>Happy Students</p>
                         </div>
                         <div className="stat-item">
-                            <h3>15+</h3>
+                            <h3>25+</h3>
                             <p>Expert Instructors</p>
                         </div>
                         <div className="stat-item">
-                            <h3>10+</h3>
+                            <h3>45+</h3>
                             <p>Years of Excellence</p>
                         </div>
                         <div className="stat-item">
-                            <h3>50+</h3>
+                            <h3>10+</h3>
                             <p>Annual Events</p>
                         </div>
                     </div>

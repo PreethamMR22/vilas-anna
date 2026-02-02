@@ -1,8 +1,8 @@
 .card {
-    background: linear-gradient(135deg, var(--color-bg-card), rgba(255, 255, 255, 0.9));
+    background: linear-gradient(135deg, var(--color-bg-card), rgba(0, 0, 0, 0.9));
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.1);
     cursor: pointer;
     height: 100%;
     display: flex;
@@ -27,7 +27,7 @@
 
 .card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(26, 77, 62, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.2);
 }
 
 .card:hover::before {
@@ -39,6 +39,9 @@
     height: 320px;
     overflow: hidden;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-image-wrapper::after {
@@ -48,7 +51,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.7) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
@@ -64,6 +67,7 @@
     object-fit: cover;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     filter: brightness(1.1);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
 }
 
 .card:hover .card-image {
@@ -81,7 +85,7 @@
     border-radius: 25px;
     font-weight: 700;
     font-size: 0.75rem;
-    box-shadow: 0 4px 15px rgba(26, 77, 62, 0.4);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     text-transform: uppercase;
     letter-spacing: 1px;
     z-index: 2;
@@ -91,7 +95,7 @@
 
 .card:hover .card-badge {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(26, 77, 62, 0.6);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
 }
 
 .card-content {
@@ -99,7 +103,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), transparent);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), transparent);
     position: relative;
 }
 
@@ -110,7 +114,7 @@
     left: 35px;
     right: 35px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(26, 77, 62, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
 }
 
 .card-content h3 {
@@ -136,11 +140,11 @@
 
 .card:hover .card-content h3 {
     color: var(--color-primary);
-    text-shadow: 0 0 10px rgba(26, 77, 62, 0.5);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
 .card-content p {
-    color: rgba(0, 0, 0, 0.7);
+    color: var(--color-text-muted);
     font-size: 1rem;
     line-height: 1.7;
     flex: 1;
@@ -148,7 +152,7 @@
 }
 
 .card:hover .card-content p {
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--color-text-main);
 }
 
 .card-arrow {
@@ -163,7 +167,7 @@
 .card:hover .card-arrow {
     opacity: 1;
     transform: translateX(5px);
-    text-shadow: 0 0 15px rgba(26, 77, 62, 0.8);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
 }
 
 .card-button, button.card-button {

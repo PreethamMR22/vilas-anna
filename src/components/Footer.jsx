@@ -57,7 +57,7 @@ const Footer = () => {
                         </div>
                         <div className="contact-item">
                             <FaPhone className="contact-icon" />
-                            <p>08861552277</p>
+                            <p>8792175588</p>
                         </div>
                         <div className="contact-item">
                             <FaEnvelope className="contact-icon" />
@@ -67,9 +67,7 @@ const Footer = () => {
                             <FaClock className="contact-icon" />
                             <div>
                                 <p className="schedule-title">Daily Schedule</p>
-                                <p>Yoga: 6:00 AM – 10:30 AM</p>
-                                <p>Art Therapy: 10:30 AM – 3:30 PM</p>
-                                <p>Music: 4:00 PM – 8:00 PM</p>
+                                <p>9:00 AM – 9:00 PM</p>
                             </div>
                         </div>
                     </div>

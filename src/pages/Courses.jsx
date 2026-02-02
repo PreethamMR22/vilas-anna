@@ -28,35 +28,31 @@ const Courses = () => {
         <div className="courses-grid">
           <Card
             image="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop"
-            title="Music Classes"
-            timing="4:00 PM – 8:00 PM"
+            title="Offline Music Classes"
             description="Instruments • Vocals • Theory"
             buttonText="Explore Music"
             onClick={() => handleCardClick('music')}
             delay={1}
           />
           <Card
-            image="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop"
-            title="Yoga Classes"
-            timing="6:00 AM – 10:30 AM"
-            description="Beginner-friendly • Wellness focused"
-            buttonText="Explore Yoga"
-            onClick={() => handleCardClick('yoga')}
+            image="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2070&auto=format&fit=crop"
+            title="After School Activities"
+            description="Chess • Art • Yoga • Dance"
+            buttonText="Explore Activities"
+            onClick={() => handleCardClick('after-school-activities')}
             delay={2}
           />
           <Card
-            image="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=2070&auto=format&fit=crop"
-            title="Art Therapy / Art Workshops"
-            timing="10:30 AM – 3:30 PM"
-            description="Guided sessions • Creative healing"
-            buttonText="Explore Art Therapy"
-            onClick={() => handleCardClick('art-therapy')}
+            image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop"
+            title="Instrumental Sales & Services"
+            description="Instrument Sales • Repairs • Rentals"
+            buttonText="Explore Instruments"
+            onClick={() => handleCardClick('instrumental-sales')}
             delay={3}
           />
           <Card
             image="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop"
             title="Events & Entertainment"
-            timing="Evenings & Weekends"
             description="Weekly Jamming • Karaoke Nights • Signature Events"
             buttonText="Explore Events"
             onClick={() => navigate('/events')}
@@ -65,16 +61,14 @@ const Courses = () => {
           <Card
             image={spaceRentalsImage}
             title="Space Rentals"
-            timing="Available Daily"
             description="Premium Facilities • Creative Events • Corporate Functions"
             buttonText="View Spaces"
-            onClick={() => navigate('/gallery')}
+            onClick={() => navigate('/space-rentals')}
             delay={5}
           />
           <Card
             image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
-            title="Digital Learning"
-            timing="24/7 Access"
+            title="Online Classes"
             description="Online Classes • Hybrid Learning • Global Access"
             buttonText="Explore Digital"
             onClick={() => navigate('/digital-learning')}

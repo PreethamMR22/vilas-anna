@@ -38,6 +38,76 @@
     letter-spacing: -1px;
 }
 
+.program-overview-section {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 40px 20px;
+}
+
+.program-overview-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--color-text-main);
+    text-align: center;
+}
+
+.overview-block {
+    margin-bottom: 15px;
+}
+
+.overview-block h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.overview-block p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+}
+
+.levels-section {
+    margin-top: 15px;
+}
+
+.levels-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--color-text-main);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.levels-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.level-badge {
+    padding: 8px 20px;
+    background: rgba(74, 222, 128, 0.1);
+    color: var(--color-primary);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.level-badge:hover {
+    background: rgba(74, 222, 128, 0.2);
+    border-color: rgba(74, 222, 128, 0.5);
+}
+
 .program-overview {
     text-align: center;
     max-width: 800px;
@@ -58,7 +128,7 @@
 .program-overview p {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--color-text-muted);
     margin-bottom: 30px;
 }
 
@@ -103,23 +173,27 @@
 
 
 .sub-program-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+    background: linear-gradient(135deg, var(--color-bg-card), rgba(0, 0, 0, 0.9));
     border-radius: 20px;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.1);
     transition: all 0.3s ease;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .sub-program-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border-color: rgba(26, 77, 62, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(212, 175, 55, 0.3);
 }
 
 .sub-program-image {
     height: 200px;
     overflow: hidden;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sub-program-image img {
@@ -127,6 +201,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
 }
 
 .sub-program-card:hover .sub-program-image img {
@@ -135,6 +210,7 @@
 
 .sub-program-content {
     padding: 30px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), transparent);
 }
 
 .sub-program-content h4 {
@@ -152,7 +228,7 @@
 }
 
 .sub-program-description {
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--color-text-muted);
     line-height: 1.6;
     margin-bottom: 20px;
     font-size: 1rem;
@@ -165,7 +241,7 @@
 }
 
 .sub-program-details li {
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--color-text-main);
     margin-bottom: 10px;
     padding-left: 20px;
     position: relative;
@@ -201,6 +277,41 @@
     background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary));
 }
 
+.vocal-styles {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.vocal-style {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.vocal-style.classical {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+    color: var(--color-bg-dark);
+    border: 1px solid var(--color-primary);
+}
+
+.vocal-style.western {
+    background: linear-gradient(135deg, var(--color-bg-card), var(--color-bg-secondary));
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.vocal-style:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width: 768px) {
     .program-hero {
         margin-top: 40px;
@@ -210,9 +321,32 @@
         font-size: 2.5rem;
     }
     
+    .program-overview-section h2,
     .program-overview h2,
     .sub-programs-section h3 {
         font-size: 2rem;
+    }
+    
+    .overview-block {
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .overview-block h3 {
+        font-size: 1.5rem;
+    }
+    
+    .overview-block p {
+        font-size: 1rem;
+    }
+    
+    .levels-list {
+        gap: 10px;
+    }
+    
+    .level-badge {
+        padding: 8px 20px;
+        font-size: 0.9rem;
     }
     
     .sub-programs-grid {

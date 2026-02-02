@@ -36,22 +36,25 @@ const Events = () => {
                 >
                     <div className="event-content">
                         <div className="event-text">
-                            <h2>Weekly Jamming Sessions</h2>
-                            <h3>Fostering Collaboration and Joy</h3>
+                            <h2>LIVE JAMMING SESSIONS – BLUE GRASS NIGHTS</h2>
+                            <h3>Weekly Collaborative Performance Sessions</h3>
                             <p>
-                                Join our vibrant weekly jamming sessions where musicians of all levels come together to create magic. 
-                                These informal gatherings are perfect for experimenting with new styles, meeting fellow musicians, 
-                                and experiencing the pure joy of spontaneous music creation.
+                                Weekly collaborative performance sessions where students perform live, build confidence, learn 
+                                band coordination, and develop improvisation skills. Join our vibrant weekly jamming sessions where 
+                                musicians of all levels come together to create magic.
                             </p>
                             <div className="event-details">
                                 <div className="detail-item">
-                                    <span>Every Friday: 6:00 PM - 9:00 PM</span>
+                                    <span>Every Friday</span>
+                                </div>
+                                <div className="detail-item">
+                                    <span>Live performance opportunities for all students</span>
+                                </div>
+                                <div className="detail-item">
+                                    <span>Band coordination and improvisation development</span>
                                 </div>
                                 <div className="detail-item">
                                     <span>Open to all instruments and skill levels</span>
-                                </div>
-                                <div className="detail-item">
-                                    <span>Collaborative learning environment</span>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +85,7 @@ const Events = () => {
                             </p>
                             <div className="event-details">
                                 <div className="detail-item">
-                                    <span>Karaoke Nights: Every Saturday 7:00 PM - 11:00 PM</span>
+                                    <span>Karaoke Nights: Every Saturday</span>
                                 </div>
                                 <div className="detail-item">
                                     <span>Monthly Signature Events & Cultural Celebrations</span>
@@ -151,8 +154,7 @@ const Events = () => {
                                 onClick={() => {
                                     setProgramData({
                                         category: 'jamming',
-                                        programName: 'Weekly Jamming Sessions',
-                                        timing: 'Friday 6:00 PM - 9:00 PM'
+                                        programName: 'Weekly Jamming Sessions'
                                     });
                                     navigate('/contact');
                                 }}

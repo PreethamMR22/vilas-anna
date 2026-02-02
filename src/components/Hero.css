@@ -25,9 +25,9 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, 
-        rgba(0, 0, 0, 0.1) 0%, 
-        rgba(0, 0, 0, 0.3) 50%, 
-        rgba(0, 0, 0, 0.5) 100%);
+        rgba(0, 0, 0, 0.3) 0%, 
+        rgba(0, 0, 0, 0.5) 50%, 
+        rgba(0, 0, 0, 0.7) 100%);
     z-index: 1;
 }
 
@@ -35,7 +35,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.9) contrast(1.1);
+    filter: brightness(0.8) contrast(1.1);
+    transform: scaleX(-1);
 }
 
 .hero-particles {
@@ -52,9 +53,9 @@
     position: absolute;
     width: 4px;
     height: 4px;
-    background: var(--color-primary);
+    background: #4ade80;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(26, 77, 62, 0.8);
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.8);
     opacity: 0;
 }
 
@@ -72,14 +73,14 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(26, 77, 62, 0.3);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(74, 222, 128, 0.3);
     border-radius: 50px;
     padding: 8px 20px;
     margin: 20px 0 30px 0;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-primary);
+    color: #4ade80;
     backdrop-filter: blur(10px);
 }
 
@@ -103,27 +104,30 @@
     line-height: 1.05;
     margin-bottom: 30px;
     letter-spacing: -2.5px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    color: #FFFFFF;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(74, 222, 128, 0.4);
+    color: #F5F5F5;
 }
 
 .hero h1 .text-gold {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+    background: linear-gradient(135deg, #4ade80, #22c55e, #16a34a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 30px rgba(26, 77, 62, 0.5);
+    text-shadow: 0 0 40px rgba(74, 222, 128, 0.4), 0 0 60px rgba(74, 222, 128, 0.3);
+    filter: drop-shadow(0 0 20px rgba(74, 222, 128, 0.2));
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
     font-weight: 500;
-    color: var(--color-primary);
+    color: #4ade80;
     margin-bottom: 30px;
     font-family: var(--font-heading);
     letter-spacing: 2px;
     text-transform: uppercase;
     opacity: 0.9;
+    text-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+    filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.2));
 }
 
 .hero p {
@@ -131,8 +135,9 @@
     line-height: 1.7;
     margin-bottom: 50px;
     max-width: 650px;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    color: rgba(245, 245, 245, 0.9);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(74, 222, 128, 0.15);
+    filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.1));
 }
 
 .hero-buttons {
@@ -162,7 +167,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(26, 77, 62, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.2), transparent);
     transition: left 0.5s;
 }
 
@@ -203,21 +208,35 @@
 }
 
 .hero-buttons .btn-primary {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover)) !important;
+    background: linear-gradient(135deg, #4ade80, #22c55e) !important;
     color: var(--color-bg-dark) !important;
-    box-shadow: 0 4px 15px rgba(26, 77, 62, 0.3);
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
 }
 
 .hero-buttons .btn-primary:hover {
-    background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary)) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(26, 77, 62, 0.4);
+background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+transform: translateY(-2px);
+box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4);
+}
+
+.hero-buttons .btn-secondary {
+background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary)) !important;
+color: var(--color-bg-dark) !important;
+border: none !important;
+box-shadow: var(--shadow-md);
+}
+
+.hero-buttons .btn-secondary:hover {
+background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover)) !important;
+transform: translateY(-2px);
+box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4);
 }
 
 .hero-stats {
-    display: flex;
-    gap: 40px;
-    padding: 30px 0;
+display: flex;
+gap: 40px;
+padding: 30px 0;
+border-top: 1px solid rgba(255, 255, 255, 0.3);
     border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -228,10 +247,11 @@
 .stat-number {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #FFFFFF;
+    color: #F5F5F5;
     margin-bottom: 5px;
     font-family: var(--font-heading);
-    text-shadow: 0 0 20px rgba(26, 77, 62, 0.8);
+    text-shadow: 0 0 25px rgba(74, 222, 128, 0.6), 0 0 40px rgba(74, 222, 128, 0.4);
+    filter: drop-shadow(0 0 15px rgba(74, 222, 128, 0.3));
     transition: all 0.3s ease;
 }
 
@@ -242,26 +262,29 @@
 @keyframes blushGlow {
     0% {
         transform: scale(1);
-        text-shadow: 0 0 20px rgba(26, 77, 62, 0.8);
-        color: #FFFFFF;
+        text-shadow: 0 0 25px rgba(74, 222, 128, 0.6), 0 0 40px rgba(74, 222, 128, 0.4);
+        color: #F5F5F5;
+        filter: drop-shadow(0 0 15px rgba(74, 222, 128, 0.3));
     }
     50% {
         transform: scale(1.1);
-        text-shadow: 0 0 40px rgba(26, 77, 62, 1),
-                     0 0 60px rgba(26, 77, 62, 0.8),
-                     0 0 80px rgba(26, 77, 62, 0.6);
-        color: #FFFFFF;
+        text-shadow: 0 0 40px rgba(74, 222, 128, 0.8),
+                     0 0 60px rgba(74, 222, 128, 0.6),
+                     0 0 80px rgba(74, 222, 128, 0.4);
+        color: #F5F5F5;
+        filter: drop-shadow(0 0 25px rgba(74, 222, 128, 0.4));
     }
     100% {
         transform: scale(1);
-        text-shadow: 0 0 20px rgba(26, 77, 62, 0.8);
-        color: #FFFFFF;
+        text-shadow: 0 0 25px rgba(74, 222, 128, 0.6), 0 0 40px rgba(74, 222, 128, 0.4);
+        color: #F5F5F5;
+        filter: drop-shadow(0 0 15px rgba(74, 222, 128, 0.3));
     }
 }
 
 .stat-label {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(245, 245, 245, 0.7);
     text-transform: uppercase;
     letter-spacing: 1px;
 }

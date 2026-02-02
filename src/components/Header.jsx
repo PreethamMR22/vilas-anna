@@ -157,7 +157,7 @@ const Header = () => {
                                 <div className="mobile-contact-info">
                                     <div className="contact-item">
                                         <FaPhone />
-                                        <span>08861552277</span>
+                                        <span>8792175588</span>
                                     </div>
                                     <div className="contact-item">
                                         <FaEnvelope />

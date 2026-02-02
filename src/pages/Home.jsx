@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
 import Founder from '../components/Founder';
+import CTASection from '../components/CTASection';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
@@ -25,35 +26,31 @@ const Home = () => {
                 <div className="courses-grid">
                     <Card
                         image="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop"
-                        title="Music Classes"
-                        timing="4:00 PM – 8:00 PM"
+                        title="Offline Music Classes"
                         description="Instruments • Vocals • Theory"
                         buttonText="Explore Music"
                         onClick={() => navigate('/programs/music')}
                         delay={1}
                     />
                     <Card
-                        image="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop"
-                        title="Yoga Classes"
-                        timing="6:00 AM – 10:30 AM"
-                        description="Beginner-friendly • Wellness focused"
-                        buttonText="Explore Yoga"
-                        onClick={() => navigate('/programs/yoga')}
+                        image="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2070&auto=format&fit=crop"
+                        title="After School Activities"
+                        description="Chess • Art • Yoga • Dance"
+                        buttonText="Explore Activities"
+                        onClick={() => navigate('/programs/after-school-activities')}
                         delay={2}
                     />
                     <Card
-                        image="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=2070&auto=format&fit=crop"
-                        title="Art Therapy / Art Workshops"
-                        timing="10:30 AM – 3:30 PM"
-                        description="Guided sessions • Creative healing"
-                        buttonText="Explore Art Therapy"
-                        onClick={() => navigate('/programs/art-therapy')}
+                        image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop"
+                        title="Instrumental Sales & Services"
+                        description="Instrument Sales • Repairs • Rentals"
+                        buttonText="Explore Instruments"
+                        onClick={() => navigate('/programs/instrumental-sales')}
                         delay={3}
                     />
                     <Card
                         image="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop"
                         title="Events & Entertainment"
-                        timing="Evenings & Weekends"
                         description="Weekly Jamming • Karaoke Nights • Signature Events"
                         buttonText="Explore Events"
                         onClick={() => navigate('/events')}
@@ -62,16 +59,14 @@ const Home = () => {
                     <Card
                         image={spaceRentalsImage}
                         title="Space Rentals"
-                        timing="Available Daily"
                         description="Premium Facilities • Creative Events • Corporate Functions"
                         buttonText="View Spaces"
-                        onClick={() => navigate('/gallery')}
+                        onClick={() => navigate('/space-rentals')}
                         delay={5}
                     />
                     <Card
                         image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
-                        title="Digital Learning"
-                        timing="24/7 Access"
+                        title="Online Classes"
                         description="Online Classes • Hybrid Learning • Global Access"
                         buttonText="Explore Digital"
                         onClick={() => navigate('/digital-learning')}
@@ -80,82 +75,83 @@ const Home = () => {
                 </div>
             </Section>
 
-            {/* Philosophy Section */}
-            <Section className="philosophy-section">
-                <div className="philosophy-content text-center">
+            {/* Why Parents Trust Blue Grass Academy Section */}
+            <Section className="trust-section">
+                <div className="trust-content text-center">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        At Blue Grass Academy, <br />
-                        every day builds a <span className="text-gold text-dream">better you</span>
+                        WHY PARENTS TRUST <span className="text-gold">BLUE GRASS MUSIC</span>
+                        <br />
+                        ACADEMY
                     </motion.h2>
-                    <motion.div
-                        className="philosophy-timeline"
+                    <motion.p
+                        className="trust-subtitle"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <div className="timeline-item">
-                            <div className="timeline-icon morning">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="5"/>
-                                    <line x1="12" y1="1" x2="12" y2="3"/>
-                                    <line x1="12" y1="21" x2="12" y2="23"/>
-                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                                    <line x1="1" y1="12" x2="3" y2="12"/>
-                                    <line x1="21" y1="12" x2="23" y2="12"/>
-                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                                </svg>
-                            </div>
-                            <div className="timeline-content">
-                                <h3>Calm Mornings</h3>
-                                <p>with Yoga</p>
-                            </div>
-                        </div>
-                        <div className="timeline-item">
-                            <div className="timeline-icon afternoon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                            </div>
-                            <div className="timeline-content">
-                                <h3>Creative Afternoons</h3>
-                                <p>with Art Therapy</p>
-                            </div>
-                        </div>
-                        <div className="timeline-item">
-                            <div className="timeline-icon evening">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 18V5l12-2v13"/>
-                                    <circle cx="6" cy="18" r="3"/>
-                                    <circle cx="18" cy="16" r="3"/>
-                                </svg>
-                            </div>
-                            <div className="timeline-content">
-                                <h3>Confident Evenings</h3>
-                                <p>with Music</p>
-                            </div>
-                        </div>
-                    </motion.div>
+                        We don't just aggregate teachers. We build careers and shape futures.
+                    </motion.p>
                     <motion.div
-                        className="philosophy-image-wrapper"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        className="trust-cards"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
-                        <img src={philosophyImage} alt="Musician playing drums" />
+                        <div className="trust-card">
+                            <div className="trust-icon green">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <h3>VERIFIED & EXPERT TEACHERS</h3>
+                            <p>Professionally trained, verified educators following global teaching standards.</p>
+                        </div>
+                        <div className="trust-card">
+                            <div className="trust-icon blue">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </div>
+                            <h3>SECURE LEARNING ENVIRONMENT</h3>
+                            <p>CCTV-equipped classrooms ensuring safety, transparency, and peace of mind.</p>
+                        </div>
+                        <div className="trust-card">
+                            <div className="trust-icon purple">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                                </svg>
+                            </div>
+                            <h3>REAL OUTCOMES</h3>
+                            <p>Measurable growth in technical skills, confidence, performance, and artistry.</p>
+                        </div>
+                        <div className="trust-card">
+                            <div className="trust-icon orange">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <circle cx="12" cy="12" r="6"/>
+                                    <circle cx="12" cy="12" r="2"/>
+                                </svg>
+                            </div>
+                            <h3>REGULAR ASSESSMENTS & GROWTH TRACKING</h3>
+                            <p>Growth sheets, skill benchmarks, progress reports, and personalized feedback.</p>
+                        </div>
                     </motion.div>
                 </div>
             </Section>
 
             <Founder />
+
+            <CTASection />
 
         </div>
     );

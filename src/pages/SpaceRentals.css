@@ -1,0 +1,369 @@
+.space-rentals-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+/* Hero Section */
+.space-rentals-hero {
+  height: 60vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('https://images.unsplash.com/photo-1519452575417-564c1401ecc0?q=80&w=1920') center/cover;
+  background-size: cover;
+  background-position: center;
+  padding: 140px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.space-rentals-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.space-rentals-hero p {
+  font-size: 1.25rem;
+  color: white;
+}
+
+/* Space Types Section */
+.space-types-section {
+  padding: 80px 20px;
+}
+
+.space-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.space-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.space-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(74, 222, 128, 0.3);
+}
+
+.space-image-wrapper {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.space-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.space-card:hover .space-image {
+  transform: scale(1.1);
+}
+
+.space-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+.space-content {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.space-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.space-description {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.space-features {
+  margin-bottom: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.feature-icon {
+  color: #4ade80;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.space-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.price-amount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #4ade80;
+}
+
+.price-unit {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+.space-button {
+  width: 100%;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: #000000;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: auto;
+}
+
+.space-button:hover {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4);
+}
+
+/* Features Section */
+.features-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(74, 222, 128, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+}
+
+.feature-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.feature-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.cta-button.primary {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: #000000;
+}
+
+.cta-button.primary:hover {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4);
+  transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #4ade80;
+  color: #4ade80;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .space-rentals-hero {
+    margin-top: 40px;
+  }
+  
+  .space-rentals-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .space-rentals-hero p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .space-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .space-content {
+    padding: 20px;
+  }
+
+  .space-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .price-amount {
+    font-size: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .space-rentals-hero {
+    margin-top: 40px;
+  }
+  
+  .space-rentals-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .space-rentals-hero p {
+    font-size: 0.9rem;
+    padding: 0 5px;
+  }
+
+  .space-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .price-amount {
+    font-size: 1.8rem;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+}

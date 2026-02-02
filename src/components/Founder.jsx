@@ -47,7 +47,7 @@ const Founder = () => {
                             <div className="founder-image-container">
                                 <img 
                                     src="/images/founder.png" 
-                                    alt="Kawitha Mangalapudi - Founder of Blue Grass Academy" 
+                                    alt="Kawitha Reddy - Founder of Blue Grass Academy" 
                                     className="founder-image"
                                 />
                                 <div className="founder-image-overlay"></div>
@@ -61,12 +61,21 @@ const Founder = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            <h3 className="founder-name">Kawitha Mangalapudi</h3>
+                            <h3 className="founder-name">Kawitha Reddy</h3>
                             <p className="founder-role">Founder, Blue Grass Academy</p>
                             
                             <div className="founder-description">
                                 <p>
-                                    Building a holistic academy offering Music, Yoga, and Art Therapy - a dedicated space for learning, wellness, and creative growth with quality training and personal attention.
+                                    Kawitha Reddy is the visionary founder of Blue Grass Music Academy, driven by a deep passion for music, education, and artistic growth. She believes in building strong foundations that transform beginners into confident performers.
+                                </p>
+                                <p>
+                                    Her teaching philosophy is rooted in motherly care, disciplined training, and personal mentorship, ensuring that every student receives individual attention and encouragement at every stage of their journey.
+                                </p>
+                                <p>
+                                    Alongside her role as an educator and mentor, Kawitha is actively pursuing advanced violin training, continuously refining her artistry to bring modern techniques and global performance standards into the academy.
+                                </p>
+                                <p>
+                                    Under her leadership, Blue Grass Academy has grown into a trusted name for quality music education, performance training, and creative development.
                                 </p>
                             </div>
                         </motion.div>

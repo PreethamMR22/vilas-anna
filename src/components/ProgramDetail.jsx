@@ -8,16 +8,22 @@ import './ProgramDetail.css';
 
 const programData = {
     music: {
-        title: "Music Classes",
+        title: "Offline Music Classes",
         image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop",
         description: "Discover the joy of music with our comprehensive program covering instruments, vocals, and theory.",
+        overview: {
+            instrumental: {
+                title: "INSTRUMENTAL TRAINING",
+                description: "We offer structured training in Violin, Guitar (Acoustic & Electric), Keyboard/Piano, Drums, Ukulele, Flute, and Classical Instruments.",
+                levels: ["Beginner", "Intermediate", "Advanced"]
+            }
+        },
         subPrograms: [
             {
                 id: 'piano',
                 title: 'Piano',
                 image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop',
                 description: 'Master the keys with comprehensive piano training',
-                timing: '3:00 PM - 5:00 PM',
                 details: [
                     'Classical and modern techniques',
                     'Music theory integration',
@@ -30,7 +36,6 @@ const programData = {
                 title: 'Guitar',
                 image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop',
                 description: 'Learn guitar from basics to advanced performance',
-                timing: '4:00 PM - 6:00 PM',
                 details: [
                     'Acoustic and electric styles',
                     'Chord mastery and solos',
@@ -43,7 +48,6 @@ const programData = {
                 title: 'Drums',
                 image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2070&auto=format&fit=crop',
                 description: 'Develop rhythm and percussion skills',
-                timing: '5:00 PM - 7:00 PM',
                 details: [
                     'Rhythm fundamentals',
                     'Various drumming styles',
@@ -56,7 +60,6 @@ const programData = {
                 title: 'Vocals',
                 image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop',
                 description: 'Find your voice and master vocal techniques',
-                timing: '6:00 PM - 8:00 PM',
                 details: [
                     'Breathing techniques',
                     'Range expansion',
@@ -69,7 +72,6 @@ const programData = {
                 title: 'Violin',
                 image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop',
                 description: 'Classical violin training for all levels',
-                timing: '2:00 PM - 4:00 PM',
                 details: [
                     'Classical techniques',
                     'Music reading skills',
@@ -82,104 +84,121 @@ const programData = {
                 title: 'Flute',
                 image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop',
                 description: 'Master the flute with comprehensive training',
-                timing: '7:00 PM - 9:00 PM',
                 details: [
                     'Classical and modern flute techniques',
                     'Breath control and embouchure',
                     'Music theory integration',
                     'Solo and ensemble performance'
                 ]
-            }
-        ]
-    },
-    yoga: {
-        title: "Yoga Classes",
-        image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop",
-        description: "Transform your mind and body with our beginner-friendly yoga program focused on wellness and balance.",
-        subPrograms: [
-            {
-                id: 'morning-yoga',
-                title: 'Morning Yoga (Beginner)',
-                image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop',
-                description: 'Perfect introduction to yoga practice',
-                timing: '6:00 AM - 7:30 AM',
-                details: [
-                    'Basic poses and alignment',
-                    'Breathing fundamentals',
-                    'Stress reduction techniques',
-                    'Flexible scheduling'
-                ]
             },
             {
-                id: 'yoga-wellness',
-                title: 'Yoga for Wellness',
-                image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2070&auto=format&fit=crop',
-                description: 'Focus on holistic health and wellness',
-                timing: '8:00 AM - 9:30 AM',
+                id: 'ukulele',
+                title: 'Ukulele',
+                image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2070&auto=format&fit=crop',
+                description: 'Learn the cheerful sounds of the ukulele',
                 details: [
-                    'Meditation practices',
-                    'Mindfulness techniques',
-                    'Lifestyle integration',
-                    'Personal wellness plans'
-                ]
-            },
-            {
-                id: 'yoga-seniors',
-                title: 'Yoga for Seniors',
-                image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop',
-                description: 'Gentle yoga practice for seniors',
-                timing: '9:30 AM - 10:30 AM',
-                details: [
-                    'Gentle stretches and movements',
-                    'Joint-friendly exercises',
-                    'Balance and stability focus',
-                    'Adapted poses for comfort'
+                    'Basic chords and strumming patterns',
+                    'Island and pop music styles',
+                    'Fingerpicking techniques',
+                    'Group playing and performance'
                 ]
             }
         ]
     },
-    'art-therapy': {
-        title: "Art Therapy / Art Workshops",
-        image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=2070&auto=format&fit=crop",
-        description: "Experience creative healing through guided art therapy sessions and workshops.",
+    'after-school-activities': {
+        title: "After School Activities",
+        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2070&auto=format&fit=crop",
+        description: "Engaging after-school programs designed to develop creativity, critical thinking, and physical wellness.",
         subPrograms: [
             {
-                id: 'kids-art-workshop',
-                title: 'Kids Art Workshop',
-                image: 'https://picsum.photos/seed/kids-art/400/300.jpg',
-                description: 'Creative art sessions for children',
-                timing: '10:30 AM - 12:00 PM',
+                id: 'chess',
+                title: 'Chess',
+                image: 'https://images.unsplash.com/photo-1585829486653-97878c3f66a3?q=80&w=2070&auto=format&fit=crop',
+                description: 'Develop strategic thinking and problem-solving skills',
                 details: [
-                    'Fun and engaging activities',
-                    'Age-appropriate projects',
+                    'Beginner to advanced levels',
+                    'Tournament preparation',
+                    'Critical thinking development',
+                    'Individual and team play'
+                ]
+            },
+            {
+                id: 'art',
+                title: 'Art',
+                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?q=80&w=2070&auto=format&fit=crop',
+                description: 'Explore creativity through various art mediums',
+                details: [
+                    'Drawing and painting techniques',
                     'Creative expression',
-                    'Skill development'
+                    'Art history appreciation',
+                    'Portfolio development'
                 ]
             },
             {
-                id: 'art-therapy-session',
-                title: 'Art Therapy Session',
-                image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=2070&auto=format&fit=crop',
-                description: 'Therapeutic art for emotional wellness',
-                timing: '12:30 PM - 2:00 PM',
+                id: 'yoga',
+                title: 'Yoga',
+                image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop',
+                description: 'Build flexibility, strength, and mindfulness',
                 details: [
-                    'Expressive art techniques',
-                    'Emotional processing',
-                    'Professional guidance',
-                    'Personal growth focus'
+                    'Age-appropriate poses',
+                    'Breathing techniques',
+                    'Stress management',
+                    'Physical wellness focus'
                 ]
             },
             {
-                id: 'weekend-workshop',
-                title: 'Weekend Workshop',
-                image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop',
-                description: 'Special weekend creative sessions',
-                timing: '2:30 PM - 3:30 PM',
+                id: 'dance',
+                title: 'Dance',
+                image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=2070&auto=format&fit=crop',
+                description: 'Express yourself through movement and rhythm',
                 details: [
-                    'Weekend scheduling',
-                    'Intensive creative projects',
-                    'Community building',
-                    'Take-home artwork'
+                    'Various dance styles',
+                    'Choreography basics',
+                    'Performance opportunities',
+                    'Cultural dance appreciation'
+                ]
+            }
+        ]
+    },
+    'instrumental-sales': {
+        title: "Instrumental Sales & Services",
+        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop",
+        description: "Comprehensive instrument sales, repair services, and rental options for all your musical needs.",
+        subPrograms: [
+            {
+                id: 'instrument-sales',
+                title: 'Instrument Sales',
+                image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=2070&auto=format&fit=crop',
+                description: 'Quality instruments for all skill levels',
+                details: [
+                    'Wide selection of instruments',
+                    'Beginner to professional models',
+                    'Expert consultation available',
+                    'Competitive pricing'
+                ]
+            },
+            {
+                id: 'instrument-repairs',
+                title: 'Instrument Repairs',
+                image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
+                description: 'Professional repair and maintenance services',
+                details: [
+                    'Expert technicians',
+                    'Quick turnaround time',
+                    'All instrument types',
+                    'Warranty on services'
+                ]
+            },
+            {
+                id: 'instrument-rentals',
+                title: 'Instrument Rentals',
+                image: 'https://images.unsplash.com/photo-1576324486546-794d0c6d6f8a?q=80&w=2070&auto=format&fit=crop',
+                description: 'Flexible rental plans for students and professionals',
+                details: [
+                    'Monthly and yearly plans',
+                    'Maintenance included',
+                    'Upgrade options available',
+                    'Ideal for beginners'
                 ]
             }
         ]
@@ -202,7 +221,6 @@ const ProgramDetail = () => {
         const programData = {
             category: id,
             programName: subProgram.title,
-            timing: subProgram.timing,
             description: subProgram.description
         };
         setProgramData(programData);
@@ -228,15 +246,42 @@ const ProgramDetail = () => {
             </div>
 
             <Section>
+                {program.overview && (
+                    <motion.div
+                        className="program-overview-section"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2>Program <span className="text-gold">Overview</span></h2>
+                        
+                        {program.overview.instrumental && (
+                            <div className="overview-block">
+                                <h3>{program.overview.instrumental.title}</h3>
+                                <p>{program.overview.instrumental.description}</p>
+                                <div className="levels-section">
+                                    <h4>LEVELS</h4>
+                                    <div className="levels-list">
+                                        {program.overview.instrumental.levels.map((level, index) => (
+                                            <span key={index} className="level-badge">{level}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </motion.div>
+                )}
+
                 <motion.div
                     className="program-overview"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2>Program <span className="text-gold">Overview</span></h2>
                     <p>{program.description}</p>
-                    <Link to="/contact" className="btn btn-primary">Enroll Now</Link>
+                    {id !== 'instrumental-sales' && (
+                        <Link to="/contact" className="btn btn-primary">Enroll Now</Link>
+                    )}
                 </motion.div>
 
                 <div className="sub-programs-section">
@@ -256,7 +301,12 @@ const ProgramDetail = () => {
                                 </div>
                                 <div className="sub-program-content">
                                     <h4>{subProgram.title}</h4>
-                                    <p className="sub-program-timing">{subProgram.timing}</p>
+                                    {subProgram.id === 'vocals' && (
+                                        <div className="vocal-styles">
+                                            <span className="vocal-style classical">Classical</span>
+                                            <span className="vocal-style western">Western</span>
+                                        </div>
+                                    )}
                                     <p className="sub-program-description">{subProgram.description}</p>
                                     <ul className="sub-program-details">
                                         {subProgram.details.map((detail, detailIndex) => (
@@ -265,12 +315,14 @@ const ProgramDetail = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button 
-                                        onClick={() => handleJoinProgram(subProgram)}
-                                        className="sub-program-btn"
-                                    >
-                                        Join This Program
-                                    </button>
+                                    {id !== 'instrumental-sales' && (
+                                        <button 
+                                            onClick={() => handleJoinProgram(subProgram)}
+                                            className="sub-program-btn"
+                                        >
+                                            Join This Program
+                                        </button>
+                                    )}
                                 </div>
                             </motion.div>
                         ))}

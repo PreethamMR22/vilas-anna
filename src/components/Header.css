@@ -10,11 +10,11 @@
 }
 
 .header.scrolled {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(10, 10, 10, 0.85));
     padding: 15px 0;
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(26, 77, 62, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(26, 77, 62, 0.05);
+    border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(74, 222, 128, 0.05);
 }
 
 .header-container {
@@ -39,6 +39,7 @@
     text-transform: uppercase;
     letter-spacing: 1.2px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--color-text-main);
 }
 
 .desktop-nav {
@@ -72,7 +73,7 @@
 .desktop-nav a.active {
     opacity: 1;
     color: var(--color-primary);
-    text-shadow: 0 0 8px rgba(26, 77, 62, 0.5);
+    text-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
 }
 
 /* Custom underline handled by framer motion or basic CSS fallback */
@@ -85,7 +86,7 @@
     background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
     border-radius: 2px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 10px rgba(26, 77, 62, 0.5);
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
 }
 
 .desktop-nav a:hover .underline,
@@ -116,7 +117,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 998;
     backdrop-filter: blur(2px);
 }
@@ -127,9 +128,9 @@
     right: 0;
     width: 80%;
     height: 100vh;
-    background: linear-gradient(135deg, var(--color-bg-card), rgba(255, 255, 255, 0.95));
+    background: linear-gradient(135deg, var(--color-bg-card), rgba(0, 0, 0, 0.95));
     padding: 0;
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
     z-index: 999;
     overflow-y: auto;
     display: flex;
@@ -138,8 +139,8 @@
 
 .mobile-nav-header {
     padding: 30px;
-    border-bottom: 1px solid rgba(26, 77, 62, 0.1);
-    background: rgba(248, 249, 250, 0.5);
+    border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+    background: rgba(10, 10, 10, 0.5);
 }
 
 .mobile-logo {
@@ -175,14 +176,14 @@
 .mobile-nav a:hover,
 .mobile-nav a.active {
     color: var(--color-primary);
-    background: rgba(248, 249, 250, 0.5);
+    background: rgba(10, 10, 10, 0.5);
     border-left-color: var(--color-primary);
 }
 
 .mobile-nav-footer {
     padding: 30px;
-    border-top: 1px solid rgba(26, 77, 62, 0.1);
-    background: rgba(248, 249, 250, 0.5);
+    border-top: 1px solid rgba(74, 222, 128, 0.1);
+    background: rgba(10, 10, 10, 0.5);
     margin-top: auto;
 }
 
@@ -222,7 +223,7 @@
 
 .btn-cta:hover {
     color: var(--color-primary);
-    text-shadow: 0 0 8px rgba(26, 77, 62, 0.5);
+    text-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
     transform: translateY(-2px);
 }
 
@@ -237,7 +238,7 @@
     background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
     border-radius: 2px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 10px rgba(26, 77, 62, 0.5);
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
 }
 
 .btn-cta:hover::after {
