@@ -1,10 +1,52 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Section from '../components/Section';
-import Card from '../components/Card';
 import { useProgramEnrollment } from '../contexts/ProgramEnrollmentContext';
 import './ProgramDetail.css';
+
+// LazyImage component for better performance
+const LazyImage = ({ src, alt, className }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [isInView, setIsInView] = useState(false);
+    const imgRef = useRef();
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsInView(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (imgRef.current) {
+            observer.observe(imgRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <div ref={imgRef} className={`lazy-image-container ${className}`}>
+            {isInView && (
+                <img
+                    src={src}
+                    alt={alt}
+                    className={`lazy-image ${isLoaded ? 'loaded' : 'loading'}`}
+                    onLoad={() => setIsLoaded(true)}
+                    loading="lazy"
+                />
+            )}
+            {!isLoaded && (
+                <div className="image-placeholder">
+                    <div className="skeleton-loader"></div>
+                </div>
+            )}
+        </div>
+    );
+};
 
 const programData = {
     music: {
@@ -232,7 +274,11 @@ const ProgramDetail = () => {
     return (
         <div className="page-program-detail">
             <div className="program-hero">
-                <img src={program.image} alt={program.title} />
+                <LazyImage 
+                    src={program.image} 
+                    alt={program.title}
+                    className="hero-image"
+                />
                 <div className="program-hero-overlay">
                     <motion.h1
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -245,14 +291,10 @@ const ProgramDetail = () => {
                 </div>
             </div>
 
-            <Section>
-                {program.overview && (
-                    <motion.div
-                        className="program-overview-section"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
+            <div className="section">
+                <div className="container">
+                    {program.overview && (
+                    <div className="program-overview-section">
                         <h2>Program <span className="text-gold">Overview</span></h2>
                         
                         {program.overview.instrumental && (
@@ -269,35 +311,27 @@ const ProgramDetail = () => {
                                 </div>
                             </div>
                         )}
-                    </motion.div>
+                    </div>
                 )}
 
-                <motion.div
-                    className="program-overview"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
+                <div className="program-overview">
                     <p>{program.description}</p>
                     {id !== 'instrumental-sales' && (
                         <Link to="/contact" className="btn btn-primary">Enroll Now</Link>
                     )}
-                </motion.div>
+                </div>
 
                 <div className="sub-programs-section">
                     <h3>Explore Our <span className="text-gold">Programs</span></h3>
                     <div className="sub-programs-grid">
                         {program.subPrograms.map((subProgram, index) => (
-                            <motion.div
-                                key={subProgram.id}
-                                className="sub-program-card"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                            >
+                            <div key={subProgram.id} className="sub-program-card">
                                 <div className="sub-program-image">
-                                    <img src={subProgram.image} alt={subProgram.title} />
+                                    <LazyImage 
+                                        src={subProgram.image} 
+                                        alt={subProgram.title}
+                                        className="sub-program-img"
+                                    />
                                 </div>
                                 <div className="sub-program-content">
                                     <h4>{subProgram.title}</h4>
@@ -331,11 +365,12 @@ const ProgramDetail = () => {
                                         </button>
                                     )}
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
-            </Section>
+                </div>
+            </div>
         </div>
     );
 };
