@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaPlay, FaMusic, FaStar, FaYoutube } from 'react-icons/fa';
 import { useVideoModal } from '../contexts/VideoModalContext';
-const heroImage = '/images/heronew.jpg';
+const heroImage = '/program-cards-images/offline-musicClass.jpeg';
 import './Hero.css';
 
 const Hero = () => {

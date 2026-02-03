@@ -22,7 +22,7 @@ const programData = {
             {
                 id: 'piano',
                 title: 'Piano',
-                image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop',
+                image: '/music-page-images/piano.jpeg',
                 description: 'Master the keys with comprehensive piano training',
                 details: [
                     'Classical and modern techniques',
@@ -34,7 +34,7 @@ const programData = {
             {
                 id: 'guitar',
                 title: 'Guitar',
-                image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop',
+                image: '/music-page-images/guitar.jpeg',
                 description: 'Learn guitar from basics to advanced performance',
                 details: [
                     'Acoustic and electric styles',
@@ -46,7 +46,7 @@ const programData = {
             {
                 id: 'drums',
                 title: 'Drums',
-                image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2070&auto=format&fit=crop',
+                image: '/music-page-images/drums.jpg',
                 description: 'Develop rhythm and percussion skills',
                 details: [
                     'Rhythm fundamentals',
@@ -58,7 +58,7 @@ const programData = {
             {
                 id: 'vocals',
                 title: 'Vocals',
-                image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop',
+                image: '/music-page-images/vocal.jpeg',
                 description: 'Find your voice and master vocal techniques',
                 details: [
                     'Breathing techniques',
@@ -70,7 +70,7 @@ const programData = {
             {
                 id: 'violin',
                 title: 'Violin',
-                image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop',
+                image: '/music-page-images/violine.jpg',
                 description: 'Classical violin training for all levels',
                 details: [
                     'Classical techniques',
@@ -82,7 +82,7 @@ const programData = {
             {
                 id: 'flute',
                 title: 'Flute',
-                image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop',
+                image: '/music-page-images/flute.jpg',
                 description: 'Master the flute with comprehensive training',
                 details: [
                     'Classical and modern flute techniques',
@@ -94,7 +94,7 @@ const programData = {
             {
                 id: 'ukulele',
                 title: 'Ukulele',
-                image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2070&auto=format&fit=crop',
+                image: '/music-page-images/ukulele.jpg',
                 description: 'Learn the cheerful sounds of the ukulele',
                 details: [
                     'Basic chords and strumming patterns',
@@ -107,13 +107,13 @@ const programData = {
     },
     'after-school-activities': {
         title: "After School Activities",
-        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2070&auto=format&fit=crop",
+        image: "/program-cards-images/after-school.jpg",
         description: "Engaging after-school programs designed to develop creativity, critical thinking, and physical wellness.",
         subPrograms: [
             {
                 id: 'chess',
                 title: 'Chess',
-                image: 'https://images.unsplash.com/photo-1585829486653-97878c3f66a3?q=80&w=2070&auto=format&fit=crop',
+                image: '/afterSchool-images/chess.jpg',
                 description: 'Develop strategic thinking and problem-solving skills',
                 details: [
                     'Beginner to advanced levels',
@@ -125,7 +125,7 @@ const programData = {
             {
                 id: 'art',
                 title: 'Art',
-                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?q=80&w=2070&auto=format&fit=crop',
+                image: '/afterSchool-images/art.jpg',
                 description: 'Explore creativity through various art mediums',
                 details: [
                     'Drawing and painting techniques',
@@ -137,7 +137,7 @@ const programData = {
             {
                 id: 'yoga',
                 title: 'Yoga',
-                image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2070&auto=format&fit=crop',
+                image: '/afterSchool-images/yoga.jpg',
                 description: 'Build flexibility, strength, and mindfulness',
                 details: [
                     'Age-appropriate poses',
@@ -149,7 +149,7 @@ const programData = {
             {
                 id: 'dance',
                 title: 'Dance',
-                image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=2070&auto=format&fit=crop',
+                image: '/afterSchool-images/dance.jpg',
                 description: 'Express yourself through movement and rhythm',
                 details: [
                     'Various dance styles',
@@ -162,13 +162,13 @@ const programData = {
     },
     'instrumental-sales': {
         title: "Instrumental Sales & Services",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop",
+        image: "/program-cards-images/instrument-sale.jpg",
         description: "Comprehensive instrument sales, repair services, and rental options for all your musical needs.",
         subPrograms: [
             {
                 id: 'instrument-sales',
                 title: 'Instrument Sales',
-                image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=2070&auto=format&fit=crop',
+                image: '/instrumentSales-images/sales.jpg',
                 description: 'Quality instruments for all skill levels',
                 details: [
                     'Wide selection of instruments',
@@ -180,7 +180,7 @@ const programData = {
             {
                 id: 'instrument-repairs',
                 title: 'Instrument Repairs',
-                image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
+                image: "/instrumentSales-images/repair.jpg",
                 description: 'Professional repair and maintenance services',
                 details: [
                     'Expert technicians',
@@ -192,7 +192,7 @@ const programData = {
             {
                 id: 'instrument-rentals',
                 title: 'Instrument Rentals',
-                image: 'https://images.unsplash.com/photo-1576324486546-794d0c6d6f8a?q=80&w=2070&auto=format&fit=crop',
+                image: '/instrumentSales-images/rental.jpg',
                 description: 'Flexible rental plans for students and professionals',
                 details: [
                     'Monthly and yearly plans',
@@ -315,7 +315,14 @@ const ProgramDetail = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    {id !== 'instrumental-sales' && (
+                                    {id === 'instrumental-sales' ? (
+                                        <button 
+                                            onClick={() => handleJoinProgram(subProgram)}
+                                            className="sub-program-btn"
+                                        >
+                                            Enquire
+                                        </button>
+                                    ) : (
                                         <button 
                                             onClick={() => handleJoinProgram(subProgram)}
                                             className="sub-program-btn"

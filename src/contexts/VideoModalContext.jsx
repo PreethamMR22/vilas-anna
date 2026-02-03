@@ -12,7 +12,7 @@ export const useVideoModal = () => {
 
 export const VideoModalProvider = ({ children }) => {
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-    const videoUrl = 'https://youtu.be/AIVnLaDMotk?si=4XwprdlcWT1QpK0H';
+    const videoUrl = 'https://youtu.be/vt0i6nuqNEo?si=Yuky4V0pyTsN7kq4';
 
     const openVideoModal = () => setIsVideoModalOpen(true);
     const closeVideoModal = () => setIsVideoModalOpen(false);

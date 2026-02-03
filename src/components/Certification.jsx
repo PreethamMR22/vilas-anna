@@ -131,20 +131,6 @@ const Certification = () => {
                                 </div>
                                 <h3>{cert.name}</h3>
                                 <p>{cert.description}</p>
-                                <div className="certification-features">
-                                    <div className="feature-item">
-                                        <FaCheckCircle className="feature-icon" />
-                                        <span>Performance Assessment</span>
-                                    </div>
-                                    <div className="feature-item">
-                                        <FaCheckCircle className="feature-icon" />
-                                        <span>Theory Evaluation</span>
-                                    </div>
-                                    <div className="feature-item">
-                                        <FaCheckCircle className="feature-icon" />
-                                        <span>Global Recognition</span>
-                                    </div>
-                                </div>
                             </motion.div>
                         ))}
                     </motion.div>

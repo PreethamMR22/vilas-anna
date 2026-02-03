@@ -5,7 +5,14 @@ import Card from '../components/Card';
 const courseGuitar = '/images/course_guitar.png';
 const philosophyImage = '/images/philosophy.png';
 const yogaImage = '/images/yoga.png';
-const spaceRentalsImage = '/images/space-rentals.jpg';
+const spaceRentalsImage = '/program-cards-images/space-rental.jpg';
+
+// Program Cards Images
+const offlineMusicImage = '/program-cards-images/offline-musicClass.jpeg';
+const afterSchoolImage = '/program-cards-images/after-school.jpg';
+const instrumentSalesImage = '/program-cards-images/instrument-sale.jpg';
+const eventsImage = '/program-cards-images/events-entertainment.jpeg';
+const onlineClassesImage = '/program-cards-images/online-class.jpg';
 import './Courses.css';
 
 const Courses = () => {
@@ -18,7 +25,7 @@ const Courses = () => {
   return (
     <div className="page-courses">
       <div className="courses-hero" style={{
-        background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(' + philosophyImage + ')'
+        background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(' + instrumentSalesImage + ')'
       }}>
         <h1>Our Programs</h1>
         <p>Discover your creative potential</p>
@@ -27,7 +34,7 @@ const Courses = () => {
       <Section>
         <div className="courses-grid">
           <Card
-            image="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop"
+            image={offlineMusicImage}
             title="Offline Music Classes"
             description="Instruments • Vocals • Theory"
             buttonText="Explore Music"
@@ -35,7 +42,7 @@ const Courses = () => {
             delay={1}
           />
           <Card
-            image="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2070&auto=format&fit=crop"
+            image={afterSchoolImage}
             title="After School Activities"
             description="Chess • Art • Yoga • Dance"
             buttonText="Explore Activities"
@@ -43,7 +50,7 @@ const Courses = () => {
             delay={2}
           />
           <Card
-            image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop"
+            image={instrumentSalesImage}
             title="Instrumental Sales & Services"
             description="Instrument Sales • Repairs • Rentals"
             buttonText="Explore Instruments"
@@ -51,7 +58,7 @@ const Courses = () => {
             delay={3}
           />
           <Card
-            image="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop"
+            image={eventsImage}
             title="Events & Entertainment"
             description="Weekly Jamming • Karaoke Nights • Signature Events"
             buttonText="Explore Events"
@@ -67,7 +74,7 @@ const Courses = () => {
             delay={5}
           />
           <Card
-            image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
+            image={onlineClassesImage}
             title="Online Classes"
             description="Online Classes • Hybrid Learning • Global Access"
             buttonText="Explore Digital"

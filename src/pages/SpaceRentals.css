@@ -7,7 +7,7 @@
 .space-rentals-hero {
   height: 60vh;
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-              url('https://images.unsplash.com/photo-1519452575417-564c1401ecc0?q=80&w=1920') center/cover;
+              url('/program-cards-images/space-rental.jpg') center/cover;
   background-size: cover;
   background-position: center;
   padding: 140px 0 100px;

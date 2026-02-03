@@ -45,7 +45,7 @@ const DigitalLearning = () => {
                         </div>
                         <div className="intro-image">
                             <img 
-                                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop"
+                                src="/online-classes/how-session-work.jpg"
                                 alt="Online music learning platform"
                             />
                         </div>
@@ -156,7 +156,7 @@ const DigitalLearning = () => {
                         </div>
                         <div className="tech-image">
                             <img 
-                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop"
+                                src="/online-classes/learn-live.jpg"
                                 alt="Live music session"
                             />
                         </div>
@@ -180,9 +180,8 @@ const DigitalLearning = () => {
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => {
                                     setProgramData({
-                                        category: 'live-sessions',
-                                        programName: 'Interactive Live Music Sessions',
-                                        timing: 'Flexible scheduling available'
+                                        category: 'online-classes',
+                                        programName: 'Online Classes'
                                     });
                                     navigate('/contact');
                                 }}

@@ -1,9 +1,12 @@
 import React from 'react';
 import { FaCalendarAlt, FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import './CTASection.css';
 
 const CTASection = () => {
+    const navigate = useNavigate();
+    
     return (
         <section className="cta-section">
             <div className="container">
@@ -49,6 +52,7 @@ const CTASection = () => {
                         transition={{ duration: 0.6, delay: 0.6 }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => navigate('/contact')}
                     >
                         <FaCalendarAlt className="button-icon" />
                         Book Free Demo Class

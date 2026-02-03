@@ -10,7 +10,7 @@ const SpaceRentals = () => {
     {
       id: 'standard',
       name: 'Standard',
-      image: 'https://images.unsplash.com/photo-1519452575417-564c1401ecc0?q=80&w=2070&auto=format&fit=crop',
+      image: '/Space-rentals-images/standard-room.jpg',
       badge: 'Budget Friendly',
       features: [
         'No AC',
@@ -25,7 +25,7 @@ const SpaceRentals = () => {
     {
       id: 'premium',
       name: 'Premium',
-      image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop',
+      image: '/Space-rentals-images/premium.jpg',
       badge: 'Most Popular',
       features: [
         'With AC',
@@ -40,7 +40,7 @@ const SpaceRentals = () => {
     {
       id: 'ultimate',
       name: 'Ultimate',
-      image: 'https://images.unsplash.com/photo-1519452575417-564c1401ecc0?q=80&w=2070&auto=format&fit=crop',
+      image: '/Space-rentals-images/ultimate.jpg',
       badge: 'Premium Choice',
       features: [
         'With AC',

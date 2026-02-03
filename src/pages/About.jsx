@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from '../components/Section';
 import Certification from '../components/Certification';
-const heroImage = '/images/hero.png';
+const heroImage = '/music-page-images/piano.jpeg';
 import './About.css';
 
 const About = () => {

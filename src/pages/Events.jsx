@@ -153,8 +153,8 @@ const Events = () => {
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => {
                                     setProgramData({
-                                        category: 'jamming',
-                                        programName: 'Weekly Jamming Sessions'
+                                        category: 'events-entertainment',
+                                        programName: 'Weekly Jamming'
                                     });
                                     navigate('/contact');
                                 }}

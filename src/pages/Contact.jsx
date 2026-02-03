@@ -12,44 +12,41 @@ const Contact = () => {
         name: '',
         email: '',
         phone: '',
-        interestedField: '',
-        preferredSlot: '',
-        programName: '',
-        programTiming: ''
+        interestedField: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
         if (enrollmentData) {
-            const categoryMap = {
-                'music': 'music',
-                'yoga': 'yoga',
-                'art-therapy': 'art-therapy',
-                'jamming': 'music',
-                'digital-learning': 'music'
+            const fieldMap = {
+                'piano': 'music - Piano',
+                'guitar': 'music - Guitar',
+                'drums': 'music - Drums',
+                'vocals': 'music - Vocals',
+                'violin': 'music - Violin',
+                'flute': 'music - Flute',
+                'ukulele': 'music - Ukulele',
+                'chess': 'after-school-activities - Chess',
+                'dance': 'after-school-activities - Dance',
+                'art': 'after-school-activities - Art',
+                'yoga': 'after-school-activities - Yoga',
+                'instrument-sales': 'sales-instrument-repair - Instrument Sales',
+                'instrument-repairs': 'sales-instrument-repair - Instrument Repairs',
+                'instrument-rentals': 'sales-instrument-repair - Instrument Rentals',
+                'instrument sales': 'sales-instrument-repair - Instrument Sales',
+                'instrument repairs': 'sales-instrument-repair - Instrument Repairs',
+                'instrument rentals': 'sales-instrument-repair - Instrument Rentals',
+                'online-classes': 'online-classes - Online Classes',
+                'jamming': 'events-entertainment - Weekly Jamming',
+                'karaoke': 'events-entertainment - Karaoke Nights',
+                'signature-events': 'events-entertainment - Signature Events'
             };
-            
-            const timeSlotMap = {
-                'morning': 'morning',
-                'afternoon': 'afternoon', 
-                'evening': 'evening'
-            };
-            
-            // Determine time slot based on program timing
-            let preferredSlot = '';
-            if (enrollmentData.timing) {
-                const hour = parseInt(enrollmentData.timing.split(':')[0]);
-                if (hour >= 6 && hour < 12) preferredSlot = 'morning';
-                else if (hour >= 12 && hour < 17) preferredSlot = 'afternoon';
-                else preferredSlot = 'evening';
-            }
             
             setFormData(prev => ({
                 ...prev,
-                interestedField: categoryMap[enrollmentData.category] || '',
-                programName: enrollmentData.programName || '',
-                programTiming: enrollmentData.timing || '',
-                preferredSlot: preferredSlot
+                interestedField: fieldMap[enrollmentData.programName?.toLowerCase()] || 
+                                 fieldMap[enrollmentData.category] || 
+                                 enrollmentData.programName || ''
             }));
         }
     }, [enrollmentData]);
@@ -66,14 +63,11 @@ const Contact = () => {
             const formDataToSend = new FormData();
             formDataToSend.append('access_key', import.meta.env.VITE_WEB3FORMS_ACCESS_KEY); // Must be set in .env file
             formDataToSend.append('subject', 'New Contact Form Submission - Blue Grass Academy');
-            formDataToSend.append('from_name', formData.name);
-            formDataToSend.append('from_email', formData.email);
+            formDataToSend.append('name', formData.name);
+            formDataToSend.append('email', formData.email);
             formDataToSend.append('phone', formData.phone);
             formDataToSend.append('interested_field', formData.interestedField);
-            formDataToSend.append('preferred_slot', formData.preferredSlot);
-            formDataToSend.append('program_name', formData.programName || 'Not specified');
-            formDataToSend.append('program_timing', formData.programTiming || 'Not specified');
-            formDataToSend.append('message', `New contact form submission from Blue Grass Academy website.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nInterested Field: ${formData.interestedField}\nPreferred Slot: ${formData.preferredSlot}\nProgram Name: ${formData.programName || 'Not specified'}\nProgram Timing: ${formData.programTiming || 'Not specified'}`);
+            formDataToSend.append('message', `New contact form submission from Blue Grass Academy website.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nInterested Field: ${formData.interestedField}`);
             
             // Send to Web3Forms API
             const response = await fetch('https://api.web3forms.com/submit', {
@@ -92,10 +86,7 @@ const Contact = () => {
                     name: '', 
                     email: '', 
                     phone: '', 
-                    interestedField: '', 
-                    preferredSlot: '',
-                    programName: '',
-                    programTiming: ''
+                    interestedField: ''
                 });
                 clearEnrollmentData();
             } else {
@@ -141,6 +132,8 @@ const Contact = () => {
                         <div className="info-item">
                             <h4>Telephone</h4>
                             <p>8792175588</p>
+                            <p>8861552277</p>
+                            <p>8971168006</p>
                         </div>
 
                         <div className="info-item social-section">
@@ -205,59 +198,36 @@ const Contact = () => {
                                     required
                                 >
                                     <option value="">Select a field</option>
-                                    <option value="music">Music</option>
-                                    <option value="yoga">Yoga</option>
-                                    <option value="instrumental-sales">Instrumental Sales & Services</option>
-                                    <option value="jamming">Jamming Sessions</option>
-                                    <option value="digital-learning">Online Classes</option>
+                                    <optgroup label="Music">
+                                        <option value="music - Piano">Piano</option>
+                                        <option value="music - Guitar">Guitar</option>
+                                        <option value="music - Drums">Drums</option>
+                                        <option value="music - Vocals">Vocals</option>
+                                        <option value="music - Violin">Violin</option>
+                                        <option value="music - Flute">Flute</option>
+                                        <option value="music - Ukulele">Ukulele</option>
+                                    </optgroup>
+                                    <optgroup label="After School Activities">
+                                        <option value="after-school-activities - Chess">Chess</option>
+                                        <option value="after-school-activities - Dance">Dance</option>
+                                        <option value="after-school-activities - Art">Art</option>
+                                        <option value="after-school-activities - Yoga">Yoga</option>
+                                    </optgroup>
+                                    <optgroup label="Sales & Instrument Repair">
+                                        <option value="sales-instrument-repair - Instrument Sales">Instrument Sales</option>
+                                        <option value="sales-instrument-repair - Instrument Repairs">Instrument Repairs</option>
+                                        <option value="sales-instrument-repair - Instrument Rentals">Instrument Rentals</option>
+                                    </optgroup>
+                                    <optgroup label="Online Classes">
+                                        <option value="online-classes - Online Classes">Online Classes</option>
+                                    </optgroup>
+                                    <optgroup label="Events & Entertainment">
+                                        <option value="events-entertainment - Weekly Jamming">Weekly Jamming</option>
+                                        <option value="events-entertainment - Karaoke Nights">Karaoke Nights</option>
+                                        <option value="events-entertainment - Signature Events">Signature Events</option>
+                                    </optgroup>
                                 </select>
                             </div>
-
-                            <div className="form-group">
-                                <label htmlFor="preferredSlot">Preferred Slot</label>
-                                <select
-                                    id="preferredSlot"
-                                    name="preferredSlot"
-                                    value={formData.preferredSlot}
-                                    onChange={handleChange}
-                                    required
-                                >
-                                    <option value="">Select a time slot</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
-                                </select>
-                            </div>
-
-                            {enrollmentData && (
-                                <>
-                                    <div className="form-group">
-                                        <label htmlFor="programName">Selected Program</label>
-                                        <input
-                                            type="text"
-                                            id="programName"
-                                            name="programName"
-                                            value={formData.programName}
-                                            onChange={handleChange}
-                                            readOnly
-                                            className="readonly-field"
-                                        />
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label htmlFor="programTiming">Program Timing</label>
-                                        <input
-                                            type="text"
-                                            id="programTiming"
-                                            name="programTiming"
-                                            value={formData.programTiming}
-                                            onChange={handleChange}
-                                            readOnly
-                                            className="readonly-field"
-                                        />
-                                    </div>
-                                </>
-                            )}
 
                             <button type="submit" className="btn btn-primary submit-btn" disabled={isSubmitting}>
                                 {isSubmitting ? 'Sending...' : 'Submit'}
