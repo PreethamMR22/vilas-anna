@@ -3,6 +3,7 @@ import Section from '../components/Section';
 import { FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import { useProgramEnrollment } from '../contexts/ProgramEnrollmentContext';
 import { useSubmissionModal } from '../contexts/SubmissionModalContext';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
@@ -15,6 +16,11 @@ const Contact = () => {
         interestedField: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Initialize EmailJS
+    useEffect(() => {
+        emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    }, []);
 
     useEffect(() => {
         if (enrollmentData) {
@@ -39,7 +45,10 @@ const Contact = () => {
                 'online-classes': 'online-classes - Online Classes',
                 'jamming': 'events-entertainment - Weekly Jamming',
                 'karaoke': 'events-entertainment - Karaoke Nights',
-                'signature-events': 'events-entertainment - Signature Events'
+                'signature-events': 'events-entertainment - Signature Events',
+                'standard': 'space-rentals - Standard Room',
+                'premium': 'space-rentals - Premium Room',
+                'ultimate': 'space-rentals - Ultimate Room'
             };
             
             setFormData(prev => ({
@@ -60,24 +69,23 @@ const Contact = () => {
         setIsSubmitting(true);
         
         try {
-            const formDataToSend = new FormData();
-            formDataToSend.append('access_key', import.meta.env.VITE_WEB3FORMS_ACCESS_KEY); // Must be set in .env file
-            formDataToSend.append('subject', 'New Contact Form Submission - Blue Grass Academy');
-            formDataToSend.append('name', formData.name);
-            formDataToSend.append('email', formData.email);
-            formDataToSend.append('phone', formData.phone);
-            formDataToSend.append('interested_field', formData.interestedField);
-            formDataToSend.append('message', `New contact form submission from Blue Grass Academy website.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nInterested Field: ${formData.interestedField}`);
+            const templateParams = {
+                to_name: 'Blue Grass Academy',
+                from_name: formData.name,
+                from_email: formData.email,
+                phone: formData.phone,
+                interested_field: formData.interestedField,
+                message: `New contact form submission from Blue Grass Academy website.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nInterested Field: ${formData.interestedField}`
+            };
+
+            // Send email using EmailJS
+            const response = await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                templateParams
+            );
             
-            // Send to Web3Forms API
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formDataToSend
-            });
-            
-            const result = await response.json();
-            
-            if (result.success) {
+            if (response.status === 200) {
                 showSuccessModal(
                     'Thank You for Your Interest!',
                     `Thank you for contacting Blue Grass Academy, ${formData.name}! We have received your inquiry and will get back to you soon.`
@@ -225,6 +233,11 @@ const Contact = () => {
                                         <option value="events-entertainment - Weekly Jamming">Weekly Jamming</option>
                                         <option value="events-entertainment - Karaoke Nights">Karaoke Nights</option>
                                         <option value="events-entertainment - Signature Events">Signature Events</option>
+                                    </optgroup>
+                                    <optgroup label="Space Rentals">
+                                        <option value="space-rentals - Standard Room">Standard Room</option>
+                                        <option value="space-rentals - Premium Room">Premium Room</option>
+                                        <option value="space-rentals - Ultimate Room">Ultimate Room</option>
                                     </optgroup>
                                 </select>
                             </div>

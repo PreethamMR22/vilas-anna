@@ -1,11 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Section from '../components/Section';
 import Card from '../components/Card';
+import { useProgramEnrollment } from '../contexts/ProgramEnrollmentContext';
 import './SpaceRentals.css';
 
 const SpaceRentals = () => {
+  const navigate = useNavigate();
+  const { setProgramData } = useProgramEnrollment();
+
+  const handleBookNow = (spaceType) => {
+    setProgramData({
+      programName: spaceType.name,
+      category: spaceType.id,
+      type: 'space-rental'
+    });
+    navigate('/contact');
+  };
   const spaceTypes = [
     {
       id: 'standard',
@@ -105,6 +117,7 @@ const SpaceRentals = () => {
                   className="space-button"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => handleBookNow(space)}
                 >
                   Book Now
                 </motion.button>

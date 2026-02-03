@@ -7,7 +7,7 @@ A modern, responsive web application for Blue Grass Academy - a premier educatio
 - **Responsive Design**: Fully responsive layout that works seamlessly across all devices
 - **Interactive UI**: Smooth animations and transitions using Framer Motion
 - **Program Management**: Detailed program information with enrollment capabilities
-- **Contact Forms**: Integrated contact forms with EmailJS and Web3Forms support
+- **Contact Forms**: Integrated contact forms with EmailJS support
 - **Video Modal**: Embedded video player for promotional content
 - **Gallery**: Visual showcase of academy activities and events
 - **Dynamic Counters**: Animated statistics display on the homepage
@@ -119,20 +119,18 @@ blue-grass-academy/
 Create a `.env` file in the root directory based on `.env.example`:
 
 ```env
-
-# Web3Forms Configuration required in .env file
-VITE_WEB3FORMS_ACCESS_KEY=your_access_key
+# EmailJS Configuration required in .env file
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
 ### Setup Services
 
-
-#### Web3Forms Setup
-1. Sign up at [Web3Forms](https://web3forms.com/)
-2. Get your access key
-3. Add it to the `.env` file
-
-**Note**: Web3Forms offers a free tier with **50 emails per month**. For higher volume, consider upgrading to a paid plan.
+#### EmailJS Setup
+1. Sign up at [EmailJS](https://www.emailjs.com/)
+2. Get your service ID, template ID, and public key
+3. Add them to the `.env` file
 
 ## 🎨 Customization
 
