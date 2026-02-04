@@ -129,7 +129,7 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
 
 #### EmailJS Setup
 1. Sign up at [EmailJS](https://www.emailjs.com/)
-2. Get your service ID, template ID, and public key
+2. Get your service ID, template ID, and public key kept in .env file, sample file is also available
 3. Add them to the `.env` file
 
 ## 🎨 Customization
