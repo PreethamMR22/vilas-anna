@@ -201,18 +201,18 @@ const Hero = () => {
 
                 <motion.div className="hero-buttons" variants={itemVariants}>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Link to="/contact" className="btn btn-primary">
+                            Book a Demo
+                        </Link>
+                    </motion.div>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <button 
-                            className="btn btn-primary"
+                            className="btn btn-outline"
                             onClick={openVideoModal}
                         >
                             <FaYoutube className="btn-icon" />
                             Watch Brand Film
                         </button>
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Link to="/contact" className="btn btn-outline">
-                            Book a Demo
-                        </Link>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Link to="/programs" className="btn btn-outline">
