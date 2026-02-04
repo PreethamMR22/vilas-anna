@@ -117,7 +117,7 @@ const Home = () => {
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                                 </svg>
                             </div>
-                            <h3>VERIFIED & EXPERT TEACHERS</h3>
+                            <h3>Verified & Expert Teachers</h3>
                             <p>Professionally trained, verified educators following global teaching standards.</p>
                         </div>
                         <div className="trust-card">
@@ -127,7 +127,7 @@ const Home = () => {
                                     <polyline points="9 22 9 12 15 12 15 22"/>
                                 </svg>
                             </div>
-                            <h3>SECURE LEARNING ENVIRONMENT</h3>
+                            <h3>Secure Learning Environment</h3>
                             <p>CCTV-equipped classrooms ensuring safety, transparency, and peace of mind.</p>
                         </div>
                         <div className="trust-card">
@@ -138,7 +138,7 @@ const Home = () => {
                                     <line x1="12" y1="22.08" x2="12" y2="12"/>
                                 </svg>
                             </div>
-                            <h3>REAL OUTCOMES</h3>
+                            <h3>Real Outcomes</h3>
                             <p>Measurable growth in technical skills, confidence, performance, and artistry.</p>
                         </div>
                         <div className="trust-card">
@@ -149,7 +149,7 @@ const Home = () => {
                                     <circle cx="12" cy="12" r="2"/>
                                 </svg>
                             </div>
-                            <h3>REGULAR ASSESSMENTS & GROWTH TRACKING</h3>
+                            <h3>Regular Assessments & Growth Tracking</h3>
                             <p>Growth sheets, skill benchmarks, progress reports, and personalized feedback.</p>
                         </div>
                     </motion.div>
