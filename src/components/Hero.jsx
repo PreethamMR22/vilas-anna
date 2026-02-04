@@ -22,8 +22,8 @@ const Hero = () => {
 
     const targetValues = {
         students: 500,
-        programs: 15,
-        years: 10
+        programs: 45,
+        years: 3
     };
 
     useEffect(() => {
