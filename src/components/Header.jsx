@@ -33,28 +33,16 @@ const Header = () => {
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    // Logo SVG Component
+    // Logo Component
     const Logo = () => (
-        <motion.svg 
-            width="45" 
-            height="45" 
-            viewBox="0 0 100 100" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
+        <motion.img 
+            src="/logo.png" 
+            alt="Blue Grass Academy Logo"
+            width="50"
+            height="45"
             whileHover={{ rotate: 360 }}
             transition={{ duration: 0.6 }}
-        >
-            <defs>
-                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="var(--color-primary)" />
-                    <stop offset="100%" stopColor="var(--color-primary-hover)" />
-                </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="48" stroke="url(#goldGradient)" strokeWidth="4" />
-            <path d="M35 80V20L75 50L35 80Z" fill="url(#goldGradient)" />
-            <path d="M65 20V50" stroke="white" strokeWidth="3" strokeLinecap="round" />
-            <circle cx="65" cy="15" r="5" fill="white" />
-        </motion.svg>
+        />
     );
 
     return (
