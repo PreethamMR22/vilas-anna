@@ -40,8 +40,32 @@ const Header = () => {
             alt="Blue Grass Academy Logo"
             width="50"
             height="45"
-            whileHover={{ rotate: 360 }}
-            transition={{ duration: 0.6 }}
+            animate={{ 
+                filter: "brightness(1.5) saturate(1.4) drop-shadow(0 0 25px rgba(212, 175, 55, 0.9))"
+            }}
+            initial={{ 
+                filter: "brightness(1.5) saturate(1.4) drop-shadow(0 0 25px rgba(212, 175, 55, 0.9))",
+                scale: 1
+            }}
+            whileHover={{ 
+                rotate: 360,
+                scale: 1.1,
+                filter: "brightness(1.6) saturate(1.5) drop-shadow(0 0 32px rgba(212, 175, 55, 1))",
+                transition: {
+                    scale: { duration: 0.2 },
+                    filter: { duration: 0.3 }
+                }
+            }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ 
+                duration: 0.6,
+                filter: { duration: 0.3 },
+                scale: { duration: 0.2 }
+            }}
+            style={{
+                cursor: 'pointer',
+                transition: 'filter 0.3s ease, transform 0.2s ease'
+            }}
         />
     );
 
