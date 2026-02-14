@@ -28,9 +28,103 @@
   color: white;
 }
 
+/* Creative Spaces Info Section */
+.creative-spaces-info {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05));
+}
+
+.creative-spaces-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.creative-spaces-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.creative-spaces-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+
+.creative-spaces-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.creative-spaces-column {
+  text-align: left;
+}
+
+.creative-spaces-column h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #4ade80;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.creative-spaces-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.creative-spaces-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.creative-spaces-list li::before {
+  content: "•";
+  color: #4ade80;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.facilities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.facilities-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.facilities-list li::before {
+  content: "✔";
+  color: #4ade80;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 /* Space Types Section */
 .space-types-section {
   padding: 80px 20px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
 }
 
 .space-grid {
@@ -303,6 +397,32 @@
   .space-rentals-hero p {
     font-size: 1rem;
     padding: 0 10px;
+  }
+
+  .creative-spaces-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .creative-spaces-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .creative-spaces-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .creative-spaces-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .creative-spaces-list li,
+  .facilities-list li {
+    font-size: 1rem;
+    margin-bottom: 12px;
   }
 
   .space-grid {

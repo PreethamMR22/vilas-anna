@@ -22,7 +22,7 @@ const Hero = () => {
 
     const targetValues = {
         students: 500,
-        programs: 45,
+        programs: 50,
         years: 3
     };
 
@@ -191,18 +191,26 @@ const Hero = () => {
 
                 <motion.div className="hero-badge" variants={itemVariants}>
                     <FaMusic className="badge-icon" />
-                    <span>Training Mind, Body & Soul</span>
+                    <span>Where passion becomes performance</span>
                     <FaStar className="badge-star" />
                 </motion.div>
 
                 <motion.p variants={itemVariants}>
-                    <span className="text-gold text-bold">Blue Grass Academy</span> is a holistic learning space where Music, Yoga and Instrumental Services come together to help learners grow with confidence, creativity and calm.
+                    <span className="text-gold text-bold">Blue Grass Academy</span> is a premium creative hub in Bengaluru offering music education, performing arts, wellness programs, instrument sales, events, and studio space, all under one roof.
                 </motion.p>
 
                 <motion.div className="hero-buttons" variants={itemVariants}>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Link to="/contact" className="btn btn-primary">
-                            Book a Demo
+                        <button 
+                            className="btn btn-primary"
+                            onClick={() => window.location.href = 'tel:8792175588'}
+                        >
+                            Book a free trial
+                        </button>
+                    </motion.div>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Link to="/programs" className="btn btn-outline">
+                            Explore Programs
                         </Link>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -213,11 +221,6 @@ const Hero = () => {
                             <FaYoutube className="btn-icon" />
                             Watch Brand Film
                         </button>
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Link to="/programs" className="btn btn-outline">
-                            View Programs
-                        </Link>
                     </motion.div>
                 </motion.div>
 

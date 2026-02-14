@@ -117,7 +117,7 @@ const Header = () => {
                         transition={{ delay: 0.4 }}
                     >
                         <Link to="/contact" className="btn-cta">
-                            Book Demo
+                            Contact
                         </Link>
                     </motion.div>
                 </nav>
@@ -177,7 +177,7 @@ const Header = () => {
                                     </div>
                                 </div>
                                 <Link to="/contact" className="btn-cta" onClick={toggleMenu}>
-                                    Book a Free Demo
+                                    Contact
                                 </Link>
                             </div>
                         </motion.nav>

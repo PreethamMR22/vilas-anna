@@ -50,7 +50,7 @@ const LazyImage = ({ src, alt, className }) => {
 
 const programData = {
     music: {
-        title: "Offline Music Classes",
+        title: "Music Classes",
         image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop",
         description: "Discover the joy of music with our comprehensive program covering instruments, vocals, and theory.",
         overview: {
@@ -148,7 +148,7 @@ const programData = {
         ]
     },
     'after-school-activities': {
-        title: "After School Activities",
+        title: "Creative & Wellness Programs",
         image: "/program-cards-images/after-school.jpg",
         description: "Engaging after-school programs designed to develop creativity, critical thinking, and physical wellness.",
         subPrograms: [
@@ -203,9 +203,9 @@ const programData = {
         ]
     },
     'instrumental-sales': {
-        title: "Instrumental Sales & Services",
+        title: "Instrument Store & Service",
         image: "/program-cards-images/instrument-sale.jpg",
-        description: "Comprehensive instrument sales, repair services, and rental options for all your musical needs.",
+        description: "<span class='highlight'>Buy</span> <span class='highlight'>Maintain</span> <span class='highlight'>Upgrade</span><br><br>Your trusted destination for instruments and after-sales support.",
         subPrograms: [
             {
                 id: 'instrument-sales',
@@ -315,7 +315,7 @@ const ProgramDetail = () => {
                 )}
 
                 <div className="program-overview">
-                    <p>{program.description}</p>
+                    <p dangerouslySetInnerHTML={{ __html: program.description }}></p>
                     {id !== 'instrumental-sales' && (
                         <Link to="/contact" className="btn btn-primary">Enroll Now</Link>
                     )}
@@ -361,7 +361,7 @@ const ProgramDetail = () => {
                                             onClick={() => handleJoinProgram(subProgram)}
                                             className="sub-program-btn"
                                         >
-                                            Join This Program
+                                            {id === 'music' || id === 'after-school-activities' ? 'Book a free trial' : 'Join This Program'}
                                         </button>
                                     )}
                                 </div>

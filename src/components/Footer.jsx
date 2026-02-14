@@ -19,10 +19,10 @@ const Footer = () => {
                         <p>Discover your musical potential with our expert-led programs and state-of-the-art facilities.</p>
                     </div>
                     <div className="social-links">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+                        <a href="https://www.instagram.com/blue_grass_academy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
                             <FaInstagram />
                         </a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
+                        <a href="https://www.facebook.com/share/189bp67bcA/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
                             <FaFacebookF />
                         </a>
                         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="YouTube">

@@ -15,7 +15,7 @@ const InstrumentSales = () => {
             <div className="instrument-sales-hero" style={{
                 background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(' + heroImage + ')'
             }}>
-                <h1>INSTRUMENT SALES AT BLUE GRASS MUSIC ACADEMY</h1>
+                <h1>INSTRUMENT STORE & SERVICE AT BLUE GRASS MUSIC ACADEMY</h1>
                 <p>Play with Confidence. Perform with Excellence.</p>
             </div>
 

@@ -46,7 +46,7 @@ const Founder = () => {
                         >
                             <div className="founder-image-container">
                                 <img 
-                                    src="/images/founder.png" 
+                                    src="/founder-section/founder.jpeg" 
                                     alt="Kawitha Reddy - Founder of Blue Grass Academy" 
                                     className="founder-image"
                                 />

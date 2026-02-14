@@ -13,6 +13,7 @@ const afterSchoolImage = '/program-cards-images/after-school.jpg';
 const instrumentSalesImage = '/program-cards-images/instrument-sale.jpg';
 const eventsImage = '/program-cards-images/events-entertainment.jpeg';
 const onlineClassesImage = '/program-cards-images/online-class.jpg';
+const summerCampImage = '/program-cards-images/summer-camp.jpg';
 import './Courses.css';
 
 const Courses = () => {
@@ -35,7 +36,7 @@ const Courses = () => {
         <div className="courses-grid">
           <Card
             image={offlineMusicImage}
-            title="Offline Music Classes"
+            title="Music Classes"
             description="Instruments • Vocals • Theory"
             buttonText="Explore Music"
             onClick={() => handleCardClick('music')}
@@ -43,7 +44,7 @@ const Courses = () => {
           />
           <Card
             image={afterSchoolImage}
-            title="After School Activities"
+            title="Creative & Wellness Programs"
             description="Chess • Art • Yoga • Dance"
             buttonText="Explore Activities"
             onClick={() => handleCardClick('after-school-activities')}
@@ -51,7 +52,7 @@ const Courses = () => {
           />
           <Card
             image={instrumentSalesImage}
-            title="Instrumental Sales & Services"
+            title="Instrument Store & Service"
             description="Instrument Sales • Repairs • Rentals"
             buttonText="Explore Instruments"
             onClick={() => handleCardClick('instrumental-sales')}
@@ -67,7 +68,7 @@ const Courses = () => {
           />
           <Card
             image={spaceRentalsImage}
-            title="Space Rentals"
+            title="Studio & Space Rental"
             description="Premium Facilities • Creative Events • Corporate Functions"
             buttonText="View Spaces"
             onClick={() => navigate('/space-rentals')}
@@ -80,6 +81,14 @@ const Courses = () => {
             buttonText="Explore Digital"
             onClick={() => navigate('/digital-learning')}
             delay={6}
+          />
+          <Card
+            image={summerCampImage}
+            title="Summer Camp"
+            description="Music • Art • Yoga • Performance"
+            buttonText="Join Camp"
+            onClick={() => navigate('/summer-camp')}
+            delay={7}
           />
         </div>
       </Section>

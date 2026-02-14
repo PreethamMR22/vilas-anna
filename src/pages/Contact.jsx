@@ -36,6 +36,7 @@ const Contact = () => {
                 'dance': 'after-school-activities - Dance',
                 'art': 'after-school-activities - Art',
                 'yoga': 'after-school-activities - Yoga',
+                'summer-camp': 'summer-camp - Summer Camp',
                 'instrument-sales': 'sales-instrument-repair - Instrument Sales',
                 'instrument-repairs': 'sales-instrument-repair - Instrument Repairs',
                 'instrument-rentals': 'sales-instrument-repair - Instrument Rentals',
@@ -238,6 +239,9 @@ const Contact = () => {
                                         <option value="space-rentals - Standard Room">Standard Room</option>
                                         <option value="space-rentals - Premium Room">Premium Room</option>
                                         <option value="space-rentals - Ultimate Room">Ultimate Room</option>
+                                    </optgroup>
+                                    <optgroup label="Summer Programs">
+                                        <option value="summer-camp - Summer Camp">Summer Camp</option>
                                     </optgroup>
                                 </select>
                             </div>

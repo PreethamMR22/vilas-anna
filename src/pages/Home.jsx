@@ -20,6 +20,7 @@ const afterSchoolImage = '/program-cards-images/after-school.jpg';
 const instrumentSalesImage = '/program-cards-images/instrument-sale.jpg';
 const eventsImage = '/program-cards-images/events-entertainment.jpeg';
 const onlineClassesImage = '/program-cards-images/online-class.jpg';
+const summerCampImage = '/program-cards-images/summer-camp.jpg';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Home = () => {
                 <div className="courses-grid">
                     <Card
                         image={offlineMusicImage}
-                        title="Offline Music Classes"
+                        title="Music Classes"
                         description="Instruments • Vocals • Theory"
                         buttonText="Explore Music"
                         onClick={() => navigate('/programs/music')}
@@ -41,7 +42,7 @@ const Home = () => {
                     />
                     <Card
                         image={afterSchoolImage}
-                        title="After School Activities"
+                        title="Creative & Wellness Programs"
                         description="Chess • Art • Yoga • Dance"
                         buttonText="Explore Activities"
                         onClick={() => navigate('/programs/after-school-activities')}
@@ -49,7 +50,7 @@ const Home = () => {
                     />
                     <Card
                         image={instrumentSalesImage}
-                        title="Instrumental Sales & Services"
+                        title="Instrument Store & Service"
                         description="Instrument Sales • Repairs • Rentals"
                         buttonText="Explore Instruments"
                         onClick={() => navigate('/programs/instrumental-sales')}
@@ -65,7 +66,7 @@ const Home = () => {
                     />
                     <Card
                         image={spaceRentalsImage}
-                        title="Space Rentals"
+                        title="Studio & Space Rental"
                         description="Premium Facilities • Creative Events • Corporate Functions"
                         buttonText="View Spaces"
                         onClick={() => navigate('/space-rentals')}
@@ -79,6 +80,14 @@ const Home = () => {
                         onClick={() => navigate('/digital-learning')}
                         delay={6}
                     />
+                    <Card
+                        image={summerCampImage}
+                        title="Summer Camp"
+                        description="Music • Art • Yoga • Performance"
+                        buttonText="Join Camp"
+                        onClick={() => navigate('/summer-camp')}
+                        delay={7}
+                    />
                 </div>
             </Section>
 
@@ -91,7 +100,7 @@ const Home = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        WHY PARENTS TRUST <span className="text-gold">BLUE GRASS MUSIC</span>
+                        WHY PARENTS TRUST <span className="text-gold">BLUE GRASS </span>
                         <br />
                         ACADEMY
                     </motion.h2>

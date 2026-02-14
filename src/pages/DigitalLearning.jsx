@@ -22,7 +22,7 @@ const DigitalLearning = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <h1>Interactive Live Music Sessions</h1>
+                <h1>Online Classes</h1>
                 <p>Learn instruments directly from expert instructors through live remote sessions</p>
             </motion.div>
 

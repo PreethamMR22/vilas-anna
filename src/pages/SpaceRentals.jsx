@@ -26,7 +26,7 @@ const SpaceRentals = () => {
       badge: 'Budget Friendly',
       features: [
         'No AC',
-        'Max 4 occupants',
+        'Max 10 occupants',
         '5 minutes buffer time',
         'Working hours on weekdays',
         '₹1200 per hour'
@@ -75,9 +75,50 @@ const SpaceRentals = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h1>Space Rentals</h1>
+        <h1>Studio & Space Rental</h1>
         <p>Premium facilities for your creative events and corporate functions</p>
       </motion.div>
+
+      {/* Creative Spaces Info Section */}
+      <Section className="creative-spaces-info">
+        <motion.div
+          className="creative-spaces-content"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2>Creative Spaces Available for Rent</h2>
+          <p className="creative-spaces-description">
+            Blue Grass Academy offers beautifully designed spaces for creators, educators and performers.
+          </p>
+          
+          <div className="creative-spaces-grid">
+            <div className="creative-spaces-column">
+              <h3>Ideal For</h3>
+              <ul className="creative-spaces-list">
+                <li>Music & Dance Workshops</li>
+                <li>Rehearsals & Band Practice</li>
+                <li>Photoshoots & Video Shoots</li>
+                <li>Small Events & Meetups</li>
+                <li>Therapy & Wellness Sessions</li>
+                <li>Birthday & Creative Parties</li>
+              </ul>
+            </div>
+            
+            <div className="creative-spaces-column">
+              <h3>Facilities</h3>
+              <ul className="facilities-list">
+                <li>Sound-treated music rooms</li>
+                <li>Instruments available on request</li>
+                <li>Seating & open studio space</li>
+                <li>Safe and premium ambience</li>
+                <li>Hourly / Half-day / Full-day rental</li>
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+      </Section>
 
       {/* Space Types Section */}
       <Section title="Choose Your Space" className="space-types-section">
