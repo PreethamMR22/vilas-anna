@@ -184,7 +184,7 @@ const Gallery = () => {
                             <p>Expert Instructors</p>
                         </div>
                         <div className="stat-item">
-                            <h3>45+</h3>
+                            <h3>3+</h3>
                             <p>Years of Excellence</p>
                         </div>
                         <div className="stat-item">

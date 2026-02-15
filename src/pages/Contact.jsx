@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Section from '../components/Section';
-import { FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 import { useProgramEnrollment } from '../contexts/ProgramEnrollmentContext';
 import { useSubmissionModal } from '../contexts/SubmissionModalContext';
 import emailjs from '@emailjs/browser';
@@ -145,15 +145,6 @@ const Contact = () => {
                             <p>8971168006</p>
                         </div>
 
-                        <div className="info-item social-section">
-                            <h4>Follow us</h4>
-                            <div className="social-links-contact">
-                                <a href="#" className="social-icon-c"><FaInstagram /></a>
-                                <a href="#" className="social-icon-c"><FaFacebookF /></a>
-                                <a href="#" className="social-icon-c"><FaYoutube /></a>
-                                <a href="#" className="social-icon-c"><FaLinkedinIn /></a>
-                            </div>
-                        </div>
                     </div>
 
                     {/* Form Column */}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -24,12 +24,6 @@ const Footer = () => {
                         </a>
                         <a href="https://www.facebook.com/share/189bp67bcA/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
                             <FaFacebookF />
-                        </a>
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="YouTube">
-                            <FaYoutube />
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
-                            <FaLinkedinIn />
                         </a>
                     </div>
                 </div>
