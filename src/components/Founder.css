@@ -49,13 +49,9 @@
 .founder-title {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 800;
-    color: var(--color-text-main);
+    color: var(--color-primary);
     margin: 0;
     line-height: 1.2;
-    background: linear-gradient(135deg, var(--color-text-main), var(--color-primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .founder-grid {

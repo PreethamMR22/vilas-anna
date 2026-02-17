@@ -196,7 +196,7 @@ const Hero = () => {
                 </motion.div>
 
                 <motion.p variants={itemVariants}>
-                    <span className="text-gold text-bold">Blue Grass Academy</span> is a premium creative hub in Bengaluru offering music education, performing arts, wellness programs, instrument sales, events, and studio space, all under one roof.
+                    <span className="text-gold text-bold">Blue Grass Academy</span> is a premium creative hub in Bengaluru offering music education, musical instrument sales, performing arts, wellness programs, various events, and studio space, all under one roof.
                 </motion.p>
 
                 <motion.div className="hero-buttons" variants={itemVariants}>
