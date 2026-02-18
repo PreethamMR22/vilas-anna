@@ -81,6 +81,14 @@ const Home = () => {
                         onClick={() => navigate('/digital-learning')}
                         delay={6}
                     />
+                    <Card
+                        image={summerCampImage}
+                        title="Summer Camp"
+                        description="Exciting summer activities with music, arts, and outdoor adventures"
+                        buttonText="Join Summer Camp"
+                        onClick={() => navigate('/summer-camp')}
+                        delay={7}
+                    />
                 </div>
             </Section>
 

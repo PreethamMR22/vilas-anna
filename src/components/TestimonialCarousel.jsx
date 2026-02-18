@@ -8,80 +8,80 @@ const TestimonialCarousel = () => {
             id: 1,
             name: "Priya Sharma",
             initial: "PS",
-            activity: "Music",
-            review: "Blue Grass Academy has transformed my daughter's musical journey. The instructors are exceptional and truly care about each student's progress. She's become more confident and passionate about music!",
+            activity: "Guitar",
+            review: "The guitar program at Blue Grass Academy is <span style='color: #22c55e; font-weight: 600;'>exceptional</span>! My daughter has learned proper technique and music theory. She's now <span style='color: #22c55e; font-weight: 600;'>confidently performing</span> in school concerts.",
             borderColor: "#9333ea"
         },
         {
             id: 2,
             name: "Rahul Verma",
             initial: "RV",
-            activity: "Swimming",
-            review: "The swimming program is outstanding! My son went from being afraid of water to swimming laps in just a few months. The coaches are patient and professional.",
+            activity: "Violin",
+            review: "My son's violin skills have <span style='color: #22c55e; font-weight: 600;'>blossomed</span> under the expert guidance. The classical training is thorough and the instructors are <span style='color: #22c55e; font-weight: 600;'>incredibly patient</span> with beginners.",
             borderColor: "#3b82f6"
         },
         {
             id: 3,
             name: "Anjali Patel",
             initial: "AP",
-            activity: "Art",
-            review: "My daughter's creativity has flourished here. The art teachers nurture individual expression while teaching fundamental techniques. We couldn't be happier!",
+            activity: "Piano",
+            review: "The piano curriculum is <span style='color: #22c55e; font-weight: 600;'>outstanding</span>! My daughter progressed from basic scales to playing complex pieces. The foundation she's building is <span style='color: #22c55e; font-weight: 600;'>truly remarkable</span>.",
             borderColor: "#ec4899"
         },
         {
             id: 4,
             name: "Vikram Reddy",
             initial: "VR",
-            activity: "Chess",
-            review: "The chess program has improved my son's critical thinking and concentration skills. The tournaments and competitions are well-organized and motivating.",
+            activity: "Drums",
+            review: "The drum program has <span style='color: #22c55e; font-weight: 600;'>transformed</span> my son's rhythm and coordination. The instructors teach various styles and make learning <span style='color: #22c55e; font-weight: 600;'>so much fun</span>!",
             borderColor: "#9333ea"
         },
         {
             id: 5,
             name: "Kavita Nair",
             initial: "KN",
-            activity: "Dance",
-            review: "My daughter loves every dance class! The instructors are amazing at bringing out the best in each child while making learning fun and engaging.",
+            activity: "Ukulele",
+            review: "My daughter <span style='color: #22c55e; font-weight: 600;'>absolutely loves</span> her ukulele classes! The instrument is perfect for her age, and the teachers make every lesson <span style='color: #22c55e; font-weight: 600;'>engaging and joyful</span>.",
             borderColor: "#3b82f6"
         },
         {
             id: 6,
             name: "Amit Kumar",
             initial: "AK",
-            activity: "Music",
-            review: "The music education here is top-notch. My child's piano skills have improved dramatically, and more importantly, she's developed a lifelong love for music.",
+            activity: "Flute",
+            review: "The flute instruction is <span style='color: #22c55e; font-weight: 600;'>top-notch</span>. My child's breath control and tone have improved dramatically. She's developed a <span style='color: #22c55e; font-weight: 600;'>beautiful sound</span> and love for classical music.",
             borderColor: "#ec4899"
         },
         {
             id: 7,
             name: "Sneha Iyer",
             initial: "SI",
-            activity: "Yoga",
-            review: "The yoga classes have helped my daughter with focus and flexibility. The instructors create a calm, supportive environment that's perfect for children.",
+            activity: "Western Vocals",
+            review: "The western vocal training has helped my daughter with <span style='color: #22c55e; font-weight: 600;'>pitch control</span> and stage presence. The instructors create a <span style='color: #22c55e; font-weight: 600;'>supportive environment</span> for vocal development.",
             borderColor: "#9333ea"
         },
         {
             id: 8,
             name: "Rajesh Gupta",
             initial: "RG",
-            activity: "Swimming",
-            review: "Excellent swimming program! The instructors are certified and very safety-conscious. My kids have become confident swimmers while having fun.",
+            activity: "Classical Vocals",
+            review: "<span style='color: #22c55e; font-weight: 600;'>Exceptional</span> classical vocal training! The emphasis on traditional techniques and ragas is authentic. My child's understanding of <span style='color: #22c55e; font-weight: 600;'>classical music</span> has grown immensely.",
             borderColor: "#3b82f6"
         },
         {
             id: 9,
             name: "Meera Joshi",
             initial: "MJ",
-            activity: "Art",
-            review: "The art program is fantastic! My child has explored different mediums and techniques. The annual art showcase is always a highlight of our year.",
+            activity: "Piano",
+            review: "The piano program is <span style='color: #22c55e; font-weight: 600;'>fantastic</span>! My child has learned both theory and practical skills. The recitals and performances are always a <span style='color: #22c55e; font-weight: 600;'>highlight</span> of our year.",
             borderColor: "#ec4899"
         },
         {
             id: 10,
             name: "Arjun Singh",
             initial: "AS",
-            activity: "Music",
-            review: "From beginner to performer in just one year! The music program's comprehensive approach and supportive environment have exceeded all our expectations.",
+            activity: "Guitar",
+            review: "From complete beginner to <span style='color: #22c55e; font-weight: 600;'>confident performer</span> in just months! The guitar program's comprehensive approach and expert instructors have <span style='color: #22c55e; font-weight: 600;'>exceeded all expectations</span>.",
             borderColor: "#9333ea"
         }
     ]);
@@ -187,8 +187,7 @@ const TestimonialCarousel = () => {
                                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                                     </svg>
                                 </div>
-                                <p className="testimonial-text">{testimonial.review}</p>
-                                <a href="#" className="more-link">more</a>
+                                <p className="testimonial-text" dangerouslySetInnerHTML={{ __html: testimonial.review }}></p>
                                 <div className="testimonial-footer">
                                     <div className="avatar" style={{ borderColor: testimonial.borderColor }}>
                                         {testimonial.initial}
