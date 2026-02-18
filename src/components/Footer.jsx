@@ -76,6 +76,8 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="footer-bottom-content">
                     <p>&copy; {currentYear} Blue Grass Academy. All rights reserved.</p>
+                    <p>Designed and developed by</p>
+                    <p><strong>BrandPsychology Agency</strong></p>
                 </div>
             </div>
         </footer>

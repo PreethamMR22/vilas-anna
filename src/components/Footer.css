@@ -145,10 +145,13 @@
 
 .footer-bottom-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     color: var(--color-text-dim);
     font-size: 0.9rem;
+    text-align: center;
+    gap: 5px;
 }
 
 .footer-bottom-links {
