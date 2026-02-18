@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import './TestimonialCarousel.css';
 
@@ -88,13 +88,24 @@ const TestimonialCarousel = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const [isMobile, setIsMobile] = useState(false);
+    const carouselRef = useRef(null);
 
-    // Duplicate testimonials for infinite scroll effect
-    const duplicatedTestimonials = [...testimonials, ...testimonials];
-
-    // Auto-scroll functionality
+    // Check if mobile device
     useEffect(() => {
-        if (!isAutoPlaying) return;
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Auto-scroll functionality (only for desktop)
+    useEffect(() => {
+        if (!isAutoPlaying || isMobile) return;
 
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => {
@@ -106,10 +117,12 @@ const TestimonialCarousel = () => {
         }, 4000); // Change slide every 4 seconds
 
         return () => clearInterval(interval);
-    }, [isAutoPlaying, testimonials.length]);
+    }, [isAutoPlaying, isMobile, testimonials.length]);
 
-    // Handle manual navigation
+    // Handle manual navigation (only for desktop)
     const handlePrev = () => {
+        if (isMobile) return;
+        
         setIsAutoPlaying(false);
         setCurrentIndex((prevIndex) => {
             if (prevIndex <= 0) {
@@ -123,6 +136,8 @@ const TestimonialCarousel = () => {
     };
 
     const handleNext = () => {
+        if (isMobile) return;
+        
         setIsAutoPlaying(false);
         setCurrentIndex((prevIndex) => {
             if (prevIndex >= testimonials.length - 1) {
@@ -135,8 +150,10 @@ const TestimonialCarousel = () => {
         setTimeout(() => setIsAutoPlaying(true), 10000);
     };
 
-    // Calculate transform for carousel
+    // Calculate transform for carousel (only for desktop)
     const getTransform = () => {
+        if (isMobile) return 'none';
+        
         const cardWidth = 380; // Width of each card
         const gap = 30; // Gap between cards
         const offset = currentIndex * (cardWidth + gap);
@@ -165,12 +182,12 @@ const TestimonialCarousel = () => {
                     Real stories from our community
                 </motion.p>
 
-                <div className="carousel-container">
+                <div className="carousel-container" ref={carouselRef}>
                     <div 
                         className="carousel-track" 
                         style={{ 
                             transform: getTransform(),
-                            transition: isAutoPlaying ? 'none' : 'transform 0.5s ease-in-out'
+                            transition: isAutoPlaying || isMobile ? 'none' : 'transform 0.5s ease-in-out'
                         }}
                     >
                         {testimonials.map((testimonial, index) => (

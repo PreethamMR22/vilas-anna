@@ -191,6 +191,31 @@
     .carousel-controls {
         display: none;
     }
+
+    /* Enable smooth scrolling on mobile */
+    .carousel-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+
+    .carousel-container::-webkit-scrollbar {
+        display: none; /* Chrome/Safari/Opera */
+    }
+
+    .carousel-track {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .testimonial-card {
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
 }
 
 @media (max-width: 480px) {
