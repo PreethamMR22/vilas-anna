@@ -219,7 +219,7 @@ const Hero = () => {
                             onClick={openVideoModal}
                         >
                             <FaYoutube className="btn-icon" />
-                            Watch Brand Film
+                            Watch our Story
                         </button>
                     </motion.div>
                 </motion.div>

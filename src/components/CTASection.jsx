@@ -30,7 +30,7 @@ const CTASection = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        Ready to Start Your Child's
+                        Ready to Start Your
                         <span className="highlight-text"> Learning Journey?</span>
                     </motion.h2>
                     
@@ -41,7 +41,7 @@ const CTASection = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        Book a free demo class and see the Flurn difference. No commitments, just learning.
+                        Book a free demo class and see the Blue Grass difference. No commitments, just learning.
                     </motion.p>
                     
                     <motion.button

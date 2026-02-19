@@ -67,17 +67,12 @@ const DigitalLearning = () => {
                             <p>Real-time video sessions with expert instructors for guitar, piano, violin, drums and more</p>
                         </div>
                         <div className="feature-card">
-                            <div className="feature-icon">�</div>
-                            <h3>Instant Doubt Clearing</h3>
-                            <p>Ask questions and get immediate answers during live sessions for better understanding</p>
-                        </div>
-                        <div className="feature-card">
                             <div className="feature-icon">👨‍�</div>
                             <h3>Personalized Attention</h3>
                             <p>One-on-one and small group sessions ensuring individual focus on your learning progress</p>
                         </div>
                         <div className="feature-card">
-                            <div className="feature-icon">�</div>
+                            <div className="feature-icon">🏠</div>
                             <h3>Learn From Home</h3>
                             <p>Attend classes remotely with flexible scheduling that fits your routine</p>
                         </div>
